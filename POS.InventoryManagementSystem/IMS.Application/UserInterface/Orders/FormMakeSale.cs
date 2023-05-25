@@ -284,15 +284,18 @@ namespace FinalPoject
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             DataRow row = OrderDetailDataTable.NewRow();
-
-            row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
-            row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
-            row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
-            row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
-            row["ProductUnitStock"] = dgvSearchProduct.SelectedRows[0].Cells[5].Value.ToString();
-            row["ProductMSRP"] = dgvSearchProduct.SelectedRows[0].Cells[6].Value.ToString();
-            row["ProductPerUnitPrice"] = dgvSearchProduct.SelectedRows[0].Cells[7].Value.ToString();
-            row["ProductDiscountRate"] = dgvSearchProduct.SelectedRows[0].Cells[8].Value.ToString();
+            if (dgvSearchProduct.SelectedRows[0] != null) 
+            {
+				row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
+				row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
+				row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
+				row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
+				row["ProductUnitStock"] = dgvSearchProduct.SelectedRows[0].Cells[5].Value.ToString();
+				row["ProductMSRP"] = dgvSearchProduct.SelectedRows[0].Cells[6].Value.ToString();
+				row["ProductPerUnitPrice"] = dgvSearchProduct.SelectedRows[0].Cells[7].Value.ToString();
+				row["ProductDiscountRate"] = dgvSearchProduct.SelectedRows[0].Cells[8].Value.ToString();
+			}
+           
 
 
 

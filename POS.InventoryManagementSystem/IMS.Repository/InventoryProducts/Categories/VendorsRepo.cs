@@ -29,8 +29,8 @@ namespace IMS.Repository
             {
                 if (key == null)
                     sql =
-                        @"SELECT
-                                Vendors.VendorId AS VendorId, Vendors.VednorTag AS VendorTag, Vendors.VendorName AS VendorName,
+						@"SELECT
+                                Vendors.VendorId AS VendorId, Vendors.VendorTag AS VendorTag, Vendors.VendorName AS VendorName,
                                 Vendors.VendorDescription AS VendorDisc, Vendors.VendorStatus AS VendorStatus,
                                 Vendors.RegisterDate AS RegisterDate,
                                 Vendors.VendorImage AS VendorImage, ThirdCategories.ThirdCategoryId AS ThirdCateId,
