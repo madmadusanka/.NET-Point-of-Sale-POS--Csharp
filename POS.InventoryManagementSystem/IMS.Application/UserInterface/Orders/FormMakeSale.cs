@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.CodeParser;
 using IMS.Entity.InventoryProducts;
 using IMS.Repository;
 
@@ -273,10 +275,13 @@ namespace FinalPoject
             OrderDetailDataTable.Clear();
             dgvCart.AutoGenerateColumns = false;
 
+            OrderDetailDataTable.Columns.Add("Quantity");
+            OrderDetailDataTable.Columns.Add("Price");
             foreach (DataGridViewTextBoxColumn col in dgvSearchProduct.Columns)
             {
                 OrderDetailDataTable.Columns.Add(col.HeaderText);
             }
+          
             dgvCart.DataSource = OrderDetailDataTable;
         }
 
@@ -286,22 +291,35 @@ namespace FinalPoject
             DataRow row = OrderDetailDataTable.NewRow();
             if (dgvSearchProduct.SelectedRows[0] != null) 
             {
-				row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
-				row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
-				row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
+                row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
+                row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
+                if (String.IsNullOrEmpty(this.txtProductQuant.Text))
+                {
+                    MessageBox.Show("Add Quantity");
+                    return;
+                }
+                else
+                {
+                    row["Quantity"] = this.txtProductQuant.Text;
+                }
+                row["Price"] = (Convert.ToDouble(dgvSearchProduct.SelectedRows[0].Cells[6].Value) * Convert.ToDouble(this.txtProductQuant.Text)).ToString();
+
+                row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
 				row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
 				row["ProductUnitStock"] = dgvSearchProduct.SelectedRows[0].Cells[5].Value.ToString();
 				row["ProductMSRP"] = dgvSearchProduct.SelectedRows[0].Cells[6].Value.ToString();
 				row["ProductPerUnitPrice"] = dgvSearchProduct.SelectedRows[0].Cells[7].Value.ToString();
 				row["ProductDiscountRate"] = dgvSearchProduct.SelectedRows[0].Cells[8].Value.ToString();
-			}
-           
+              
+                
 
 
+            }
 
             OrderDetailDataTable.Rows.Add(row);
 
             UpdatePrice();
+            this.txtProductQuant.Text = String.Empty;
 
         }
 
@@ -326,17 +344,17 @@ namespace FinalPoject
         }
 
         //FillEntity
-        private Orders FillEntity()
+        private Order FillEntity()
         {
 
-            var orders = new Orders();
+            var orders = new Order();
             
             orders.Id = usersRepo.GetUsersdId(this.cmbPayByUser.Text);
             orders.CustomerFullName = this.txtCoustomerName.Text;
             orders.CustomerAddress = this.txtCustomerAddress.Text;
             orders.CustomerPhone = this.txtCustomerPhone.Text;
             orders.CustomerEmail = this.txtCoustomerEmail.Text;
-            orders.OrderQuantity = Convert.ToInt32(this.txtProductQuant.Text);
+            //orders.OrderQuantity = Convert.ToInt32(this.txtProductQuant.Text);
             orders.Date = Convert.ToDateTime(Convert.ToDateTime(dtpPayDate.Value).ToString("yyyy-MM-dd"));
             orders.TotalAmount = Convert.ToDouble(this.txtTotalAmount.Text);
             orders.OrderStatus = this.cmbPayStatus.Text;
@@ -350,18 +368,28 @@ namespace FinalPoject
             return orders;
         }
 
-        //Load from Cart to Save
-        public List<Orders> GetAllForOrders()
+        private OrdersProductsMap FillOrderProductEntity(DataRow row, Order order)
         {
-            List<Orders> orderList = new List<Orders>();
 
-            foreach (DataGridViewRow row in dgvCart.Rows)
+            var ordersProductsMap = new OrdersProductsMap();
+
+            ordersProductsMap.OrderId = order.OrderId;
+            ordersProductsMap.Price = double.Parse(row["Price"].ToString());
+            ordersProductsMap.Quantity = decimal.Parse(row["Quantity"].ToString());
+            ordersProductsMap.ProductMSRP = decimal.Parse(row["ProductMSRP"].ToString());
+            ordersProductsMap.ProductId = int.Parse(row["ProductId"].ToString());
+
+            return ordersProductsMap;
+        }
+
+        //Load from Cart to Save
+        public List<OrdersProductsMap> GetAllForOrders(Order order )
+        {
+            List<OrdersProductsMap> orderList = new List<OrdersProductsMap>();
+
+            foreach (DataRow row in OrderDetailDataTable.Rows)
             {
-                Orders orders = this.FillEntity();
-                //MessageBox.Show(row.Cells[7].Value.ToString());
-                orders.ProductId = Convert.ToInt32(row.Cells[0].Value.ToString());
-                orders.ProductName = row.Cells[2].Value.ToString();
-                orders.ProductPerUnitPrice = Convert.ToDouble(row.Cells[7].Value.ToString());
+                OrdersProductsMap orders = this.FillOrderProductEntity(row, order);
                 orderList.Add(orders);
             }
             return orderList;
@@ -372,23 +400,29 @@ namespace FinalPoject
         {
             try
             {
-                Orders orObj = this.FillEntity();
+                Order orObj = this.FillEntity();
                 if (orObj == null)
                 {
-                    orObj = new Orders();
+                    orObj = new Order();
                     MessageBox.Show("Please Fill Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
                 {
-                    if (this.makeSalesRepo.SaveOrders(GetAllForOrders()))
-                    {
-                        MessageBox.Show("Save Successfully");
 
-                        foreach (DataGridViewRow row in dgvCart.Rows)
+                    if (this.makeSalesRepo.SaveOrder(ref orObj))
+                    {
+                        if (this.makeSalesRepo.SaveOrders(GetAllForOrders(orObj)))
                         {
-                            dgvCart.Rows.RemoveAt(row.Index);
+
+                            MessageBox.Show("Save Successfully");
+
+                            foreach (DataGridViewRow row in dgvCart.Rows)
+                            {
+                                dgvCart.Rows.RemoveAt(row.Index);
+                            }
                         }
+                        
                     }
                     else
                     {
@@ -410,14 +444,14 @@ namespace FinalPoject
         void UpdatePrice()
         {
             double price = 0.0;
-            foreach (DataGridViewRow row in dgvCart.Rows)
+            foreach (DataRow row in OrderDetailDataTable.Rows)
             {
-                price += double.Parse(row.Cells[6].Value.ToString());
+                price += double.Parse(row["Price"].ToString());
             }
 
             txtTotalAmount.Text = price.ToString();
 
-            txtNewVatAmount.Text = (price * 1.15).ToString();
+            txtNewVatAmount.Text = price.ToString();
         }
 
         // ------------ Cart Section ------------
@@ -432,28 +466,46 @@ namespace FinalPoject
 
         private void txtProductQuant_TextChanged(object sender, EventArgs e)
         {
-            int quantityLeft = Int32.Parse(txtPorductItemLeft.Text);
-            if (txtProductQuant.Text != "")
+            decimal quantity;
+            if (decimal.TryParse(txtProductQuant.Text, out quantity))
             {
-                int quantity = Int32.Parse(txtProductQuant.Text);
-                int itemsLeft = quantityLeft - quantity;
 
-                if (itemsLeft < 0)
+                int quantityLeft = 0;
+                if (Int32.TryParse(txtPorductItemLeft.Text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out quantityLeft))
                 {
-                    txtProductQuant.ForeColor = Color.OrangeRed;
+
+
+                    if (txtProductQuant.Text != "")
+                    {
+                        decimal itemsLeft = quantityLeft - quantity;
+
+                        if (itemsLeft < 0)
+                        {
+                            txtProductQuant.ForeColor = Color.OrangeRed;
+                        }
+                        else
+                        {
+                            txtProductQuant.ForeColor = Color.Black;
+                        }
+                        txtPorductItemLeft.Text = itemsLeft.ToString();
+                    }
+                    else
+                    {
+                        txtProductQuant.ForeColor = Color.Black;
+                        txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
+                    }
                 }
-                else
-                {
-                    txtProductQuant.ForeColor = Color.Black;
-                }
-                txtPorductItemLeft.Text = itemsLeft.ToString();
-            }
-            else
-            {
-                txtProductQuant.ForeColor = Color.Black;
-                txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
             }
 
         }
+
+        private void txtTotalAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel18_Paint(object sender, PaintEventArgs e)
+        {
+                    }
     }
 }

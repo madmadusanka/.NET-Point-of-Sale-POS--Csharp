@@ -92,28 +92,42 @@ namespace IMS.Repository
         //Order History
         public DataTable GetAllOrderHistory(string key)
         {
-            List<Orders> ordersHistoryList = new List<Orders>();
+            List<Order> ordersHistoryList = new List<Order>();
 
             string sql;
             try
             {
                 if (key == null)
+                    //sql = @"select
+                    //              Orders.OrderId AS OrderId, Orders.OrderTag AS OrderTag, Users.UserId AS UserId,
+                    //     Orders.Date AS Date, Orders.ProductId AS ProductId, Orders.ProductName AS ProductName,
+                    //     Orders.ProductPerUnitPrice AS ProductPerUnitPrice,
+                    //     Orders.OrderQuantity AS OrderQuantity, Orders.TotalAmount AS TotalAmount,
+                    //     Orders.PaymentMethod AS PaymentMethod,
+
+                    //     Users.FirstName AS FirstName, Users.LastName AS LastName,
+
+                    //     Orders.CustomerFullName AS CustomerFullName, Orders.CustomerPhone AS CustomerPhone,
+                    //     Orders.CustomerEmail AS CustomerEmail, Orders.CustomerAddress AS CustomerAddress,
+
+                    //     Orders.BarCodeId AS BarCodeId
+
+                    //              FROM Orders INNER JOIN
+                    //              Users ON Orders.Id = Users.Id ;";
                     sql = @"select
-                                  Orders.OrderId AS OrderId, Orders.OrderTag AS OrderTag, Users.UserId AS UserId,
+                                  Orders.OrderId AS OrderId, Orders.OrderTag AS OrderTag, 
 			                      Orders.Date AS Date, Orders.ProductId AS ProductId, Orders.ProductName AS ProductName,
 			                      Orders.ProductPerUnitPrice AS ProductPerUnitPrice,
 			                      Orders.OrderQuantity AS OrderQuantity, Orders.TotalAmount AS TotalAmount,
 			                      Orders.PaymentMethod AS PaymentMethod,
 
-			                      Users.FirstName AS FirstName, Users.LastName AS LastName,
 			                      
 			                      Orders.CustomerFullName AS CustomerFullName, Orders.CustomerPhone AS CustomerPhone,
 			                      Orders.CustomerEmail AS CustomerEmail, Orders.CustomerAddress AS CustomerAddress,
 			                      
 			                      Orders.BarCodeId AS BarCodeId
 
-                                  FROM Orders INNER JOIN
-                                  Users ON Orders.Id = Users.Id ;";
+                                  FROM Orders ";
                 else
                     sql = @"select
                                   Orders.OrderId AS OrderId, Orders.OrderTag AS OrderTag, Users.UserId AS UserId,
@@ -152,9 +166,9 @@ namespace IMS.Repository
         }
 
         //view & search & filter 
-        public List<Orders> GetAll2(string key)
+        public List<Order> GetAll2(string key)
         {
-            List<Orders> ordersList = new List<Orders>();
+            List<Order> ordersList = new List<Order>();
 
             string sql;
             try
@@ -197,7 +211,7 @@ namespace IMS.Repository
                 int x = 0;
                 while (x < dt.Rows.Count)
                 {
-                    Orders o = this.ConvertToEntity(dt.Rows[x]);
+                    Order o = this.ConvertToEntity(dt.Rows[x]);
                     ordersList.Add(o);
                     x++;
                 }
@@ -210,14 +224,14 @@ namespace IMS.Repository
             }
         }
 
-        private Orders ConvertToEntity(DataRow row)
+        private Order ConvertToEntity(DataRow row)
         {
             if (row == null)
             {
                 return null;
             }
 
-            var orders = new Orders();
+            var orders = new Order();
             orders.ProductName = row["ProductName"].ToString(); 
             orders.ProductId = Convert.ToInt32(row["ProductId"].ToString());
             orders.ProductIdTag = row["ProductIdTag"].ToString();
@@ -234,9 +248,9 @@ namespace IMS.Repository
         }
 
         //for - Orders
-        public List<Orders> GetAllForOrders()
+        public List<Order> GetAllForOrders()
         {
-            List<Orders> ordersList = new List<Orders>();
+            List<Order> ordersList = new List<Order>();
             string sql;
 
             try
@@ -272,7 +286,7 @@ namespace IMS.Repository
             int x = 0;
                 while (x < dt.Rows.Count)
                 {
-                    Orders o = this.ConvertToEntityForOrders(dt.Rows[x]);
+                    Order o = this.ConvertToEntityForOrders(dt.Rows[x]);
                     ordersList.Add(o);
                     x++;
                 }
@@ -285,14 +299,14 @@ namespace IMS.Repository
             }
         }
 
-        private Orders ConvertToEntityForOrders(DataRow row)
+        private Order ConvertToEntityForOrders(DataRow row)
         {
             if (row == null)
             {
                 return null;
             }
 
-            var orders = new Orders();
+            var orders = new Order();
             orders.CustomerEmail = row["CustomerEmail"].ToString();
             orders.CustomerAddress = row["CustomerAddress"].ToString(); 
             orders.CustomerPhone = row["CustomerPhone"].ToString();
@@ -318,23 +332,15 @@ namespace IMS.Repository
         }
 
         //SaveData - Orders 
-        public bool SaveOrders(List<Orders> orders)
+        public bool SaveOrders(List<OrdersProductsMap> orders)
         {
             bool saveSuccesful = false;
-            //List<Orders> orders = GetAllForOrders();
+  
 
-            foreach (Orders or in orders)
+            foreach (OrdersProductsMap or in orders)
             {
-                string sql = "insert into Orders (Id, BarCodeId, Date, ProductId, ProductName, ProductPerUnitPrice, OrderQuantity," +
-                             "OrderStatus, PaymentMethod, " +
-                             "TotalAmount, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress) " +
-                             " values ('" + or.Id + "', " +
-                             " '" + or.BarCodeId + "' , '" + or.Date + "' , '" + or.ProductId + "' ," +
-                             " '" + or.ProductName + "' ,  '" + or.ProductPerUnitPrice + "' , " +
-                             " '" + or.OrderQuantity + "' , '" + or.OrderStatus + "' , '" + or.PaymentMethod + "' ," +
-                             " '" + or.TotalAmount + "' ," +
-                             " '" + or.CustomerFullName + "' , '" + or.CustomerPhone + "' , '" + or.CustomerEmail + "' ," +
-                             " '" + or.CustomerAddress + "') ";
+                string sql = "INSERT INTO OrdersProductsMap (OrderId, ProductId, Price, Quantity, ProductMSRP)" +
+                    "VALUES ("+ or.OrderId+ ", "+ or.ProductId+","+ or.Price +","+ or.Quantity+","+or.ProductMSRP+");";
                 try
                 {
                     this.iDB.ExecuteDMLQuery(sql);
@@ -348,6 +354,31 @@ namespace IMS.Repository
                 }
             }
             return saveSuccesful;
+        }
+        public bool SaveOrder(ref Order or)
+        {
+            bool isSucccess = false; 
+
+            string sql = "insert into Orders (Id, BarCodeId, Date," +
+                             "OrderStatus, PaymentMethod, " +
+                             "TotalAmount, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress) " +
+                             " values ('" + or.Id + "', " +
+                             " '" + or.BarCodeId + "' , '" + or.Date + "' , '" + or.OrderStatus + "' , '" + or.PaymentMethod + "' ," +
+                             " '" + or.TotalAmount + "' ," +
+                             " '" + or.CustomerFullName + "' , '" + or.CustomerPhone + "' , '" + or.CustomerEmail + "' ," +
+                             " '" + or.CustomerAddress + "'); SELECT SCOPE_IDENTITY(); ";
+            try
+            {
+                or.OrderId = Convert.ToInt32(this.iDB.ExecuteScalar(sql));
+                isSucccess = true;
+        
+            }
+            catch (Exception e)
+            {
+                isSucccess = false;
+                Debug.WriteLine(e.ToString());
+            }
+            return isSucccess;
         }
     }
 }

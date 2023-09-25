@@ -28,6 +28,6 @@ namespace IMS.Entity.InventoryProducts
         public string   BloodGroup { get; set; }
         public int      PostalCode { get; set; }
 
-        public virtual ICollection<Orders> Orders{ get; set; }
+        public virtual ICollection<Order> Orders{ get; set; }
     }
 }

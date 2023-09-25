@@ -76,6 +76,25 @@ namespace IMS.DataAccess
             int u = this.Sqlcom.ExecuteNonQuery();
             return u;
         }
+        public object ExecuteScalar(string sqlQuery)
+        {
+            object result = null;
+
+            try
+            {
+               
+                    using (SqlCommand command = new SqlCommand(sqlQuery, this.sqlcon))
+                    {
+                        result = command.ExecuteScalar();
+                    }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+
+            return result;
+        }
 
         public string GetSingleData(string query, string columnName)
         {

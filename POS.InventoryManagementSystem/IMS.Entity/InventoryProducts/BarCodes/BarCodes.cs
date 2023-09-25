@@ -11,6 +11,6 @@ namespace IMS.Entity.InventoryProducts
         public int    BarCodeId{ get; set; }
         public string BarCode1 { get; set; }
 
-        public virtual ICollection<Orders> Orders{ get; set; }
+        public virtual ICollection<Order> Orders{ get; set; }
     }
 }

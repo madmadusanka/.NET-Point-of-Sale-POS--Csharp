@@ -47,7 +47,10 @@ CREATE TABLE Orders (
 CREATE TABLE OrdersProductsMap (
     OrderProductsCategoriesId INT IDENTITY(1,1) PRIMARY KEY,
     OrderId INT,
-    ProductId INT
+    ProductId INT,
+	Price DOUBLE PRECISION,
+	Quantity  DECIMAL(15, 4),
+	ProductMSRP DECIMAL(18, 2)
 );
 
 -- Create ProCateMap table

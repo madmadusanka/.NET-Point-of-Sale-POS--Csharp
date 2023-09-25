@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IMS.Entity.InventoryProducts
 {
-    public class Orders
+    public class Order
     {
         public int      OrderId      { get; set; }
         public int      Id       { get; set; }
