@@ -341,8 +341,11 @@ namespace FinalPoject
             orders.TotalAmount = Convert.ToDouble(this.txtTotalAmount.Text);
             orders.OrderStatus = this.cmbPayStatus.Text;
             orders.PaymentMethod = this.cmbPaymentMethod.Text;
-            orders.BarCodeId = Convert.ToInt32(this.txtBarcode.Text);
-           
+            if (!String.IsNullOrEmpty(this.txtBarcode.Text)) {
+                orders.BarCodeId = Convert.ToInt32(this.txtBarcode.Text);
+            }
+
+
 
             return orders;
         }
