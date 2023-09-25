@@ -38,42 +38,53 @@ namespace FinalPoject.UserInterface.Dashboard
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!SecurityProvider.IsValidLicense())
+            try
             {
-                MessageBox.Show("Invalid Licesne");
-                SecurityProvider.GenerateKeyFile();
-                return;
-               
-            }
+                string v = "sds";
+                var x = int.Parse(v);
 
-            string role = usersRepo.GetRole(txtUserId.Text, txtPassword.Text);
-            if (role=="Admin")
-            {
-                FormStart formStart = new FormStart  (role,this);
-                formStart.Visible = true;
-                this.Visible = false;
+
+                if (!SecurityProvider.IsValidLicense())
+                {
+                    MessageBox.Show("Invalid Licesne");
+                    SecurityProvider.GenerateKeyFile();
+                    return;
+
+                }
+
+                string role = usersRepo.GetRole(txtUserId.Text, txtPassword.Text);
+                if (role == "Admin")
+                {
+                    FormStart formStart = new FormStart(role, this);
+                    formStart.Visible = true;
+                    this.Visible = false;
+                }
+                else if (role == "Cashier")
+                {
+                    new FormStart(role, this).Show();
+                    FormStart formStart = new FormStart(role, this);
+                    formStart.Visible = true;
+                    this.Visible = false;
+                }
+                else if (role == "Salesman")
+                {
+                    new FormStart(role, this).Show();
+                    FormStart formStart = new FormStart(role, this);
+                    formStart.Visible = true;
+                    this.Visible = false;
+                }
+                else if (role == null)
+                {
+                    MessageBox.Show("UserID & Password Incorrect", "Login Filed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Role Returned : " + role);
+                }
             }
-            else if(role=="Cashier")
+            catch (Exception ex)
             {
-                new FormStart(role, this).Show();
-                FormStart formStart = new FormStart(role, this);
-                formStart.Visible = true;
-                this.Visible = false;
-            }
-            else if (role == "Salesman")
-            {
-                new FormStart(role, this).Show();
-                FormStart formStart = new FormStart(role, this);
-                formStart.Visible = true;
-                this.Visible = false;
-            }
-            else if (role == null)
-            {
-                MessageBox.Show("UserID & Password Incorrect", "Login Filed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                MessageBox.Show("Role Returned : "+role);
+                Logger.Error(ex);
             }
         }
     }
