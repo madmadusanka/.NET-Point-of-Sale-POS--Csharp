@@ -53,7 +53,7 @@ namespace FinalPoject
             this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel62 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Guna2Panel62 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancle = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveBrand = new Guna.UI2.WinForms.Guna2Button();
@@ -105,7 +105,7 @@ namespace FinalPoject
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbmage)).BeginInit();
-            this.guna2Panel62.SuspendLayout();
+            this.Guna2Panel62.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
@@ -146,7 +146,7 @@ namespace FinalPoject
             this.guna2Panel12.Controls.Add(this.panel1);
             this.guna2Panel12.Controls.Add(this.guna2Panel10);
             this.guna2Panel12.Controls.Add(this.guna2Panel20);
-            this.guna2Panel12.Controls.Add(this.guna2Panel62);
+            this.guna2Panel12.Controls.Add(this.Guna2Panel62);
             this.guna2Panel12.Controls.Add(this.guna2Panel15);
             this.guna2Panel12.CustomBorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -578,16 +578,16 @@ namespace FinalPoject
             // 
             // guna2Panel62
             // 
-            this.guna2Panel62.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel62.Controls.Add(this.tableLayoutPanel3);
-            this.guna2Panel62.CustomBorderColor = System.Drawing.Color.Silver;
-            this.guna2Panel62.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.guna2Panel62.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel62.Location = new System.Drawing.Point(0, 563);
-            this.guna2Panel62.Name = "guna2Panel62";
-            this.guna2Panel62.ShadowDecoration.Parent = this.guna2Panel62;
-            this.guna2Panel62.Size = new System.Drawing.Size(414, 57);
-            this.guna2Panel62.TabIndex = 132;
+            this.Guna2Panel62.BackColor = System.Drawing.Color.Transparent;
+            this.Guna2Panel62.Controls.Add(this.tableLayoutPanel3);
+            this.Guna2Panel62.CustomBorderColor = System.Drawing.Color.Silver;
+            this.Guna2Panel62.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.Guna2Panel62.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Guna2Panel62.Location = new System.Drawing.Point(0, 563);
+            this.Guna2Panel62.Name = "guna2Panel62";
+            this.Guna2Panel62.ShadowDecoration.Parent = this.Guna2Panel62;
+            this.Guna2Panel62.Size = new System.Drawing.Size(414, 57);
+            this.Guna2Panel62.TabIndex = 132;
             // 
             // tableLayoutPanel3
             // 
@@ -1222,7 +1222,7 @@ namespace FinalPoject
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbmage)).EndInit();
-            this.guna2Panel62.ResumeLayout(false);
+            this.Guna2Panel62.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.guna2Panel15.ResumeLayout(false);
             this.guna2Panel15.PerformLayout();
@@ -1244,6 +1244,7 @@ namespace FinalPoject
         }
 
         #endregion
+
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
@@ -1316,5 +1317,6 @@ namespace FinalPoject
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandDisc;
         private System.Windows.Forms.DataGridViewTextBoxColumn VendorId;
+        public Guna.UI2.WinForms.Guna2Panel Guna2Panel62 { get => guna2Panel62; set => guna2Panel62 = value; }
     }
 }

@@ -79,7 +79,7 @@ namespace FinalPoject
                 Server dbServer = new Server(new ServerConnection(txtServer.Text, txtUsername.Text, txtPassword.Text));
                 Restore dbRestore = new Restore() {Database = txtDatabase.Text, Action = RestoreActionType.Database, ReplaceDatabase = true, NoRecovery = false};
 
-                dbRestore.Devices.AddDevice(@"C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup\inventoryDB.bak", DeviceType.File);
+                //dbRestore.Devices.AddDevice(@"C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup\inventoryDB.bak", DeviceType.File);
 
                 dbRestore.PercentComplete += DbRestore_PercentComplete;
                 dbRestore.Complete += DbRestore_Complete;
