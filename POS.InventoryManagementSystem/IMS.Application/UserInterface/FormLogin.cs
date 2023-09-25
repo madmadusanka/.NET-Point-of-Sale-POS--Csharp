@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IMS.Framework;
 using IMS.Repository;
 
 namespace FinalPoject.UserInterface.Dashboard
@@ -37,6 +38,14 @@ namespace FinalPoject.UserInterface.Dashboard
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!SecurityProvider.IsValidLicense())
+            {
+                MessageBox.Show("Invalid Licesne");
+                SecurityProvider.GenerateKeyFile();
+                return;
+               
+            }
+
             string role = usersRepo.GetRole(txtUserId.Text, txtPassword.Text);
             if (role=="Admin")
             {
