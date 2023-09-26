@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace FinalPoject
 {
     partial class FormMakeSale
@@ -374,7 +376,7 @@ namespace FinalPoject
             this.dgvSearchProduct.RowHeadersWidth = 51;
             this.dgvSearchProduct.RowTemplate.Height = 24;
             this.dgvSearchProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearchProduct.Size = new System.Drawing.Size(361, 407);
+            this.dgvSearchProduct.Size = new System.Drawing.Size(440, 407);
             this.dgvSearchProduct.TabIndex = 169;
             this.dgvSearchProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchProdcut_CellClick);
             // 
@@ -385,7 +387,8 @@ namespace FinalPoject
             this.ProductId.MinimumWidth = 6;
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
-            this.ProductId.Width = 60;
+            this.ProductId.Width = 10;
+
             // 
             // ProductIdTag
             // 
@@ -394,6 +397,7 @@ namespace FinalPoject
             this.ProductIdTag.MinimumWidth = 6;
             this.ProductIdTag.Name = "ProductIdTag";
             this.ProductIdTag.ReadOnly = true;
+            this.ProductIdTag.Visible = false;
             // 
             // ProductName
             // 
@@ -402,7 +406,9 @@ namespace FinalPoject
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 120;
+            this.ProductName.Width = 100;
+
+
             // 
             // BrandName
             // 
@@ -419,6 +425,7 @@ namespace FinalPoject
             this.ProductStatus.MinimumWidth = 6;
             this.ProductStatus.Name = "ProductStatus";
             this.ProductStatus.ReadOnly = true;
+            this.ProductStatus.Visible = false;
             // 
             // ProductUnitStock
             // 
@@ -427,6 +434,7 @@ namespace FinalPoject
             this.ProductUnitStock.MinimumWidth = 6;
             this.ProductUnitStock.Name = "ProductUnitStock";
             this.ProductUnitStock.ReadOnly = true;
+            this.ProductUnitStock.Visible = false;
             // 
             // ProductMSRP
             // 
@@ -435,6 +443,7 @@ namespace FinalPoject
             this.ProductMSRP.MinimumWidth = 6;
             this.ProductMSRP.Name = "ProductMSRP";
             this.ProductMSRP.ReadOnly = true;
+            this.ProductMSRP.Width = 10;
             // 
             // ProductPerUnitPrice
             // 
@@ -605,52 +614,56 @@ namespace FinalPoject
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 24;
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCart.Size = new System.Drawing.Size(380, 407);
+            this.dgvCart.Size = new System.Drawing.Size(300, 407);
             this.dgvCart.TabIndex = 170;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 60;
+            this.dataGridViewTextBoxColumn1.Width = 10;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductIdTag";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TAG";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 30;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 70;
+            this.dataGridViewTextBoxColumn2.Width = 30;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.dataGridViewTextBoxColumn3.Width = 100;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "BrandName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Brand";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 10;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductStatus";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductMSRP";
+            this.dataGridViewTextBoxColumn5.HeaderText = "MSRP";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Visible = true;
+            this.dataGridViewTextBoxColumn3.Width = 10;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -678,6 +691,8 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 125;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -687,6 +702,7 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 125;
+            this.dataGridViewTextBoxColumn9.Visible = false; 
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -694,6 +710,7 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn10.HeaderText = "Vendor";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -701,6 +718,7 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn11.HeaderText = "Category 1";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -708,8 +726,7 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn12.HeaderText = "Category 2";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // guna2Panel16
+            this.dataGridViewTextBoxColumn12.Visible = false;
             // 
             this.guna2Panel16.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel16.Dock = System.Windows.Forms.DockStyle.Right;

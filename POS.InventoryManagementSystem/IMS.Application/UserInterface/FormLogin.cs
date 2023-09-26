@@ -40,8 +40,6 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             try
             {
-                string v = "sds";
-                var x = int.Parse(v);
 
 
                 if (!SecurityProvider.IsValidLicense())
