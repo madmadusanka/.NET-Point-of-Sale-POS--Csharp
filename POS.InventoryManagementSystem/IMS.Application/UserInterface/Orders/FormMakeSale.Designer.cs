@@ -31,6 +31,7 @@ namespace FinalPoject
         /// </summary>
         private void InitializeComponent()
         {
+            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlInsideLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlBottom = new Guna.UI2.WinForms.Guna2Panel();
@@ -345,6 +346,7 @@ namespace FinalPoject
             this.LeftPanel.Location = new System.Drawing.Point(0, 99);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShadowDecoration.Parent = this.LeftPanel;
+            //this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
             this.LeftPanel.Size = new System.Drawing.Size(401, 497);
             this.LeftPanel.TabIndex = 212;
             // 
@@ -875,7 +877,7 @@ namespace FinalPoject
             this.panel1.Controls.Add(this.txtProducTag);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.pbImage);
+            //this.panel1.Controls.Add(this.pbImage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(20, 70);
@@ -895,6 +897,8 @@ namespace FinalPoject
             this.label27.Size = new System.Drawing.Size(52, 15);
             this.label27.TabIndex = 254;
             this.label27.Text = "BarCode";
+            this.label27.Visible =false;
+
             // 
             // txtBarcode
             // 
@@ -919,13 +923,14 @@ namespace FinalPoject
             this.txtBarcode.ShadowDecoration.Parent = this.txtBarcode;
             this.txtBarcode.Size = new System.Drawing.Size(181, 30);
             this.txtBarcode.TabIndex = 253;
+            this.txtBarcode.Visible = false;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(73, 488);
+            this.label23.Location = new System.Drawing.Point(14, 215);
             this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 15);
@@ -943,6 +948,8 @@ namespace FinalPoject
             this.label22.Size = new System.Drawing.Size(38, 15);
             this.label22.TabIndex = 251;
             this.label22.Text = "Brand";
+            this.label22.Visible = false;
+
             // 
             // txtBrand
             // 
@@ -971,6 +978,7 @@ namespace FinalPoject
             this.txtBrand.ShadowDecoration.Parent = this.txtBrand;
             this.txtBrand.Size = new System.Drawing.Size(182, 30);
             this.txtBrand.TabIndex = 250;
+            this.txtBrand.Visible = false;
             // 
             // label21
             // 
@@ -983,6 +991,7 @@ namespace FinalPoject
             this.label21.Size = new System.Drawing.Size(157, 15);
             this.label21.TabIndex = 249;
             this.label21.Text = "New Amount with 15% Vat";
+            this.label21.Visible = false;
             // 
             // txtNewVatAmount
             // 
@@ -1008,6 +1017,7 @@ namespace FinalPoject
             this.txtNewVatAmount.ShadowDecoration.Parent = this.txtNewVatAmount;
             this.txtNewVatAmount.Size = new System.Drawing.Size(271, 30);
             this.txtNewVatAmount.TabIndex = 248;
+            this.txtNewVatAmount.Visible = false;
             // 
             // txtVatShow
             // 
@@ -1036,6 +1046,7 @@ namespace FinalPoject
             this.txtVatShow.ShadowDecoration.Parent = this.txtVatShow;
             this.txtVatShow.Size = new System.Drawing.Size(182, 30);
             this.txtVatShow.TabIndex = 247;
+            this.txtVatShow.Visible = false;
             // 
             // txtPorductItemLeft
             // 
@@ -1064,25 +1075,26 @@ namespace FinalPoject
             this.txtPorductItemLeft.ShadowDecoration.Parent = this.txtPorductItemLeft;
             this.txtPorductItemLeft.Size = new System.Drawing.Size(182, 30);
             this.txtPorductItemLeft.TabIndex = 246;
+            this.txtPorductItemLeft.Visible = false;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(418, 554);
+            this.label18.Location = new System.Drawing.Point(14, 255);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(75, 15);
             this.label18.TabIndex = 245;
-            this.label18.Text = "Total Amont";
+            this.label18.Text = "Total Amount";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(73, 450);
+            this.label10.Location = new System.Drawing.Point(14, 130);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 15);
@@ -1094,7 +1106,7 @@ namespace FinalPoject
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(454, 450);
+            this.label6.Location = new System.Drawing.Point(400, 130);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 15);
@@ -1117,7 +1129,7 @@ namespace FinalPoject
             "Paid",
             "UnPaid"});
             this.cmbPayStatus.ItemsAppearance.Parent = this.cmbPayStatus;
-            this.cmbPayStatus.Location = new System.Drawing.Point(505, 438);
+            this.cmbPayStatus.Location = new System.Drawing.Point(450, 130);
             this.cmbPayStatus.Name = "cmbPayStatus";
             this.cmbPayStatus.ShadowDecoration.Parent = this.cmbPayStatus;
             this.cmbPayStatus.Size = new System.Drawing.Size(271, 36);
@@ -1139,7 +1151,7 @@ namespace FinalPoject
             "Cash",
             "Card"});
             this.cmbPaymentMethod.ItemsAppearance.Parent = this.cmbPaymentMethod;
-            this.cmbPaymentMethod.Location = new System.Drawing.Point(190, 438);
+            this.cmbPaymentMethod.Location = new System.Drawing.Point(160, 130);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.ShadowDecoration.Parent = this.cmbPaymentMethod;
             this.cmbPaymentMethod.Size = new System.Drawing.Size(224, 36);
@@ -1150,7 +1162,7 @@ namespace FinalPoject
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(302, 259);
+            this.label16.Location = new System.Drawing.Point(14, 175);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 15);
@@ -1168,6 +1180,7 @@ namespace FinalPoject
             this.label17.Size = new System.Drawing.Size(44, 15);
             this.label17.TabIndex = 239;
             this.label17.Text = "%  OFF";
+            this.label17.Visible = false;
             // 
             // txtDiscount
             // 
@@ -1196,6 +1209,7 @@ namespace FinalPoject
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(182, 30);
             this.txtDiscount.TabIndex = 238;
+            this.txtDiscount.Visible = false;
             // 
             // cmbPayByUser
             // 
@@ -1211,7 +1225,7 @@ namespace FinalPoject
             this.cmbPayByUser.HoverState.Parent = this.cmbPayByUser;
             this.cmbPayByUser.ItemHeight = 30;
             this.cmbPayByUser.ItemsAppearance.Parent = this.cmbPayByUser;
-            this.cmbPayByUser.Location = new System.Drawing.Point(356, 250);
+            this.cmbPayByUser.Location = new System.Drawing.Point(160, 175);
             this.cmbPayByUser.Name = "cmbPayByUser";
             this.cmbPayByUser.ShadowDecoration.Parent = this.cmbPayByUser;
             this.cmbPayByUser.Size = new System.Drawing.Size(374, 36);
@@ -1232,7 +1246,7 @@ namespace FinalPoject
             this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
-            this.txtTotalAmount.Location = new System.Drawing.Point(505, 546);
+            this.txtTotalAmount.Location = new System.Drawing.Point(160, 255);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
             this.txtTotalAmount.PlaceholderText = "";
@@ -1259,11 +1273,11 @@ namespace FinalPoject
             this.txtCustomerPhone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerPhone.HoverState.Parent = this.txtCustomerPhone;
-            this.txtCustomerPhone.Location = new System.Drawing.Point(505, 366);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(450, 50);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.PasswordChar = '\0';
             this.txtCustomerPhone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtCustomerPhone.PlaceholderText = "Ex: Chips, Coke, Mobile";
+            this.txtCustomerPhone.PlaceholderText = "Ex:Mobile";
             this.txtCustomerPhone.SelectedText = "";
             this.txtCustomerPhone.ShadowDecoration.Parent = this.txtCustomerPhone;
             this.txtCustomerPhone.Size = new System.Drawing.Size(271, 30);
@@ -1274,7 +1288,7 @@ namespace FinalPoject
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(123, 410);
+            this.label11.Location = new System.Drawing.Point(14, 90);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 15);
@@ -1296,7 +1310,7 @@ namespace FinalPoject
             this.txtCoustomerEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtCoustomerEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCoustomerEmail.HoverState.Parent = this.txtCoustomerEmail;
-            this.txtCoustomerEmail.Location = new System.Drawing.Point(190, 366);
+            this.txtCoustomerEmail.Location = new System.Drawing.Point(160, 50);
             this.txtCoustomerEmail.Name = "txtCoustomerEmail";
             this.txtCoustomerEmail.PasswordChar = '\0';
             this.txtCoustomerEmail.PlaceholderText = "";
@@ -1310,7 +1324,7 @@ namespace FinalPoject
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(452, 373);
+            this.label12.Location = new System.Drawing.Point(400, 50);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 15);
@@ -1332,7 +1346,7 @@ namespace FinalPoject
             this.txtCoustomerName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtCoustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCoustomerName.HoverState.Parent = this.txtCoustomerName;
-            this.txtCoustomerName.Location = new System.Drawing.Point(190, 330);
+            this.txtCoustomerName.Location = new System.Drawing.Point(160, 10);
             this.txtCoustomerName.Name = "txtCoustomerName";
             this.txtCoustomerName.PasswordChar = '\0';
             this.txtCoustomerName.PlaceholderText = "";
@@ -1358,11 +1372,11 @@ namespace FinalPoject
             this.txtCustomerAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCustomerAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerAddress.HoverState.Parent = this.txtCustomerAddress;
-            this.txtCustomerAddress.Location = new System.Drawing.Point(190, 402);
+            this.txtCustomerAddress.Location = new System.Drawing.Point(160, 90);
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.PasswordChar = '\0';
             this.txtCustomerAddress.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.txtCustomerAddress.PlaceholderText = "Ex: Chips, Coke, Mobile";
+            this.txtCustomerAddress.PlaceholderText = "Optional";
             this.txtCustomerAddress.SelectedText = "";
             this.txtCustomerAddress.ShadowDecoration.Parent = this.txtCustomerAddress;
             this.txtCustomerAddress.Size = new System.Drawing.Size(586, 30);
@@ -1373,7 +1387,7 @@ namespace FinalPoject
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(136, 373);
+            this.label13.Location = new System.Drawing.Point(14, 50);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 15);
@@ -1385,7 +1399,7 @@ namespace FinalPoject
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(56, 338);
+            this.label15.Location = new System.Drawing.Point(14, 10);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(116, 15);
@@ -1403,6 +1417,8 @@ namespace FinalPoject
             this.label14.Size = new System.Drawing.Size(54, 15);
             this.label14.TabIndex = 227;
             this.label14.Text = "Item Left";
+            this.label14.Visible = false;
+            
             // 
             // label2
             // 
@@ -1415,6 +1431,7 @@ namespace FinalPoject
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 226;
             this.label2.Text = "MSRP";
+            this.label2.Visible = false;
             // 
             // dtpPayDate
             // 
@@ -1423,7 +1440,7 @@ namespace FinalPoject
             this.dtpPayDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtpPayDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPayDate.HoverState.Parent = this.dtpPayDate;
-            this.dtpPayDate.Location = new System.Drawing.Point(190, 480);
+            this.dtpPayDate.Location = new System.Drawing.Point(160, 215);
             this.dtpPayDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpPayDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpPayDate.Name = "dtpPayDate";
@@ -1456,6 +1473,8 @@ namespace FinalPoject
             this.txtProductPerUnitPrice.ShadowDecoration.Parent = this.txtProductPerUnitPrice;
             this.txtProductPerUnitPrice.Size = new System.Drawing.Size(170, 30);
             this.txtProductPerUnitPrice.TabIndex = 224;
+            this.txtProductPerUnitPrice.Visible = false;
+
             // 
             // label4
             // 
@@ -1468,6 +1487,7 @@ namespace FinalPoject
             this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 223;
             this.label4.Text = "Stock Price";
+            this.label4.Visible = false;
             // 
             // txtProductQuant
             // 
@@ -1492,6 +1512,7 @@ namespace FinalPoject
             this.txtProductQuant.ShadowDecoration.Parent = this.txtProductQuant;
             this.txtProductQuant.Size = new System.Drawing.Size(170, 30);
             this.txtProductQuant.TabIndex = 221;
+            this.txtProductQuant.Visible = false;
             this.txtProductQuant.TextChanged += new System.EventHandler(this.txtProductQuant_TextChanged);
             // 
             // txtProductMSRP
@@ -1521,6 +1542,7 @@ namespace FinalPoject
             this.txtProductMSRP.ShadowDecoration.Parent = this.txtProductMSRP;
             this.txtProductMSRP.Size = new System.Drawing.Size(170, 30);
             this.txtProductMSRP.TabIndex = 222;
+            this.txtProductMSRP.Visible = false;
             // 
             // label9
             // 
@@ -1533,6 +1555,7 @@ namespace FinalPoject
             this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 220;
             this.label9.Text = "Quantity";
+            this.label9.Visible = false;
             // 
             // txtProductId
             // 
@@ -1558,6 +1581,7 @@ namespace FinalPoject
             this.txtProductId.ShadowDecoration.Parent = this.txtProductId;
             this.txtProductId.Size = new System.Drawing.Size(170, 30);
             this.txtProductId.TabIndex = 219;
+            this.txtProductId.Visible = false;
             // 
             // label26
             // 
@@ -1570,6 +1594,7 @@ namespace FinalPoject
             this.label26.Size = new System.Drawing.Size(73, 15);
             this.label26.TabIndex = 218;
             this.label26.Text = "Product TAG";
+            this.label26.Visible =false;
             // 
             // txtProductName
             // 
@@ -1595,6 +1620,7 @@ namespace FinalPoject
             this.txtProductName.ShadowDecoration.Parent = this.txtProductName;
             this.txtProductName.Size = new System.Drawing.Size(420, 30);
             this.txtProductName.TabIndex = 214;
+            this.txtProductName.Visible = false;
             // 
             // label20
             // 
@@ -1607,6 +1633,7 @@ namespace FinalPoject
             this.label20.Size = new System.Drawing.Size(26, 15);
             this.label20.TabIndex = 217;
             this.label20.Text = "VAT";
+            this.label20.Visible = false;
             // 
             // txtProducTag
             // 
@@ -1635,6 +1662,7 @@ namespace FinalPoject
             this.txtProducTag.ShadowDecoration.Parent = this.txtProducTag;
             this.txtProducTag.Size = new System.Drawing.Size(170, 30);
             this.txtProducTag.TabIndex = 215;
+            this.txtProducTag.Visible = false;
             // 
             // label8
             // 
@@ -1647,6 +1675,7 @@ namespace FinalPoject
             this.label8.Size = new System.Drawing.Size(68, 15);
             this.label8.TabIndex = 212;
             this.label8.Text = "Products ID";
+            this.label8.Visible = false;
             // 
             // label7
             // 
@@ -1659,6 +1688,7 @@ namespace FinalPoject
             this.label7.Size = new System.Drawing.Size(84, 15);
             this.label7.TabIndex = 213;
             this.label7.Text = "Product Name";
+            this.label7.Visible = false;
             // 
             // guna2Panel17
             // 
