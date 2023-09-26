@@ -33,6 +33,7 @@ namespace FinalPoject.UserInterface.Dashboard
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            label6.Text = Constants.Name;
 
         }
 
@@ -84,6 +85,16 @@ namespace FinalPoject.UserInterface.Dashboard
             {
                 Logger.Error(ex);
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

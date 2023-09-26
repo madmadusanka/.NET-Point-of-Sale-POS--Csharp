@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IMS.DataAccess;
 using IMS.Entity.InventoryProducts;
+using IMS.Framework;
 
 namespace IMS.Repository
 {
@@ -76,11 +77,10 @@ namespace IMS.Repository
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                Logger.Error(ex);
             }
             finally
             {
-                connection?.Close();
                 reader?.Close();
             }
             return columnData;

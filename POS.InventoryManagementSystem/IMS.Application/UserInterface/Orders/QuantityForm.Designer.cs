@@ -51,6 +51,7 @@
             this.quantity.Size = new System.Drawing.Size(100, 22);
             this.quantity.TabIndex = 1;
             this.quantity.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.quantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quantity_KeyDown);
             // 
             // button1
             // 

@@ -237,6 +237,8 @@ namespace FinalPoject
             this.cmbPayStatus.StartIndex = -1;
             this.cmbPayByUser.StartIndex = -1;
             this.cmbPaymentMethod.StartIndex = -1;
+            this.txtTotalAmount.Text = "0";
+            this.OrderDetailDataTable.Clear();
         }
 
         //Refresh Button
@@ -280,7 +282,7 @@ namespace FinalPoject
             OrderDetailDataTable.Columns.Add("Price");
             foreach (DataGridViewTextBoxColumn col in dgvSearchProduct.Columns)
             {
-                OrderDetailDataTable.Columns.Add(col.HeaderText);
+                OrderDetailDataTable.Columns.Add(col.Name);
             }
           
             dgvCart.DataSource = OrderDetailDataTable;
@@ -289,9 +291,14 @@ namespace FinalPoject
         //Add product - Cart
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            
+            AddItem();
+        }
+
+        private void AddItem()
+        {
+
             DataRow row = OrderDetailDataTable.NewRow();
-            if (dgvSearchProduct.SelectedRows[0] != null) 
+            if (dgvSearchProduct.SelectedRows[0] != null)
             {
 
                 QuantityForm quantityForm = new QuantityForm();
@@ -299,7 +306,7 @@ namespace FinalPoject
                 if (quantityForm.Quantiy != 0)
                 {
                     this.txtProductQuant.Text = quantityForm.Quantiy.ToString();
-                
+
                     row["Quantity"] = this.txtProductQuant.Text;
 
 
@@ -320,14 +327,11 @@ namespace FinalPoject
                     UpdatePrice();
                     this.txtProductQuant.Text = String.Empty;
                 }
-              
-                
+
+
 
 
             }
-
-           
-
         }
 
         //Remove Product - Cart
@@ -369,7 +373,7 @@ namespace FinalPoject
             if (!String.IsNullOrEmpty(this.txtBarcode.Text)) {
                 orders.BarCodeId = Convert.ToInt32(this.txtBarcode.Text);
             }
-
+            
 
 
             return orders;
@@ -401,6 +405,9 @@ namespace FinalPoject
             }
             return orderList;
         }
+
+
+
 
         //Save - Place Order
         private void btnPlaceOrderToSave_Click(object sender, EventArgs e)
@@ -506,6 +513,15 @@ namespace FinalPoject
 
         }
 
+
+        private void dgvSearchProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                AddItem();
+
+            }
+        }
         private void txtTotalAmount_TextChanged(object sender, EventArgs e)
         {
 

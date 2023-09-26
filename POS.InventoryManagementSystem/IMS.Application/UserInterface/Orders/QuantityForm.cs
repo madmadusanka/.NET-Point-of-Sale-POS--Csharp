@@ -31,9 +31,15 @@ namespace FinalPoject.UserInterface.Orders
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            Submit();
+
+        }
+
+        private void Submit()
+        {
             try
             {
-                Quantiy =decimal.Parse(this.quantity.Text);
+                Quantiy = decimal.Parse(this.quantity.Text);
                 this.Close();
             }
             catch (Exception ex)
@@ -42,12 +48,19 @@ namespace FinalPoject.UserInterface.Orders
                 MessageBox.Show("Invalid Input");
 
             }
-
         }
-
         private void QuantityForm_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void quantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                Submit();
+
+            }
         }
     }
 }

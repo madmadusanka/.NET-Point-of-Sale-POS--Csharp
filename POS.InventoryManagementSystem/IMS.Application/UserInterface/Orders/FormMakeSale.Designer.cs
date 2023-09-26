@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FinalPoject
@@ -328,7 +329,7 @@ namespace FinalPoject
             this.guna2Panel11.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.ShadowDecoration.Parent = this.guna2Panel11;
-            this.guna2Panel11.Size = new System.Drawing.Size(1680, 653);
+            this.guna2Panel11.Size = new System.Drawing.Size(screenWidth, 653);
             this.guna2Panel11.TabIndex = 27;
             // 
             // LeftPanel
@@ -346,13 +347,14 @@ namespace FinalPoject
             this.LeftPanel.Location = new System.Drawing.Point(0, 99);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShadowDecoration.Parent = this.LeftPanel;
-            //this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
-            this.LeftPanel.Size = new System.Drawing.Size(401, 497);
+            this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+            //this.LeftPanel.Size = new System.Drawing.Size(401, 497);
             this.LeftPanel.TabIndex = 212;
             // 
             // dgvSearchProduct
             // 
             this.dgvSearchProduct.AllowUserToAddRows = false;
+            this.dgvSearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSearchProduct_KeyDown); ;
             this.dgvSearchProduct.AllowUserToDeleteRows = false;
             this.dgvSearchProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -385,11 +387,11 @@ namespace FinalPoject
             // ProductId
             // 
             this.ProductId.DataPropertyName = "ProductId";
-            this.ProductId.HeaderText = "ProductId";
+            this.ProductId.HeaderText = "Id";
             this.ProductId.MinimumWidth = 6;
             this.ProductId.Name = "ProductId";
             this.ProductId.ReadOnly = true;
-            this.ProductId.Width = 10;
+            this.ProductId.Width = 20;
 
             // 
             // ProductIdTag
@@ -404,7 +406,7 @@ namespace FinalPoject
             // ProductName
             // 
             this.ProductName.DataPropertyName = "ProductName";
-            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.HeaderText = "Name";
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
@@ -415,7 +417,7 @@ namespace FinalPoject
             // BrandName
             // 
             this.BrandName.DataPropertyName = "BrandName";
-            this.BrandName.HeaderText = "BrandName";
+            this.BrandName.HeaderText = "Brand";
             this.BrandName.MinimumWidth = 6;
             this.BrandName.Name = "BrandName";
             this.BrandName.ReadOnly = true;
@@ -423,7 +425,7 @@ namespace FinalPoject
             // ProductStatus
             // 
             this.ProductStatus.DataPropertyName = "ProductStatus";
-            this.ProductStatus.HeaderText = "ProductStatus";
+            this.ProductStatus.HeaderText = "Status";
             this.ProductStatus.MinimumWidth = 6;
             this.ProductStatus.Name = "ProductStatus";
             this.ProductStatus.ReadOnly = true;
@@ -441,11 +443,11 @@ namespace FinalPoject
             // ProductMSRP
             // 
             this.ProductMSRP.DataPropertyName = "ProductMSRP";
-            this.ProductMSRP.HeaderText = "ProductMSRP";
+            this.ProductMSRP.HeaderText = "MSRP";
             this.ProductMSRP.MinimumWidth = 6;
             this.ProductMSRP.Name = "ProductMSRP";
             this.ProductMSRP.ReadOnly = true;
-            this.ProductMSRP.Width = 10;
+            this.ProductMSRP.Width = 70;
             // 
             // ProductPerUnitPrice
             // 
@@ -466,7 +468,7 @@ namespace FinalPoject
             // VendorName
             // 
             this.VendorName.DataPropertyName = "VendorName";
-            this.VendorName.HeaderText = "VendorName";
+            this.VendorName.HeaderText = "Vendor";
             this.VendorName.Name = "VendorName";
             this.VendorName.ReadOnly = true;
             // 
@@ -585,13 +587,18 @@ namespace FinalPoject
             this.MiddelPanel.Location = new System.Drawing.Point(401, 99);
             this.MiddelPanel.Name = "MiddelPanel";
             this.MiddelPanel.ShadowDecoration.Parent = this.MiddelPanel;
-            this.MiddelPanel.Size = new System.Drawing.Size(420, 497);
+
+            //this.MiddelPanel.Size = new System.Drawing.Size(420, 497);
+            //this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+
+            this.MiddelPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 3), 497);
             this.MiddelPanel.TabIndex = 211;
             // 
             // dgvCart
             // 
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToDeleteRows = false;
+            this.dgvCart.AutoGenerateColumns = false;
             this.dgvCart.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -621,13 +628,12 @@ namespace FinalPoject
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 10;
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.Width = 20;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -829,7 +835,8 @@ namespace FinalPoject
             this.RightPanel.Location = new System.Drawing.Point(821, 99);
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.ShadowDecoration.Parent = this.RightPanel;
-            this.RightPanel.Size = new System.Drawing.Size(859, 497);
+            //this.RightPanel.Size = new System.Drawing.Size(859, 497);
+            this.RightPanel.Size = new System.Drawing.Size(((screenWidth / 12) *5 ), 497);
             this.RightPanel.TabIndex = 210;
             // 
             // panel1
@@ -1830,7 +1837,7 @@ namespace FinalPoject
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(1680, 99);
+            this.guna2Panel2.Size = new System.Drawing.Size(screenWidth, 99);
             this.guna2Panel2.TabIndex = 152;
             // 
             // guna2Panel12
@@ -2075,7 +2082,7 @@ namespace FinalPoject
             this.guna2Panel13.Location = new System.Drawing.Point(0, 596);
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.ShadowDecoration.Parent = this.guna2Panel13;
-            this.guna2Panel13.Size = new System.Drawing.Size(1680, 57);
+            this.guna2Panel13.Size = new System.Drawing.Size(screenWidth, 57);
             this.guna2Panel13.TabIndex = 133;
             // 
             // tableLayoutPanel4
@@ -2106,7 +2113,7 @@ namespace FinalPoject
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1680, 57);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(screenWidth, 57);
             this.tableLayoutPanel4.TabIndex = 137;
             // 
             // btnCancle
@@ -2328,6 +2335,7 @@ namespace FinalPoject
 
         }
 
+     
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
