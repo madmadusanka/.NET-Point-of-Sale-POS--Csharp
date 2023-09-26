@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.CodeParser;
+using FinalPoject.UserInterface.Orders;
 using IMS.Entity.InventoryProducts;
 using IMS.Repository;
 
@@ -288,38 +289,44 @@ namespace FinalPoject
         //Add product - Cart
         private void btnAddItem_Click(object sender, EventArgs e)
         {
+            
             DataRow row = OrderDetailDataTable.NewRow();
             if (dgvSearchProduct.SelectedRows[0] != null) 
             {
-                row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
-                row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
-                if (String.IsNullOrEmpty(this.txtProductQuant.Text))
-                {
-                    MessageBox.Show("Add Quantity");
-                    return;
-                }
-                else
-                {
-                    row["Quantity"] = this.txtProductQuant.Text;
-                }
-                row["Price"] = (Convert.ToDouble(dgvSearchProduct.SelectedRows[0].Cells[6].Value) * Convert.ToDouble(this.txtProductQuant.Text)).ToString();
 
-                row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
-				row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
-				row["ProductUnitStock"] = dgvSearchProduct.SelectedRows[0].Cells[5].Value.ToString();
-				row["ProductMSRP"] = dgvSearchProduct.SelectedRows[0].Cells[6].Value.ToString();
-				row["ProductPerUnitPrice"] = dgvSearchProduct.SelectedRows[0].Cells[7].Value.ToString();
-				row["ProductDiscountRate"] = dgvSearchProduct.SelectedRows[0].Cells[8].Value.ToString();
+                QuantityForm quantityForm = new QuantityForm();
+                quantityForm.ShowDialog();
+                if (quantityForm.Quantiy != 0)
+                {
+                    this.txtProductQuant.Text = quantityForm.Quantiy.ToString();
+                
+                    row["Quantity"] = this.txtProductQuant.Text;
+
+
+                    row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
+                    row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
+
+                    row["Price"] = (Convert.ToDouble(dgvSearchProduct.SelectedRows[0].Cells[6].Value) * Convert.ToDouble(this.txtProductQuant.Text)).ToString();
+
+                    row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
+                    row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
+                    row["ProductUnitStock"] = dgvSearchProduct.SelectedRows[0].Cells[5].Value.ToString();
+                    row["ProductMSRP"] = dgvSearchProduct.SelectedRows[0].Cells[6].Value.ToString();
+                    row["ProductPerUnitPrice"] = dgvSearchProduct.SelectedRows[0].Cells[7].Value.ToString();
+                    row["ProductDiscountRate"] = dgvSearchProduct.SelectedRows[0].Cells[8].Value.ToString();
+
+                    OrderDetailDataTable.Rows.Add(row);
+
+                    UpdatePrice();
+                    this.txtProductQuant.Text = String.Empty;
+                }
               
                 
 
 
             }
 
-            OrderDetailDataTable.Rows.Add(row);
-
-            UpdatePrice();
-            this.txtProductQuant.Text = String.Empty;
+           
 
         }
 
