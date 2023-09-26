@@ -47,7 +47,7 @@ namespace IMS.Repository
             string sql;
             try
             {
-                if (key == null)
+                if ( String.IsNullOrEmpty(key?.Trim()))
                     sql = @"select
                                     p.ProductId as 'ProductId', p.ProductIdTag as 'ProductIdTag', p.ProductName as 'ProductName',
                                     p.ProductStatus AS ProductStatus,
@@ -78,13 +78,14 @@ namespace IMS.Repository
                                     left join ThirdCategories as tc on v.ThirdCategoryId=tc.ThirdCategoryId
                                     left join SecondCategories as sc on tc.SecondCategoryId=sc.SecondCategoryId 
                                 
-                                    where sc.SecondCategoryName like '%" + key + "%' ";
+                                    where CONCAT(  p.ProductName,sc.SecondCategoryName, b.BrandName, ProductId,tc.ThirdCategoryName) LIKE '%" + key + "%' ";
 
                 return this.iDB.ExecuteQueryTable(sql);
                 
             }
             catch (Exception e)
             {
+                Logger.Error(e);
                 return null;
                 throw;
             }
