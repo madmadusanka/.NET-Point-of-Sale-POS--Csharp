@@ -13,7 +13,9 @@ using System.Windows.Forms;
 using DevExpress.CodeParser;
 using FinalPoject.UserInterface.Orders;
 using IMS.Entity.InventoryProducts;
+using IMS.Entity.InventoryProducts.Customers;
 using IMS.Repository;
+using IMS.Repository.InventoryProducts.Customers;
 
 namespace FinalPoject
 {
@@ -21,11 +23,13 @@ namespace FinalPoject
     {
         private MasterCategoriesRepo masterCategoriesRepo{ get; set; }
         private ThirdCategoriesRepo  thirdCategoriesRepo { get; set; }
+        private CustomersRepo  customersRepo { get; set; }
         private SecondCategoriesReop secondCateReop      { get; set; }
         private VendorsRepo          vendorsRepo         { get; set; }
         private BrandsRepo           brandRepo           { get; set; }
         private UsersRepo            usersRepo           { get; set; }
         private DataTable OrderDetailDataTable;
+        private Customer Customer { get; set; }
         private OrdersRepo makeSalesRepo{get; set;}
 
         public FormMakeSale()
@@ -43,6 +47,7 @@ namespace FinalPoject
             this.vendorsRepo = new VendorsRepo();
             this.brandRepo = new BrandsRepo();
             this.usersRepo = new UsersRepo();
+            this.customersRepo = new CustomersRepo();
             //
             InitiateDgvcart();
             //
@@ -247,6 +252,7 @@ namespace FinalPoject
             this.cmbPaymentMethod.StartIndex = -1;
             this.txtTotalAmount.Text = "0";
             this.OrderDetailDataTable.Clear();
+            Customer = null;
         }
 
         //Refresh Button
@@ -450,7 +456,35 @@ namespace FinalPoject
                         MessageBox.Show("Save Failed");
                     }
                 }
-               
+                try
+                {
+                    if (!string.IsNullOrEmpty(txtCustomerPhone.Text))
+                    {
+                        if(Customer == null || Customer.CustomerID == default)
+                        {
+                            Customer = new Customer
+                            {
+                                CustomerFullName = txtCustomerPhone.Text,
+                                CustomerAddress = txtCustomerAddress.Text,
+                                CustomerEmail   = txtCoustomerEmail.Text,
+                                CustomerPhone = txtCustomerPhone.Text
+                            };
+
+                            if (!customersRepo.Save(Customer))
+                            {
+                                MessageBox.Show("Customer not saved.");
+                            }
+                        }
+                        
+                    }
+                }
+                catch 
+                {
+                    MessageBox.Show("Customer not saved.");
+
+                }
+
+
                 Refresh();
                 this.PopulateGridView();
             }
@@ -530,5 +564,21 @@ namespace FinalPoject
             }
         }
 
+        private void txtCustomerPhone_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+               Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
+                txtCoustomerEmail.Text = Customer.CustomerEmail;
+                txtCoustomerName.Text = Customer.CustomerFullName;
+                txtCustomerPhone.Text = Customer.CustomerPhone;
+                txtCustomerAddress.Text = Customer.CustomerAddress;
+            }
+            catch(Exception ex) 
+            { 
+            
+            }
+
+        }
     }
 }

@@ -167,3 +167,12 @@ VALUES
 ALTER TABLE Orders
 ADD  SavedByUser VARCHAR(250),
     SaveDateTime DATETIME
+
+
+	CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerFullName VARCHAR(255),
+    CustomerPhone VARCHAR(15),
+    CustomerEmail VARCHAR(255),
+    CustomerAddress VARCHAR(255)
+);

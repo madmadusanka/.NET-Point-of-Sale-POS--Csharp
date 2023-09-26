@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="InventoryProducts\BarCodes\BarCodes.cs" />
     <Compile Include="InventoryProducts\Categories\Brands.cs" />
+    <Compile Include="InventoryProducts\Customers\Customer.cs" />
     <Compile Include="InventoryProducts\Expense\Expenses.cs" />
     <Compile Include="InventoryProducts\Users\Users.cs" />
     <Compile Include="InventoryProducts\Categories\MainCategories.cs" />
