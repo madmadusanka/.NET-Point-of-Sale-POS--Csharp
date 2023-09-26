@@ -9,7 +9,7 @@ namespace FinalPoject
     public static class Constants
     {
         public const string Name = "Smart Kade";
-        public const string Currency = "";
+        public const string Currency = "LKR";
         public const string Version = "";
 
     }

@@ -71,6 +71,7 @@ namespace FinalPoject.UserInterface.Dashboard
                     FormStart formStart = new FormStart(role, this);
                     formStart.Visible = true;
                     this.Visible = false;
+
                 }
                 else if (role == null)
                 {
@@ -80,6 +81,8 @@ namespace FinalPoject.UserInterface.Dashboard
                 {
                     MessageBox.Show("Role Returned : " + role);
                 }
+                GlobalVariables.LoggedInUsername = txtUserId.Text;
+
             }
             catch (Exception ex)
             {

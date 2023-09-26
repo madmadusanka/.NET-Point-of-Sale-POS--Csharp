@@ -150,16 +150,20 @@ CREATE TABLE SecondCategories (
 
 
 -- Insert Salesman
-INSERT INTO Users (Id, UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
+INSERT INTO Users ( UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
 VALUES 
-    (1, 'salesman', 'John', 'Doe', 'salesman123', 'john.doe@example.com', 30, 'Male', 'Salesman', 30000.00, '2023-09-25', '1993-05-15', '123456789', '555-555-5555', 'Hometown', 'Current City', 'Division', 'O+', '12345');
+    ('salesman', 'John', 'Doe', 'salesman123', 'john.doe@example.com', 30, 'Male', 'Salesman', 30000.00, '2023-09-25', '1993-05-15', '123456789', '555-555-5555', 'Hometown', 'Current City', 'Division', 'O+', '12345');
 
 -- Insert Cashier
-INSERT INTO Users (Id, UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
+INSERT INTO Users ( UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
 VALUES 
-    (2, 'cashier', 'Jane', 'Doe', 'cashier123', 'jane.doe@example.com', 28, 'Female', 'Cashier', 32000.00, '2023-09-25', '1995-02-20', '987654321', '555-555-5556', 'Hometown', 'Current City', 'Division', 'A-', '54321');
+    ('cashier', 'Jane', 'Doe', 'cashier123', 'jane.doe@example.com', 28, 'Female', 'Cashier', 32000.00, '2023-09-25', '1995-02-20', '987654321', '555-555-5556', 'Hometown', 'Current City', 'Division', 'A-', '54321');
 
 -- Insert Admin
-INSERT INTO Users (Id, UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
+INSERT INTO Users (UserId, FirstName, LastName, Password, Email, Age, Gender, Role, Salary, JoinDate, Birthdate, NID, Phone, HomeTown, CurrentCity, Division, BloodGroup, PostalCode)
 VALUES 
-    (3, 'admin', 'Admin', 'User', 'admin123', 'admin@example.com', 35, 'Non-Binary', 'Admin', 50000.00, '2023-09-25', '1988-10-10', '1010101010', '555-555-5557', 'Admin Town', 'Admin City', 'Admin Division', 'AB+', '00000');
+    ('admin', 'Admin', 'User', 'admin123', 'admin@example.com', 35, 'Non-Binary', 'Admin', 50000.00, '2023-09-25', '1988-10-10', '1010101010', '555-555-5557', 'Admin Town', 'Admin City', 'Admin Division', 'AB+', '00000');
+
+ALTER TABLE Orders
+ADD  SavedByUser VARCHAR(250),
+    SaveDateTime DATETIME

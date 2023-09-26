@@ -35,6 +35,9 @@ namespace IMS.Entity.InventoryProducts
         public string CustomerPhone   { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerEmail   { get; set; }
+        public string SavedByUser { get; set; }
+        public string SaveDateTime { get; set; }
+
 
         //OutSide - Users
         public string FirstName{ get; set; }

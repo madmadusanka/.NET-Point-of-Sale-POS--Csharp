@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IMS.DataAccess;
 using IMS.Entity.InventoryProducts;
+using IMS.Framework;
 
 namespace IMS.Repository
 {
@@ -115,7 +116,7 @@ namespace IMS.Repository
                     //              FROM Orders INNER JOIN
                     //              Users ON Orders.Id = Users.Id ;";
                     sql = @"select
-                                  Orders.OrderId AS OrderId, Orders.OrderTag AS OrderTag, 
+                                  Orders.OrderId AS OrderId,SavedByUser AS UserId, Orders.OrderTag AS OrderTag, 
 			                      Orders.Date AS Date, Orders.ProductId AS ProductId, Orders.ProductName AS ProductName,
 			                      Orders.ProductPerUnitPrice AS ProductPerUnitPrice,
 			                      Orders.OrderQuantity AS OrderQuantity, Orders.TotalAmount AS TotalAmount,
@@ -361,22 +362,24 @@ namespace IMS.Repository
 
             string sql = "insert into Orders (Id, BarCodeId, Date," +
                              "OrderStatus, PaymentMethod, " +
-                             "TotalAmount, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress) " +
+                             "TotalAmount, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress,SavedByUser,SaveDateTime) " +
                              " values ('" + or.Id + "', " +
                              " '" + or.BarCodeId + "' , '" + or.Date + "' , '" + or.OrderStatus + "' , '" + or.PaymentMethod + "' ," +
                              " '" + or.TotalAmount + "' ," +
                              " '" + or.CustomerFullName + "' , '" + or.CustomerPhone + "' , '" + or.CustomerEmail + "' ," +
-                             " '" + or.CustomerAddress + "'); SELECT SCOPE_IDENTITY(); ";
+                             " '" + or.CustomerAddress + "' ,'"+or.SavedByUser+"' , '"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"') ";
+
             try
             {
-                or.OrderId = Convert.ToInt32(this.iDB.ExecuteScalar(sql));
+                this.iDB.ExecuteDMLQuery(sql);
+                or.OrderId = Convert.ToInt32(this.iDB.ExecuteScalar("SELECT SCOPE_IDENTITY();"));
                 isSucccess = true;
         
             }
             catch (Exception e)
             {
                 isSucccess = false;
-                Debug.WriteLine(e.ToString());
+                Logger.Error(e);
             }
             return isSucccess;
         }

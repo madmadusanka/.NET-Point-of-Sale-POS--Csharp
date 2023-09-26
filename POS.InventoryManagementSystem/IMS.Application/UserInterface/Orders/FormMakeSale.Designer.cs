@@ -108,7 +108,7 @@ namespace FinalPoject
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbPayByUser = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbPayByUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCustomerPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -347,14 +347,14 @@ namespace FinalPoject
             this.LeftPanel.Location = new System.Drawing.Point(0, 99);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShadowDecoration.Parent = this.LeftPanel;
-            this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
-            //this.LeftPanel.Size = new System.Drawing.Size(401, 497);
+            //this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+            this.LeftPanel.Size = new System.Drawing.Size(500, 497);
             this.LeftPanel.TabIndex = 212;
             // 
             // dgvSearchProduct
             // 
             this.dgvSearchProduct.AllowUserToAddRows = false;
-            this.dgvSearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSearchProduct_KeyDown); ;
+            this.dgvSearchProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSearchProduct_KeyDown); 
             this.dgvSearchProduct.AllowUserToDeleteRows = false;
             this.dgvSearchProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -588,10 +588,10 @@ namespace FinalPoject
             this.MiddelPanel.Name = "MiddelPanel";
             this.MiddelPanel.ShadowDecoration.Parent = this.MiddelPanel;
 
-            //this.MiddelPanel.Size = new System.Drawing.Size(420, 497);
-            //this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+            this.MiddelPanel.Size = new System.Drawing.Size(500, 497);
+            ////this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
 
-            this.MiddelPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 3), 497);
+            //this.MiddelPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 3), 497);
             this.MiddelPanel.TabIndex = 211;
             // 
             // dgvCart
@@ -835,8 +835,8 @@ namespace FinalPoject
             this.RightPanel.Location = new System.Drawing.Point(821, 99);
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.ShadowDecoration.Parent = this.RightPanel;
-            //this.RightPanel.Size = new System.Drawing.Size(859, 497);
-            this.RightPanel.Size = new System.Drawing.Size(((screenWidth / 12) *5 ), 497);
+            this.RightPanel.Size = new System.Drawing.Size(500, 497);
+            //this.RightPanel.Size = new System.Drawing.Size(((screenWidth / 12) *5 ), 497);
             this.RightPanel.TabIndex = 210;
             // 
             // panel1
@@ -1220,18 +1220,19 @@ namespace FinalPoject
             // 
             // cmbPayByUser
             // 
-            this.cmbPayByUser.Animated = true;
+            //this.cmbPayByUser.Animated = true;
             this.cmbPayByUser.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPayByUser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPayByUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPayByUser.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbPayByUser.ReadOnly = true;
+            //this.cmbPayByUser.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            //this.cmbPayByUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            //this.cmbPayByUser.FocusedColor = System.Drawing.Color.Empty;
             this.cmbPayByUser.FocusedState.Parent = this.cmbPayByUser;
             this.cmbPayByUser.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbPayByUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbPayByUser.FormattingEnabled = true;
+            //this.cmbPayByUser.FormattingEnabled = true;
             this.cmbPayByUser.HoverState.Parent = this.cmbPayByUser;
-            this.cmbPayByUser.ItemHeight = 30;
-            this.cmbPayByUser.ItemsAppearance.Parent = this.cmbPayByUser;
+            //this.cmbPayByUser.ItemHeight = 30;
+            //this.cmbPayByUser.ItemsAppearance.Parent = this.cmbPayByUser;
             this.cmbPayByUser.Location = new System.Drawing.Point(160, 175);
             this.cmbPayByUser.Name = "cmbPayByUser";
             this.cmbPayByUser.ShadowDecoration.Parent = this.cmbPayByUser;
@@ -2390,7 +2391,7 @@ namespace FinalPoject
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbPayByUser;
+        private Guna.UI2.WinForms.Guna2TextBox cmbPayByUser;
         private Guna.UI2.WinForms.Guna2TextBox txtTotalAmount;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerPhone;
         private System.Windows.Forms.Label label11;

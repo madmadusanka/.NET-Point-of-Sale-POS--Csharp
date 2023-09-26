@@ -31,6 +31,11 @@ namespace FinalPoject
         {
             InitializeComponent();
             //
+            var screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+            this.MiddelPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+            this.LeftPanel.Size = new System.Drawing.Size(((screenWidth / 12) * 4), 497);
+
             this.makeSalesRepo = new OrdersRepo();
             this.secondCateReop = new SecondCategoriesReop();
             this.thirdCategoriesRepo = new ThirdCategoriesRepo();
@@ -107,13 +112,14 @@ namespace FinalPoject
         }
         private void UsersIdToName()
         {
-            this.cmbPayByUser.Items.Clear();
-            this.cmbPayByUser.Items.Add("--Not Selected--");
-            this.cmbPayByUser.SelectedIndex = cmbPayByUser.FindStringExact("--Not Selected--");
-            foreach (DataRow row in this.usersRepo.LoadComboUsersName().Rows)
-            {
-                this.cmbPayByUser.Items.Add(row["FirstName"].ToString() + " " + row["LastName"].ToString() + " - " + row["Role"].ToString());
-            }
+            this.cmbPayByUser.Text = GlobalVariables.LoggedInUsername;
+            //this.cmbPayByUser.Items.Clear();
+            //this.cmbPayByUser.Items.Add("--Not Selected--");
+            //this.cmbPayByUser.SelectedIndex = cmbPayByUser.FindStringExact("--Not Selected--");
+            //foreach (DataRow row in this.usersRepo.LoadComboUsersName().Rows)
+            //{
+            //    this.cmbPayByUser.Items.Add(row["FirstName"].ToString() + " " + row["LastName"].ToString() + " - " + row["Role"].ToString());
+            //}
         }
 
         //Filter by ComboBox
@@ -235,7 +241,6 @@ namespace FinalPoject
             this.txtCustomerAddress.Clear();
             this.dtpPayDate.Text = "";
             this.cmbPayStatus.StartIndex = -1;
-            this.cmbPayByUser.StartIndex = -1;
             this.cmbPaymentMethod.StartIndex = -1;
             this.txtTotalAmount.Text = "0";
             this.OrderDetailDataTable.Clear();
@@ -248,13 +253,11 @@ namespace FinalPoject
             this.RefreshContent();
             this.txtSearchForSell.Clear();
             //
-            this.cmbSecond.StartIndex = 0; 
+            this.cmbSecond.StartIndex = 0;
             this.cmbThird.StartIndex = 0;
             this.cmbVendor.StartIndex = 0;
-            this.cmbBrand.StartIndex = 0; 
-            this.cmbPayByUser.StartIndex = 0;
+            this.cmbBrand.StartIndex = 0;
         }
-
 
         // ------------ Cart Section ------------
 
@@ -365,6 +368,7 @@ namespace FinalPoject
             orders.CustomerAddress = this.txtCustomerAddress.Text;
             orders.CustomerPhone = this.txtCustomerPhone.Text;
             orders.CustomerEmail = this.txtCoustomerEmail.Text;
+            orders.SavedByUser = GlobalVariables.LoggedInUsername;
             //orders.OrderQuantity = Convert.ToInt32(this.txtProductQuant.Text);
             orders.Date = Convert.ToDateTime(Convert.ToDateTime(dtpPayDate.Value).ToString("yyyy-MM-dd"));
             orders.TotalAmount = Convert.ToDouble(this.txtTotalAmount.Text);

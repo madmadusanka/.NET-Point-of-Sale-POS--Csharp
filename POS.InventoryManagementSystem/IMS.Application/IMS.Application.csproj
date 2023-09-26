@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="GlobalVariables.cs" />
     <Compile Include="UserInterface\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>

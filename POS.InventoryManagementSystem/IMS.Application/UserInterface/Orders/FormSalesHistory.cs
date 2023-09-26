@@ -54,5 +54,10 @@ namespace FinalPoject
         {
             this.PopulateGridView(this.txtSearchSellHistory.Text);
         }
+
+        private void dgvSellHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

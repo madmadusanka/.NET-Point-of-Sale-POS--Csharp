@@ -33,15 +33,15 @@ namespace FinalPoject.UserInterface.Dashboard
 
         private void PopulateGridView()
         {
-            lblExpLast7Day.Text = expenseRepo.GetLastWeekExpense() + " BDT";
-            lblTotalExp.Text = expenseRepo.GetTotalExpense() + " BDT";
-            lblExpLast30Day.Text = expenseRepo.GetLastMonth() + " BDT";
-            lblExpLastDay.Text = expenseRepo.GetTodayExpense() + " BDT";
+            lblExpLast7Day.Text = expenseRepo.GetLastWeekExpense() + Constants.Currency;
+            lblTotalExp.Text = expenseRepo.GetTotalExpense() + Constants.Currency;
+            lblExpLast30Day.Text = expenseRepo.GetLastMonth() + Constants.Currency;
+            lblExpLastDay.Text = expenseRepo.GetTodayExpense() + Constants.Currency;
             //
-            lblLastTotalSell.Text = ordersRepo.GetTotalOrders() + " BDT";
-            lblLastDaySell.Text = ordersRepo.GetTodaySell() + " BDT";
-            lblLast7DaySell.Text = ordersRepo.GetLastWeekSell() + " BDT";
-            lblLast30DaySell.Text = ordersRepo.GetLastMonthSell() + " BDT";
+            lblLastTotalSell.Text = ordersRepo.GetTotalOrders() + Constants.Currency;
+            lblLastDaySell.Text = ordersRepo.GetTodaySell() + Constants.Currency;
+            lblLast7DaySell.Text = ordersRepo.GetLastWeekSell() + Constants.Currency;
+            lblLast30DaySell.Text = ordersRepo.GetLastMonthSell() + Constants.Currency;
             //
             lblTotalAdmin.Text = usersRepo.GetTotalAdmin();
             lblTotalSalesMan.Text = usersRepo.GetTotalSalesman();
@@ -52,10 +52,10 @@ namespace FinalPoject.UserInterface.Dashboard
             lblAvailableStock.Text = productsRepo.GetAvailableProducts();
             lblNotAvailableStock.Text = productsRepo.GetNoAvailableProducts();
             //
-            lblAdminTotalSal.Text = usersRepo.GetAdminSal() + " BDT";
-            lblCashierTotalSal.Text = usersRepo.GetCashierSal() + " BDT";
-            lblSalesManTotalSal.Text = usersRepo.GetSalesmanSal() + " BDT";
-            lblTotalSal.Text = usersRepo.GetTotalSal() + " BDT";
+            lblAdminTotalSal.Text = usersRepo.GetAdminSal() + Constants.Currency;
+            lblCashierTotalSal.Text = usersRepo.GetCashierSal() + Constants.Currency;
+            lblSalesManTotalSal.Text = usersRepo.GetSalesmanSal() + Constants.Currency;
+            lblTotalSal.Text = usersRepo.GetTotalSal() + Constants.Currency;
             //
             lblTotalMC.Text = msMasterCategoriesRepo.GetMainCate();
             lblTotalSC.Text = msMasterCategoriesRepo.GetSecCate();
