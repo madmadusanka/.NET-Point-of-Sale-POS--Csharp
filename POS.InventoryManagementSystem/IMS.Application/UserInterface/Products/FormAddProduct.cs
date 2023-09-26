@@ -149,16 +149,18 @@ namespace FinalPoject
 
             product.ProductName = this.txtName.Text;
             product.ProductStatus = this.txtStatus.Text;
-            product.ProductMSRP = Convert.ToDouble(this.txtMSRP.Text);
+
+            product.ProductMSRP = Validation.ConvertToDouble(this.txtMSRP.Text, "MSRP");
+
             product.BrandId = brandRepo.GetBrandId(this.cmbBrand.Text);
-            product.ProductPerUnitPrice = Convert.ToDouble(this.txtPerUnitPrice.Text);
-            product.ProductQuantityPerUnit = Convert.ToDouble(this.txtQuantityPerUnit.Text);
-            product.ProductDiscountRate = Convert.ToDouble(this.txtDiscountRate.Text);
-            product.ProductSize = Convert.ToDouble(this.txtSize.Text);
+            product.ProductPerUnitPrice = Validation.ConvertToDouble(this.txtPerUnitPrice.Text, "Product Per Unit Price");
+            product.ProductQuantityPerUnit = Validation.ConvertToDouble(this.txtQuantityPerUnit.Text, "Quantity Per Unit");
+            product.ProductDiscountRate = Validation.ConvertToDouble(this.txtDiscountRate.Text,"Discount Rate");
+            product.ProductSize = Validation.ConvertToDouble(this.txtSize.Text, "Size");
             product.ProductColor = this.txtColor.Text;
             //proCateMas.ProductPictures = new[] { Convert.ToByte(row["pPictures"].ToString()) };
-            product.ProductWeight = Convert.ToDouble(this.txtWeight.Text);
-            product.ProductUnitStock = Convert.ToInt32(this.txtUniStock.Text);
+            product.ProductWeight = Validation.ConvertToDouble(this.txtWeight.Text, "Weight");
+            product.ProductUnitStock = Validation.ConvertToInt(this.txtUniStock.Text,"Unit Stock");
             product.ProductDescription = this.txtDiscription.Text;
 
             return product;
@@ -235,5 +237,8 @@ namespace FinalPoject
             FormBrand brand = new FormBrand();
             brand.ShowDialog();
         }
+
+     
+
     }
 }

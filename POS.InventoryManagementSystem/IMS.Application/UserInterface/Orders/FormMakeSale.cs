@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -51,6 +52,8 @@ namespace FinalPoject
             this.VendorIdToName();
             this.UsersIdToName();
         }
+
+    
 
         //
         private void PopulateGridView(string searchKey = null)
@@ -526,13 +529,6 @@ namespace FinalPoject
 
             }
         }
-        private void txtTotalAmount_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void guna2Panel18_Paint(object sender, PaintEventArgs e)
-        {
-                    }
     }
 }
