@@ -19,6 +19,7 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             InitializeComponent();
             this.usersRepo = new UsersRepo();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void lblForgetPassword_MouseHover(object sender, EventArgs e)

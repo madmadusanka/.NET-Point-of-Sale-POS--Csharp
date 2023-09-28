@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logger.cs" />
+    <Compile Include="BillGenerator.cs" />
     <Compile Include="PrintService.cs" />
     <Compile Include="SecurityProvider.cs" />
     <Compile Include="HardwareSerial.cs" />
@@ -60,6 +61,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.Entity\IMS.Entity.csproj">
+      <Project>{ED38EB38-60AE-4512-86E8-9D9D8894321B}</Project>
+      <Name>IMS.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

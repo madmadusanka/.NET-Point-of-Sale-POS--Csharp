@@ -14,6 +14,7 @@ using DevExpress.CodeParser;
 using FinalPoject.UserInterface.Orders;
 using IMS.Entity.InventoryProducts;
 using IMS.Entity.InventoryProducts.Customers;
+using IMS.Framework;
 using IMS.Repository;
 using IMS.Repository.InventoryProducts.Customers;
 
@@ -402,6 +403,7 @@ namespace FinalPoject
             ordersProductsMap.Quantity = decimal.Parse(row["Quantity"].ToString());
             ordersProductsMap.ProductMSRP = decimal.Parse(row["ProductMSRP"].ToString());
             ordersProductsMap.ProductId = int.Parse(row["ProductId"].ToString());
+            ordersProductsMap.Name = row["ProductName"].ToString();
 
             return ordersProductsMap;
         }
@@ -428,65 +430,81 @@ namespace FinalPoject
             try
             {
                 Order orObj = this.FillEntity();
-                if (orObj == null)
-                {
-                    orObj = new Order();
-                    MessageBox.Show("Please Fill Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
+                List<OrdersProductsMap>  ordersProductsMaps = GetAllForOrders(orObj);
+                if (ordersProductsMaps.Count() > 0)
+
                 {
 
-                    if (this.makeSalesRepo.SaveOrder(ref orObj))
+                    if (orObj == null)
                     {
-                        if (this.makeSalesRepo.SaveOrders(GetAllForOrders(orObj)))
-                        {
-
-                            MessageBox.Show("Save Successfully");
-
-                            foreach (DataGridViewRow row in dgvCart.Rows)
-                            {
-                                dgvCart.Rows.RemoveAt(row.Index);
-                            }
-                        }
-                        
+                        orObj = new Order();
+                        MessageBox.Show("Please Fill Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                     else
                     {
-                        MessageBox.Show("Save Failed");
-                    }
-                }
-                try
-                {
-                    if (!string.IsNullOrEmpty(txtCustomerPhone.Text))
-                    {
-                        if(Customer == null || Customer.CustomerID == default)
+
+                        if (this.makeSalesRepo.SaveOrder(ref orObj))
                         {
-                            Customer = new Customer
-                            {
-                                CustomerFullName = txtCustomerPhone.Text,
-                                CustomerAddress = txtCustomerAddress.Text,
-                                CustomerEmail   = txtCoustomerEmail.Text,
-                                CustomerPhone = txtCustomerPhone.Text
-                            };
 
-                            if (!customersRepo.Save(Customer))
+                            if (this.makeSalesRepo.SaveOrders(ordersProductsMaps));
                             {
-                                MessageBox.Show("Customer not saved.");
+
+                                MessageBox.Show("Save Successfully");
+
+                                foreach (DataGridViewRow row in dgvCart.Rows)
+                                {
+                                    dgvCart.Rows.RemoveAt(row.Index);
+                                }
                             }
+
                         }
-                        
+                        else
+                        {
+                            MessageBox.Show("Save Failed");
+                        }
                     }
+                    try
+                    {
+                        if (!string.IsNullOrEmpty(txtCustomerPhone.Text))
+                        {
+                            if (Customer == null || Customer.CustomerID == default)
+                            {
+                                Customer = new Customer
+                                {
+                                    CustomerFullName = txtCustomerPhone.Text,
+                                    CustomerAddress = txtCustomerAddress.Text,
+                                    CustomerEmail = txtCoustomerEmail.Text,
+                                    CustomerPhone = txtCustomerPhone.Text
+                                };
+
+                                if (!customersRepo.Save(Customer))
+                                {
+                                    MessageBox.Show("Customer not saved.");
+                                }
+                            }
+
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Customer not saved.");
+
+                    }
+                    try
+                    {
+                         Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
+                         PrintService printService = new PrintService(bitmap);
+                         //printService.Print();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Print Error");
+                    }
+
+                    Refresh();
+                    this.PopulateGridView();
                 }
-                catch 
-                {
-                    MessageBox.Show("Customer not saved.");
-
-                }
-
-
-                Refresh();
-                this.PopulateGridView();
             }
 
             catch (Exception exception)
