@@ -18,6 +18,7 @@ namespace IMS.Framework
         {
             int paperWidth = 300; // Set the width in pixels (adjust as needed)
             int paperHeight = 150+list.Count()*20+270; // Set the height dynamically (adjust as needed)
+            int rightpadding = 30;
 
 
 
@@ -40,26 +41,26 @@ namespace IMS.Framework
             DrawStringInCenter(ref g, font, paperWidth, 120, "Kendalanda,Homagama.");
             DrawStringInCenter(ref g, font, paperWidth, 140, "WhatsApp - 076 102 7 502");
             //DrawStringInCenter(ref g, font, paperWidth, 160, "WhatsApp - 076 102 7 502");
-            DrawStringInCenter(ref g, font, paperWidth, 180, order.Date.ToString());
-            DrawStringInCenter(ref g, font, paperWidth, 200, "-----------------------");
+            DrawStringInCenter(ref g, font, paperWidth, 160, order.Date.ToString());
+            DrawStringInCenter(ref g, font, paperWidth, 180, "-----------------------");
 
             // Draw itemized list
-            int yPos = 220;
-            g.DrawString("Item", font, Brushes.Black, 50, yPos);
+            int yPos = 200;
+            g.DrawString("Item", font, Brushes.Black, rightpadding, yPos);
             g.DrawString("Qty", font, Brushes.Black, 200, yPos);
             g.DrawString("Price", font, Brushes.Black, 250, yPos);
             
             foreach (var item in list)
             {
                 yPos += 20;
-                g.DrawString(item.Name, font, Brushes.Black, 50, yPos);
+                g.DrawString(item.Name, font, Brushes.Black, rightpadding, yPos);
                 g.DrawString(item.Quantity.ToString(), font, Brushes.Black, 200, yPos);
                 g.DrawString(item.Price.ToString(), font, Brushes.Black, 250, yPos);
             }
 
             // Draw total
             yPos += 60;
-            g.DrawString($"Total:                           {currency}{order.TotalAmount}", font, Brushes.Black, 50, yPos);
+            g.DrawString($"Total:                           {currency}{order.TotalAmount}", font, Brushes.Black, rightpadding, yPos);
 
             // Draw footer
             yPos += 30;
