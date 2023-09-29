@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using FinalPoject.UserInterface.Dashboard;
 using FinalPoject.UserInterface.Exp;
 using Guna.UI2.WinForms;
+using Microsoft.Office.Interop.Word;
+using Application = Microsoft.Office.Interop.Word.Application;
 
 namespace FinalPoject
 {
@@ -37,9 +39,10 @@ namespace FinalPoject
                 SetupForSalesman();
             }
 
+
             this.lblShowUserInfo.Text = this.role;
         }
-
+       
         void SetupForAdmin()
         {
             btnDashboard.Enabled = true;
@@ -135,7 +138,7 @@ namespace FinalPoject
 
             if (MessageBox.Show("Do you want to close the application?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                Application.Exit();
+                //Application.Exit();
             }
         }
 
@@ -143,7 +146,7 @@ namespace FinalPoject
         {
             if (MessageBox.Show("Do you want to close the application?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                Application.Exit();
+                //Application.Exit();
             }
         }
 

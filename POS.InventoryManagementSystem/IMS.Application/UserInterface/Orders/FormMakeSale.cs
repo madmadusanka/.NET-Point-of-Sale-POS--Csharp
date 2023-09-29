@@ -427,10 +427,15 @@ namespace FinalPoject
         //Save - Place Order
         private void btnPlaceOrderToSave_Click(object sender, EventArgs e)
         {
+            SaveOrder();
+        }
+
+        private void SaveOrder()
+        {
             try
             {
                 Order orObj = this.FillEntity();
-                List<OrdersProductsMap>  ordersProductsMaps = GetAllForOrders(orObj);
+                List<OrdersProductsMap> ordersProductsMaps = GetAllForOrders(orObj);
                 if (ordersProductsMaps.Count() > 0)
 
                 {
@@ -447,7 +452,7 @@ namespace FinalPoject
                         if (this.makeSalesRepo.SaveOrder(ref orObj))
                         {
 
-                            if (this.makeSalesRepo.SaveOrders(ordersProductsMaps));
+                            if (this.makeSalesRepo.SaveOrders(ordersProductsMaps)) ;
                             {
 
                                 MessageBox.Show("Save Successfully");
@@ -472,7 +477,7 @@ namespace FinalPoject
                             {
                                 Customer = new Customer
                                 {
-                                    CustomerFullName = txtCustomerPhone.Text,
+                                    CustomerFullName = txtCoustomerName.Text,
                                     CustomerAddress = txtCustomerAddress.Text,
                                     CustomerEmail = txtCoustomerEmail.Text,
                                     CustomerPhone = txtCustomerPhone.Text
@@ -493,9 +498,9 @@ namespace FinalPoject
                     }
                     try
                     {
-                         Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
-                         PrintService printService = new PrintService(bitmap);
-                         //printService.Print();
+                        //Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
+                        PrintService.PrintBill(ordersProductsMaps, orObj);
+                        //printService.Print();
                     }
                     catch (Exception ex)
                     {
@@ -580,23 +585,33 @@ namespace FinalPoject
                 AddItem();
 
             }
+
+            if (e.KeyData == Keys.P)
+            {
+                SaveOrder();
+
+            }
         }
 
-        private void txtCustomerPhone_Leave(object sender, EventArgs e)
+
+        private void FillCustomer()
         {
             try
             {
-               Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
+                Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
                 txtCoustomerEmail.Text = Customer.CustomerEmail;
                 txtCoustomerName.Text = Customer.CustomerFullName;
                 txtCustomerPhone.Text = Customer.CustomerPhone;
                 txtCustomerAddress.Text = Customer.CustomerAddress;
             }
-            catch(Exception ex) 
-            { 
-            
-            }
+            catch (Exception ex)
+            {
 
+            }
+        }
+        private void txtCustomerPhone_Leave(object sender, EventArgs e)
+        {
+            FillCustomer();
         }
     }
 }
