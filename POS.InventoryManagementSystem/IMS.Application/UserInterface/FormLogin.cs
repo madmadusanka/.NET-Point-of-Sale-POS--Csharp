@@ -42,7 +42,7 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             try
             {
-
+                SecurityProvider.GenerateKeyFile();
 
                 if (!SecurityProvider.IsValidLicense())
                 {

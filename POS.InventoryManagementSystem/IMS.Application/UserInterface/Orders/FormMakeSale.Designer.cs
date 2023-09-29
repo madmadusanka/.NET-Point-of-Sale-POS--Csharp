@@ -2122,7 +2122,7 @@ namespace FinalPoject
             this.btnPlaceOrderToSave.Name = "btnPlaceOrderToSave";
             this.btnPlaceOrderToSave.Size = new System.Drawing.Size(292, 42);
             this.btnPlaceOrderToSave.TabIndex = 172;
-            this.btnPlaceOrderToSave.Text = "Plcae Order";
+            this.btnPlaceOrderToSave.Text = "Place Order";
             this.btnPlaceOrderToSave.TextOffset = new System.Drawing.Point(8, 0);
             this.btnPlaceOrderToSave.Click += new System.EventHandler(this.btnPlaceOrderToSave_Click);
             // 

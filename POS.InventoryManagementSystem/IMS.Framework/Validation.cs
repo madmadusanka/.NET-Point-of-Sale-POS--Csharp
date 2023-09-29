@@ -15,7 +15,7 @@ namespace IMS.Framework
 
         public static double  ConvertToDouble(string value, string error) 
         {
-            if(String.IsNullOrEmpty(error)){
+            if(!String.IsNullOrEmpty(value)){
 
 
                 double result = 0.00;

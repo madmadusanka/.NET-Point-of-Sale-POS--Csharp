@@ -434,6 +434,7 @@ namespace FinalPoject
         {
             try
             {
+                FillCustomer();
                 Order orObj = this.FillEntity();
                 List<OrdersProductsMap> ordersProductsMaps = GetAllForOrders(orObj);
                 if (ordersProductsMaps.Count() > 0)
@@ -598,11 +599,14 @@ namespace FinalPoject
         {
             try
             {
-                Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
-                txtCoustomerEmail.Text = Customer.CustomerEmail;
-                txtCoustomerName.Text = Customer.CustomerFullName;
-                txtCustomerPhone.Text = Customer.CustomerPhone;
-                txtCustomerAddress.Text = Customer.CustomerAddress;
+                if(Customer ==null && Customer?.CustomerPhone != txtCustomerPhone.Text)
+                {
+                    Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
+                    txtCoustomerEmail.Text = Customer.CustomerEmail;
+                    txtCoustomerName.Text = Customer.CustomerFullName;
+                    txtCustomerPhone.Text = Customer.CustomerPhone;
+                    txtCustomerAddress.Text = Customer.CustomerAddress;
+                }
             }
             catch (Exception ex)
             {
