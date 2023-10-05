@@ -1,4 +1,4 @@
-CREATE DATABASE Inventory; 
+CREATE DATABASE Inventory3 COLLATE Latin1_General_100_CI_AS_SC_UTF8
 -- Create Users table
 -- Create Users table
 CREATE TABLE Users (
@@ -170,7 +170,7 @@ ADD  SavedByUser VARCHAR(250),
 
 
 	CREATE TABLE Customers (
-    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
     CustomerFullName VARCHAR(255),
     CustomerPhone VARCHAR(15),
     CustomerEmail VARCHAR(255),

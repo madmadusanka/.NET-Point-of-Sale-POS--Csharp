@@ -41,7 +41,7 @@ namespace FinalPoject
         private void PopulateGridView(string searchKey = null)
         {
             this.dgvMasterView.AutoGenerateColumns = false;
-            this.dgvMasterView.DataSource = this.masterCategoriesRepo.GetAll(searchKey).ToList();
+            this.dgvMasterView.DataSource = this.masterCategoriesRepo.GetAll(searchKey)?.ToList();
             this.dgvMasterView.ClearSelection();
             this.Refresh();
         }

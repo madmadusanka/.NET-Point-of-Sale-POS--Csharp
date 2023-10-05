@@ -505,6 +505,7 @@ namespace FinalPoject
                     }
                     catch (Exception ex)
                     {
+                        Logger.Error(ex);
                         MessageBox.Show("Print Error");
                     }
 

@@ -48,6 +48,11 @@ namespace IMS.Framework
             log.Error(ex.Message + " \n " + ex.StackTrace+ " \n ");
         }
 
+        public static void Info(Exception ex)
+        {
+            log.Info(ex.Message + " \n " + ex.StackTrace + " \n ");
+        }
+
         // Add more log levels and methods as needed...
     }
 

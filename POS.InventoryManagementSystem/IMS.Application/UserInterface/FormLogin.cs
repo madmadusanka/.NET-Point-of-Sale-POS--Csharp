@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using FinalPoject.UserInterface.Orders;
 using IMS.Framework;
 using IMS.Repository;
 
@@ -31,20 +36,25 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             this.lblForgetPassword.ForeColor = Color.FromArgb(196, 189, 237);
         }
-
+        Bitmap bitmap = null;
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            label6.Text = Constants.Name;
+            //InvoiceReport invoiceReport = new InvoiceReport();
+            //invoiceReport.Show();
+           
+            //InvoiceReport report = new InvoiceReport();
+            //report.Show();
 
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
+                PrintService.PrintBill("test");
+
                 SecurityProvider.GenerateKeyFile();
 
-                if (!SecurityProvider.IsValidLicense())
+                if (SecurityProvider.IsValidLicense())
                 {
                     MessageBox.Show("Invalid Licesne");
                     SecurityProvider.GenerateKeyFile();
