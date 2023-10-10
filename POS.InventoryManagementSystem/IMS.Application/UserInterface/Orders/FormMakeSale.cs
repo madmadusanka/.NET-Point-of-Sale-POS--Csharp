@@ -234,15 +234,15 @@ namespace FinalPoject
         //Refresh
         private void RefreshContent()
         {
-            this.txtProductName.Clear();
-            this.txtProductId.Clear();
-            this.txtProducTag.Clear();
-            this.txtProductQuant.Clear();
-            this.txtProductPerUnitPrice.Clear();
-            this.txtDiscount.Clear();
-            this.txtProductMSRP.Clear();
-            this.txtBrand.Clear();
-            this.txtPorductItemLeft.Clear();
+            //this.txtProductName.Clear();
+            //this.txtProductId.Clear();
+            //this.txtProducTag.Clear();
+            //this.txtProductQuant.Clear();
+            //this.txtProductPerUnitPrice.Clear();
+            //this.txtDiscount.Clear();
+            //this.txtProductMSRP.Clear();
+            //this.txtBrand.Clear();
+            //this.txtPorductItemLeft.Clear();
             //
             this.txtCoustomerName.Clear();
             this.txtCoustomerEmail.Clear();
@@ -274,14 +274,14 @@ namespace FinalPoject
         //Products Click on Details
         private void dgvSearchProdcut_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtProductName.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductName"].Value.ToString();
-            this.txtProductId.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductId"].Value.ToString();
-            this.txtProducTag.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductIdTag"].Value.ToString();
-            this.txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
-            this.txtProductPerUnitPrice.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductPerUnitPrice"].Value.ToString();
-            this.txtDiscount.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductDiscountRate"].Value.ToString();
-            this.txtProductMSRP.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductMSRP"].Value.ToString();
-            this.txtBrand.Text = this.dgvSearchProduct.CurrentRow.Cells["BrandName"].Value.ToString();
+            //this.txtProductName.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductName"].Value.ToString();
+            //this.txtProductId.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductId"].Value.ToString();
+            //this.txtProducTag.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductIdTag"].Value.ToString();
+            //this.txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
+            //this.txtProductPerUnitPrice.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductPerUnitPrice"].Value.ToString();
+            //this.txtDiscount.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductDiscountRate"].Value.ToString();
+            //this.txtProductMSRP.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductMSRP"].Value.ToString();
+            //this.txtBrand.Text = this.dgvSearchProduct.CurrentRow.Cells["BrandName"].Value.ToString();
         }
 
         //LoadCart
@@ -318,15 +318,15 @@ namespace FinalPoject
                 quantityForm.ShowDialog();
                 if (quantityForm.Quantiy != 0)
                 {
-                    this.txtProductQuant.Text = quantityForm.Quantiy.ToString();
+                    decimal quantity = quantityForm.Quantiy;
 
-                    row["Quantity"] = this.txtProductQuant.Text;
+                    row["Quantity"] = quantity;
 
 
                     row["ProductId"] = dgvSearchProduct.SelectedRows[0].Cells[0].Value.ToString();
                     row["ProductName"] = dgvSearchProduct.SelectedRows[0].Cells[2].Value.ToString();
 
-                    row["Price"] = (Convert.ToDouble(dgvSearchProduct.SelectedRows[0].Cells[6].Value) * Convert.ToDouble(this.txtProductQuant.Text)).ToString();
+                    row["Price"] = (Convert.ToDouble(dgvSearchProduct.SelectedRows[0].Cells[6].Value) * Convert.ToDouble(quantity)).ToString();
 
                     row["ProductIdTag"] = dgvSearchProduct.SelectedRows[0].Cells[1].Value.ToString();
                     row["BrandName"] = dgvSearchProduct.SelectedRows[0].Cells[3].Value.ToString();
@@ -338,7 +338,7 @@ namespace FinalPoject
                     OrderDetailDataTable.Rows.Add(row);
 
                     UpdatePrice();
-                    this.txtProductQuant.Text = String.Empty;
+                    //this.txtProductQuant.Text = String.Empty;
                 }
 
 
@@ -384,9 +384,9 @@ namespace FinalPoject
             orders.TotalAmount = Convert.ToDouble(this.txtTotalAmount.Text);
             orders.OrderStatus = this.cmbPayStatus.Text;
             orders.PaymentMethod = this.cmbPaymentMethod.Text;
-            if (!String.IsNullOrEmpty(this.txtBarcode.Text)) {
-                orders.BarCodeId = Convert.ToInt32(this.txtBarcode.Text);
-            }
+            //if (!String.IsNullOrEmpty(this.txtBarcode.Text)) {
+            //    orders.BarCodeId = Convert.ToInt32(this.txtBarcode.Text);
+            //}
             
 
 
@@ -546,36 +546,36 @@ namespace FinalPoject
 
         private void txtProductQuant_TextChanged(object sender, EventArgs e)
         {
-            decimal quantity;
-            if (decimal.TryParse(txtProductQuant.Text, out quantity))
-            {
+            //decimal quantity;
+            //if (decimal.TryParse(txtProductQuant.Text, out quantity))
+            //{
 
-                int quantityLeft = 0;
-                if (Int32.TryParse(txtPorductItemLeft.Text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out quantityLeft))
-                {
+            //    int quantityLeft = 0;
+            //    if (Int32.TryParse(txtPorductItemLeft.Text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out quantityLeft))
+            //    {
 
 
-                    if (txtProductQuant.Text != "")
-                    {
-                        decimal itemsLeft = quantityLeft - quantity;
+            //        if (txtProductQuant.Text != "")
+            //        {
+            //            decimal itemsLeft = quantityLeft - quantity;
 
-                        if (itemsLeft < 0)
-                        {
-                            txtProductQuant.ForeColor = Color.OrangeRed;
-                        }
-                        else
-                        {
-                            txtProductQuant.ForeColor = Color.Black;
-                        }
-                        txtPorductItemLeft.Text = itemsLeft.ToString();
-                    }
-                    else
-                    {
-                        txtProductQuant.ForeColor = Color.Black;
-                        txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
-                    }
-                }
-            }
+            //            if (itemsLeft < 0)
+            //            {
+            //                txtProductQuant.ForeColor = Color.OrangeRed;
+            //            }
+            //            else
+            //            {
+            //                txtProductQuant.ForeColor = Color.Black;
+            //            }
+            //            txtPorductItemLeft.Text = itemsLeft.ToString();
+            //        }
+            //        else
+            //        {
+            //            //txtProductQuant.ForeColor = Color.Black;
+            //            //txtPorductItemLeft.Text = this.dgvSearchProduct.CurrentRow.Cells["ProductUnitStock"].Value.ToString();
+            //        }
+            //    }
+            //}
 
         }
 
@@ -617,6 +617,11 @@ namespace FinalPoject
         private void txtCustomerPhone_Leave(object sender, EventArgs e)
         {
             FillCustomer();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
