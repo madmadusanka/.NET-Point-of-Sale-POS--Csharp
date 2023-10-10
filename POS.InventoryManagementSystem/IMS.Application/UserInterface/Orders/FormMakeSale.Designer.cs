@@ -145,17 +145,6 @@ namespace FinalPoject
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
-            this.lblTotalItemResult = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.cmbThird = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbSecond = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbVendor = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbBrand = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtSearchForSell = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblTotalItemFound = new System.Windows.Forms.Label();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancle = new Guna.UI2.WinForms.Guna2Button();
@@ -164,6 +153,17 @@ namespace FinalPoject
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
             this.pbImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblTotalItemFound = new System.Windows.Forms.Label();
+            this.txtSearchForSell = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cmbBrand = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbVendor = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbSecond = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbThird = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnCancelSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalItemResult = new System.Windows.Forms.Label();
+            this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
             this.pnlOrderSelect.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -179,11 +179,11 @@ namespace FinalPoject
             this.guna2Panel18.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
-            this.tablePanel3.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
+            this.tablePanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -191,7 +191,7 @@ namespace FinalPoject
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel3.Location = new System.Drawing.Point(1904, 20);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(20, 920);
             this.guna2Panel3.TabIndex = 20;
@@ -201,7 +201,7 @@ namespace FinalPoject
             this.pnlInsideLeft.BackColor = System.Drawing.Color.Transparent;
             this.pnlInsideLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlInsideLeft.Location = new System.Drawing.Point(0, 20);
-            this.pnlInsideLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInsideLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInsideLeft.Name = "pnlInsideLeft";
             this.pnlInsideLeft.Size = new System.Drawing.Size(20, 920);
             this.pnlInsideLeft.TabIndex = 19;
@@ -210,7 +210,7 @@ namespace FinalPoject
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom.Location = new System.Drawing.Point(0, 940);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(1924, 20);
             this.pnlBottom.TabIndex = 18;
@@ -220,7 +220,7 @@ namespace FinalPoject
             this.pnlInsideTop.BackColor = System.Drawing.Color.Transparent;
             this.pnlInsideTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInsideTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlInsideTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInsideTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInsideTop.Name = "pnlInsideTop";
             this.pnlInsideTop.Size = new System.Drawing.Size(1924, 20);
             this.pnlInsideTop.TabIndex = 17;
@@ -236,7 +236,7 @@ namespace FinalPoject
             this.pnlOrderSelect.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOrderSelect.FillColor = System.Drawing.Color.White;
             this.pnlOrderSelect.Location = new System.Drawing.Point(20, 20);
-            this.pnlOrderSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlOrderSelect.Margin = new System.Windows.Forms.Padding(4);
             this.pnlOrderSelect.Name = "pnlOrderSelect";
             this.pnlOrderSelect.Size = new System.Drawing.Size(1884, 90);
             this.pnlOrderSelect.TabIndex = 22;
@@ -248,7 +248,7 @@ namespace FinalPoject
             this.guna2Panel6.Controls.Add(this.guna2Panel9);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(649, 90);
             this.guna2Panel6.TabIndex = 5;
@@ -282,7 +282,7 @@ namespace FinalPoject
             this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel9.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(29, 90);
             this.guna2Panel9.TabIndex = 19;
@@ -292,7 +292,7 @@ namespace FinalPoject
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(20, 110);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1884, 20);
             this.guna2Panel1.TabIndex = 23;
@@ -328,7 +328,7 @@ namespace FinalPoject
             this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel11.FillColor = System.Drawing.Color.White;
             this.guna2Panel11.Location = new System.Drawing.Point(4, 4);
-            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(1876, 802);
             this.guna2Panel11.TabIndex = 27;
@@ -346,7 +346,7 @@ namespace FinalPoject
             this.LeftPanel.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftPanel.Location = new System.Drawing.Point(0, 122);
-            this.LeftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LeftPanel.Margin = new System.Windows.Forms.Padding(4);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.Size = new System.Drawing.Size(542, 610);
             this.LeftPanel.TabIndex = 212;
@@ -410,6 +410,7 @@ namespace FinalPoject
             this.ProductName.MinimumWidth = 6;
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 125;
             // 
             // BrandName
             // 
@@ -499,7 +500,7 @@ namespace FinalPoject
             this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel7.Location = new System.Drawing.Point(515, 86);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(27, 499);
             this.guna2Panel7.TabIndex = 168;
@@ -509,7 +510,7 @@ namespace FinalPoject
             this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel8.Location = new System.Drawing.Point(0, 86);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(27, 499);
             this.guna2Panel8.TabIndex = 167;
@@ -519,7 +520,7 @@ namespace FinalPoject
             this.guna2Panel21.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel21.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(542, 16);
             this.guna2Panel21.TabIndex = 165;
@@ -533,7 +534,7 @@ namespace FinalPoject
             this.guna2Panel22.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel22.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel22.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel22.Name = "guna2Panel22";
             this.guna2Panel22.Size = new System.Drawing.Size(542, 70);
             this.guna2Panel22.TabIndex = 164;
@@ -567,7 +568,7 @@ namespace FinalPoject
             this.guna2Panel23.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel23.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel23.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel23.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel23.Name = "guna2Panel23";
             this.guna2Panel23.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel23.TabIndex = 19;
@@ -577,7 +578,7 @@ namespace FinalPoject
             this.guna2Panel15.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel15.Location = new System.Drawing.Point(0, 585);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(542, 25);
             this.guna2Panel15.TabIndex = 162;
@@ -595,7 +596,7 @@ namespace FinalPoject
             this.MiddelPanel.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.MiddelPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MiddelPanel.Location = new System.Drawing.Point(542, 122);
-            this.MiddelPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MiddelPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MiddelPanel.Name = "MiddelPanel";
             this.MiddelPanel.Size = new System.Drawing.Size(667, 610);
             this.MiddelPanel.TabIndex = 211;
@@ -657,6 +658,7 @@ namespace FinalPoject
             this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -751,7 +753,7 @@ namespace FinalPoject
             this.guna2Panel16.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel16.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel16.Location = new System.Drawing.Point(640, 86);
-            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel16.Name = "guna2Panel16";
             this.guna2Panel16.Size = new System.Drawing.Size(27, 499);
             this.guna2Panel16.TabIndex = 168;
@@ -761,7 +763,7 @@ namespace FinalPoject
             this.guna2Panel25.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel25.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel25.Location = new System.Drawing.Point(0, 86);
-            this.guna2Panel25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel25.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel25.Name = "guna2Panel25";
             this.guna2Panel25.Size = new System.Drawing.Size(27, 499);
             this.guna2Panel25.TabIndex = 167;
@@ -771,7 +773,7 @@ namespace FinalPoject
             this.guna2Panel26.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel26.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel26.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel26.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel26.Name = "guna2Panel26";
             this.guna2Panel26.Size = new System.Drawing.Size(667, 16);
             this.guna2Panel26.TabIndex = 165;
@@ -785,7 +787,7 @@ namespace FinalPoject
             this.guna2Panel27.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel27.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel27.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel27.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel27.Name = "guna2Panel27";
             this.guna2Panel27.Size = new System.Drawing.Size(667, 70);
             this.guna2Panel27.TabIndex = 164;
@@ -807,7 +809,7 @@ namespace FinalPoject
             this.guna2Panel28.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel28.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel28.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel28.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel28.Name = "guna2Panel28";
             this.guna2Panel28.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel28.TabIndex = 19;
@@ -829,7 +831,7 @@ namespace FinalPoject
             this.guna2Panel29.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel29.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel29.Location = new System.Drawing.Point(0, 585);
-            this.guna2Panel29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel29.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel29.Name = "guna2Panel29";
             this.guna2Panel29.Size = new System.Drawing.Size(667, 25);
             this.guna2Panel29.TabIndex = 162;
@@ -847,7 +849,7 @@ namespace FinalPoject
             this.RightPanel.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.RightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.RightPanel.Location = new System.Drawing.Point(1209, 122);
-            this.RightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RightPanel.Margin = new System.Windows.Forms.Padding(4);
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.Size = new System.Drawing.Size(667, 610);
             this.RightPanel.TabIndex = 210;
@@ -1129,7 +1131,7 @@ namespace FinalPoject
             "Paid",
             "UnPaid"});
             this.cmbPayStatus.Location = new System.Drawing.Point(600, 160);
-            this.cmbPayStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPayStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPayStatus.Name = "cmbPayStatus";
             this.cmbPayStatus.Size = new System.Drawing.Size(360, 36);
             this.cmbPayStatus.TabIndex = 242;
@@ -1148,7 +1150,7 @@ namespace FinalPoject
             "Cash",
             "Card"});
             this.cmbPaymentMethod.Location = new System.Drawing.Point(213, 160);
-            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPaymentMethod.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPaymentMethod.Name = "cmbPaymentMethod";
             this.cmbPaymentMethod.Size = new System.Drawing.Size(297, 36);
             this.cmbPaymentMethod.TabIndex = 241;
@@ -1416,7 +1418,7 @@ namespace FinalPoject
             this.dtpPayDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpPayDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPayDate.Location = new System.Drawing.Point(213, 265);
-            this.dtpPayDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpPayDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpPayDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpPayDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpPayDate.Name = "dtpPayDate";
@@ -1651,7 +1653,7 @@ namespace FinalPoject
             this.guna2Panel17.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel17.Location = new System.Drawing.Point(27, 585);
-            this.guna2Panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel17.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel17.Name = "guna2Panel17";
             this.guna2Panel17.Size = new System.Drawing.Size(627, 25);
             this.guna2Panel17.TabIndex = 169;
@@ -1661,7 +1663,7 @@ namespace FinalPoject
             this.guna2Panel20.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel20.Location = new System.Drawing.Point(27, 70);
-            this.guna2Panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel20.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel20.Name = "guna2Panel20";
             this.guna2Panel20.Size = new System.Drawing.Size(627, 16);
             this.guna2Panel20.TabIndex = 168;
@@ -1671,7 +1673,7 @@ namespace FinalPoject
             this.guna2Panel19.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel19.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel19.Location = new System.Drawing.Point(654, 70);
-            this.guna2Panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel19.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel19.Name = "guna2Panel19";
             this.guna2Panel19.Size = new System.Drawing.Size(13, 540);
             this.guna2Panel19.TabIndex = 167;
@@ -1682,7 +1684,7 @@ namespace FinalPoject
             this.guna2Panel18.Controls.Add(this.tableLayoutPanel2);
             this.guna2Panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel18.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel18.Name = "guna2Panel18";
             this.guna2Panel18.Size = new System.Drawing.Size(27, 540);
             this.guna2Panel18.TabIndex = 166;
@@ -1736,7 +1738,7 @@ namespace FinalPoject
             this.guna2Panel5.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(667, 70);
             this.guna2Panel5.TabIndex = 165;
@@ -1770,7 +1772,7 @@ namespace FinalPoject
             this.guna2Panel24.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel24.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel24.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel24.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel24.Name = "guna2Panel24";
             this.guna2Panel24.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel24.TabIndex = 19;
@@ -1786,7 +1788,7 @@ namespace FinalPoject
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1876, 122);
             this.guna2Panel2.TabIndex = 152;
@@ -1796,7 +1798,7 @@ namespace FinalPoject
             this.guna2Panel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel12.Location = new System.Drawing.Point(2620, 12);
-            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Size = new System.Drawing.Size(29, 89);
             this.guna2Panel12.TabIndex = 207;
@@ -1806,7 +1808,7 @@ namespace FinalPoject
             this.guna2Panel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel10.Location = new System.Drawing.Point(0, 12);
-            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(29, 89);
             this.guna2Panel10.TabIndex = 206;
@@ -1816,227 +1818,10 @@ namespace FinalPoject
             this.guna2Panel14.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel14.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel14.Name = "guna2Panel14";
             this.guna2Panel14.Size = new System.Drawing.Size(2649, 12);
             this.guna2Panel14.TabIndex = 157;
-            // 
-            // tablePanel3
-            // 
-            this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 129F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 10F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 496F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 14F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 110F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 112F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 86F, true, "FilterBy"),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 179F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 173F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 168F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 189F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 16.31F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 7.23F)});
-            this.tablePanel3.Controls.Add(this.lblTotalItemResult);
-            this.tablePanel3.Controls.Add(this.label1);
-            this.tablePanel3.Controls.Add(this.btnCancelSearch);
-            this.tablePanel3.Controls.Add(this.cmbThird);
-            this.tablePanel3.Controls.Add(this.cmbSecond);
-            this.tablePanel3.Controls.Add(this.cmbVendor);
-            this.tablePanel3.Controls.Add(this.cmbBrand);
-            this.tablePanel3.Controls.Add(this.label24);
-            this.tablePanel3.Controls.Add(this.txtSearchForSell);
-            this.tablePanel3.Controls.Add(this.lblTotalItemFound);
-            this.tablePanel3.Location = new System.Drawing.Point(40, 20);
-            this.tablePanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tablePanel3.Name = "tablePanel3";
-            this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39F)});
-            this.tablePanel3.Size = new System.Drawing.Size(2580, 71);
-            this.tablePanel3.TabIndex = 205;
-            // 
-            // lblTotalItemResult
-            // 
-            this.lblTotalItemResult.AutoSize = true;
-            this.tablePanel3.SetColumn(this.lblTotalItemResult, 8);
-            this.lblTotalItemResult.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemResult.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalItemResult.Location = new System.Drawing.Point(1089, 21);
-            this.lblTotalItemResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalItemResult.Name = "lblTotalItemResult";
-            this.tablePanel3.SetRow(this.lblTotalItemResult, 0);
-            this.lblTotalItemResult.Size = new System.Drawing.Size(23, 28);
-            this.lblTotalItemResult.TabIndex = 6;
-            this.lblTotalItemResult.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.tablePanel3.SetColumn(this.label1, 9);
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(1239, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.tablePanel3.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(99, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filter By -";
-            // 
-            // btnCancelSearch
-            // 
-            this.btnCancelSearch.Animated = true;
-            this.btnCancelSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelSearch.CustomImages.HoveredImage = global::FinalPoject.Properties.Resources.icons8_delete_480px_1;
-            this.btnCancelSearch.CustomImages.Image = global::FinalPoject.Properties.Resources.icons8_delete_480px_3;
-            this.btnCancelSearch.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCancelSearch.FillColor = System.Drawing.Color.Transparent;
-            this.btnCancelSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSearch.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCancelSearch.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnCancelSearch.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSearch.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCancelSearch.Location = new System.Drawing.Point(872, 17);
-            this.btnCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelSearch.Name = "btnCancelSearch";
-            this.btnCancelSearch.Size = new System.Drawing.Size(44, 37);
-            this.btnCancelSearch.TabIndex = 207;
-            this.btnCancelSearch.TextOffset = new System.Drawing.Point(8, 0);
-            this.btnCancelSearch.Click += new System.EventHandler(this.btnCancelSearch_Click);
-            // 
-            // cmbThird
-            // 
-            this.cmbThird.BackColor = System.Drawing.Color.Transparent;
-            this.cmbThird.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbThird.DropDownHeight = 300;
-            this.cmbThird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbThird.DropDownWidth = 250;
-            this.cmbThird.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbThird.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbThird.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbThird.FormattingEnabled = true;
-            this.cmbThird.IntegralHeight = false;
-            this.cmbThird.ItemHeight = 30;
-            this.cmbThird.Location = new System.Drawing.Point(1823, 14);
-            this.cmbThird.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbThird.Name = "cmbThird";
-            this.cmbThird.Size = new System.Drawing.Size(215, 36);
-            this.cmbThird.TabIndex = 210;
-            this.cmbThird.SelectedIndexChanged += new System.EventHandler(this.cmbThird_SelectedIndexChanged);
-            // 
-            // cmbSecond
-            // 
-            this.cmbSecond.BackColor = System.Drawing.Color.Transparent;
-            this.cmbSecond.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbSecond.DropDownHeight = 300;
-            this.cmbSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSecond.DropDownWidth = 250;
-            this.cmbSecond.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbSecond.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbSecond.FormattingEnabled = true;
-            this.cmbSecond.IntegralHeight = false;
-            this.cmbSecond.ItemHeight = 30;
-            this.cmbSecond.Location = new System.Drawing.Point(2047, 14);
-            this.cmbSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbSecond.Name = "cmbSecond";
-            this.cmbSecond.Size = new System.Drawing.Size(243, 36);
-            this.cmbSecond.TabIndex = 209;
-            this.cmbSecond.SelectedIndexChanged += new System.EventHandler(this.cmbSecond_SelectedIndexChanged);
-            // 
-            // cmbVendor
-            // 
-            this.cmbVendor.BackColor = System.Drawing.Color.Transparent;
-            this.cmbVendor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbVendor.DropDownHeight = 300;
-            this.cmbVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVendor.DropDownWidth = 250;
-            this.cmbVendor.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbVendor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbVendor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbVendor.FormattingEnabled = true;
-            this.cmbVendor.IntegralHeight = false;
-            this.cmbVendor.ItemHeight = 30;
-            this.cmbVendor.Location = new System.Drawing.Point(1592, 14);
-            this.cmbVendor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbVendor.Name = "cmbVendor";
-            this.cmbVendor.Size = new System.Drawing.Size(221, 36);
-            this.cmbVendor.TabIndex = 208;
-            this.cmbVendor.SelectedIndexChanged += new System.EventHandler(this.cmbVendor_SelectedIndexChanged);
-            // 
-            // cmbBrand
-            // 
-            this.cmbBrand.BackColor = System.Drawing.Color.Transparent;
-            this.cmbBrand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbBrand.DropDownHeight = 300;
-            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBrand.DropDownWidth = 250;
-            this.cmbBrand.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbBrand.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbBrand.FormattingEnabled = true;
-            this.cmbBrand.IntegralHeight = false;
-            this.cmbBrand.ItemHeight = 30;
-            this.cmbBrand.Location = new System.Drawing.Point(1353, 14);
-            this.cmbBrand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbBrand.Name = "cmbBrand";
-            this.cmbBrand.Size = new System.Drawing.Size(229, 36);
-            this.cmbBrand.TabIndex = 207;
-            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.label24.Location = new System.Drawing.Point(25, 23);
-            this.label24.Margin = new System.Windows.Forms.Padding(0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(152, 25);
-            this.label24.TabIndex = 164;
-            this.label24.Text = "Search Product";
-            // 
-            // txtSearchForSell
-            // 
-            this.txtSearchForSell.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
-            this.txtSearchForSell.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchForSell.DefaultText = "";
-            this.txtSearchForSell.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchForSell.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchForSell.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchForSell.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchForSell.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchForSell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchForSell.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchForSell.HoverState.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.txtSearchForSell.IconRight = global::FinalPoject.Properties.Resources.icons8_search_480px;
-            this.txtSearchForSell.Location = new System.Drawing.Point(201, 17);
-            this.txtSearchForSell.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtSearchForSell.Name = "txtSearchForSell";
-            this.txtSearchForSell.PasswordChar = '\0';
-            this.txtSearchForSell.PlaceholderText = "by Name, Tag, Brand etc.";
-            this.txtSearchForSell.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtSearchForSell.SelectedText = "";
-            this.txtSearchForSell.Size = new System.Drawing.Size(651, 37);
-            this.txtSearchForSell.TabIndex = 134;
-            this.txtSearchForSell.TextChanged += new System.EventHandler(this.txtSearchForSell_TextChanged_1);
-            // 
-            // lblTotalItemFound
-            // 
-            this.lblTotalItemFound.AutoSize = true;
-            this.tablePanel3.SetColumn(this.lblTotalItemFound, 7);
-            this.lblTotalItemFound.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemFound.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalItemFound.Location = new System.Drawing.Point(943, 21);
-            this.lblTotalItemFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalItemFound.Name = "lblTotalItemFound";
-            this.tablePanel3.SetRow(this.lblTotalItemFound, 0);
-            this.lblTotalItemFound.Size = new System.Drawing.Size(130, 28);
-            this.lblTotalItemFound.TabIndex = 0;
-            this.lblTotalItemFound.Text = "Total Found :";
             // 
             // guna2Panel13
             // 
@@ -2045,7 +1830,7 @@ namespace FinalPoject
             this.guna2Panel13.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel13.Location = new System.Drawing.Point(0, 732);
-            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(1876, 70);
             this.guna2Panel13.TabIndex = 133;
@@ -2096,7 +1881,7 @@ namespace FinalPoject
             this.btnCancle.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnCancle.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnCancle.Location = new System.Drawing.Point(1408, 14);
-            this.btnCancle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(292, 42);
             this.btnCancle.TabIndex = 171;
@@ -2118,7 +1903,7 @@ namespace FinalPoject
             this.btnPlaceOrderToSave.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlaceOrderToSave.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.btnPlaceOrderToSave.Location = new System.Drawing.Point(1097, 14);
-            this.btnPlaceOrderToSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPlaceOrderToSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlaceOrderToSave.Name = "btnPlaceOrderToSave";
             this.btnPlaceOrderToSave.Size = new System.Drawing.Size(292, 42);
             this.btnPlaceOrderToSave.TabIndex = 172;
@@ -2141,7 +1926,7 @@ namespace FinalPoject
             this.btnAddItem.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAddItem.Location = new System.Drawing.Point(164, 14);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(292, 42);
             this.btnAddItem.TabIndex = 171;
@@ -2165,7 +1950,7 @@ namespace FinalPoject
             this.btnRefresh.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(233)))), ((int)(((byte)(249)))));
             this.btnRefresh.Location = new System.Drawing.Point(475, 14);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(292, 42);
             this.btnRefresh.TabIndex = 133;
@@ -2189,7 +1974,7 @@ namespace FinalPoject
             this.btnDeleteProduct.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnDeleteProduct.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDeleteProduct.Location = new System.Drawing.Point(786, 14);
-            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(292, 42);
             this.btnDeleteProduct.TabIndex = 135;
@@ -2210,6 +1995,233 @@ namespace FinalPoject
             this.pbImage.TabIndex = 216;
             this.pbImage.TabStop = false;
             // 
+            // lblTotalItemFound
+            // 
+            this.lblTotalItemFound.AutoSize = true;
+            this.tablePanel3.SetColumn(this.lblTotalItemFound, 7);
+            this.lblTotalItemFound.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItemFound.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalItemFound.Location = new System.Drawing.Point(708, 7);
+            this.lblTotalItemFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalItemFound.Name = "lblTotalItemFound";
+            this.tablePanel3.SetRow(this.lblTotalItemFound, 0);
+            this.lblTotalItemFound.Size = new System.Drawing.Size(81, 56);
+            this.lblTotalItemFound.TabIndex = 0;
+            this.lblTotalItemFound.Text = "Total Found :";
+            // 
+            // txtSearchForSell
+            // 
+            this.txtSearchForSell.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
+            this.txtSearchForSell.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchForSell.DefaultText = "";
+            this.txtSearchForSell.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchForSell.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchForSell.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchForSell.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchForSell.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchForSell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchForSell.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchForSell.HoverState.PlaceholderForeColor = System.Drawing.Color.Transparent;
+            this.txtSearchForSell.IconRight = global::FinalPoject.Properties.Resources.icons8_search_480px;
+            this.txtSearchForSell.Location = new System.Drawing.Point(201, 17);
+            this.txtSearchForSell.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtSearchForSell.Name = "txtSearchForSell";
+            this.txtSearchForSell.PasswordChar = '\0';
+            this.txtSearchForSell.PlaceholderText = "by Name, Tag, Brand etc.";
+            this.txtSearchForSell.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtSearchForSell.SelectedText = "";
+            this.txtSearchForSell.Size = new System.Drawing.Size(407, 37);
+            this.txtSearchForSell.TabIndex = 134;
+            this.txtSearchForSell.TextChanged += new System.EventHandler(this.txtSearchForSell_TextChanged_1);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.label24.Location = new System.Drawing.Point(25, 23);
+            this.label24.Margin = new System.Windows.Forms.Padding(0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(152, 25);
+            this.label24.TabIndex = 164;
+            this.label24.Text = "Search Product";
+            // 
+            // cmbBrand
+            // 
+            this.cmbBrand.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbBrand, 10);
+            this.cmbBrand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBrand.DropDownHeight = 300;
+            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBrand.DropDownWidth = 250;
+            this.cmbBrand.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbBrand.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbBrand.FormattingEnabled = true;
+            this.cmbBrand.IntegralHeight = false;
+            this.cmbBrand.ItemHeight = 30;
+            this.cmbBrand.Location = new System.Drawing.Point(993, 17);
+            this.cmbBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBrand.Name = "cmbBrand";
+            this.tablePanel3.SetRow(this.cmbBrand, 0);
+            this.cmbBrand.Size = new System.Drawing.Size(227, 36);
+            this.cmbBrand.TabIndex = 207;
+            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
+            // 
+            // cmbVendor
+            // 
+            this.cmbVendor.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbVendor, 11);
+            this.cmbVendor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbVendor.DropDownHeight = 300;
+            this.cmbVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVendor.DropDownWidth = 250;
+            this.cmbVendor.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbVendor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbVendor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbVendor.FormattingEnabled = true;
+            this.cmbVendor.IntegralHeight = false;
+            this.cmbVendor.ItemHeight = 30;
+            this.cmbVendor.Location = new System.Drawing.Point(1228, 17);
+            this.cmbVendor.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbVendor.Name = "cmbVendor";
+            this.tablePanel3.SetRow(this.cmbVendor, 0);
+            this.cmbVendor.Size = new System.Drawing.Size(223, 36);
+            this.cmbVendor.TabIndex = 208;
+            this.cmbVendor.SelectedIndexChanged += new System.EventHandler(this.cmbVendor_SelectedIndexChanged);
+            // 
+            // cmbSecond
+            // 
+            this.cmbSecond.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbSecond, 13);
+            this.cmbSecond.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSecond.DropDownHeight = 300;
+            this.cmbSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSecond.DropDownWidth = 250;
+            this.cmbSecond.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbSecond.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSecond.FormattingEnabled = true;
+            this.cmbSecond.IntegralHeight = false;
+            this.cmbSecond.ItemHeight = 30;
+            this.cmbSecond.Location = new System.Drawing.Point(1678, 17);
+            this.cmbSecond.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSecond.Name = "cmbSecond";
+            this.tablePanel3.SetRow(this.cmbSecond, 0);
+            this.cmbSecond.Size = new System.Drawing.Size(248, 36);
+            this.cmbSecond.TabIndex = 209;
+            this.cmbSecond.SelectedIndexChanged += new System.EventHandler(this.cmbSecond_SelectedIndexChanged);
+            // 
+            // cmbThird
+            // 
+            this.cmbThird.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbThird, 12);
+            this.cmbThird.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbThird.DropDownHeight = 300;
+            this.cmbThird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbThird.DropDownWidth = 250;
+            this.cmbThird.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbThird.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbThird.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbThird.FormattingEnabled = true;
+            this.cmbThird.IntegralHeight = false;
+            this.cmbThird.ItemHeight = 30;
+            this.cmbThird.Location = new System.Drawing.Point(1458, 17);
+            this.cmbThird.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbThird.Name = "cmbThird";
+            this.tablePanel3.SetRow(this.cmbThird, 0);
+            this.cmbThird.Size = new System.Drawing.Size(212, 36);
+            this.cmbThird.TabIndex = 210;
+            this.cmbThird.SelectedIndexChanged += new System.EventHandler(this.cmbThird_SelectedIndexChanged);
+            // 
+            // btnCancelSearch
+            // 
+            this.btnCancelSearch.Animated = true;
+            this.tablePanel3.SetColumn(this.btnCancelSearch, 4);
+            this.btnCancelSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelSearch.CustomImages.HoveredImage = global::FinalPoject.Properties.Resources.icons8_delete_480px_1;
+            this.btnCancelSearch.CustomImages.Image = global::FinalPoject.Properties.Resources.icons8_delete_480px_3;
+            this.btnCancelSearch.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCancelSearch.FillColor = System.Drawing.Color.Transparent;
+            this.btnCancelSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelSearch.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCancelSearch.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnCancelSearch.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelSearch.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnCancelSearch.Location = new System.Drawing.Point(647, 17);
+            this.btnCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelSearch.Name = "btnCancelSearch";
+            this.tablePanel3.SetRow(this.btnCancelSearch, 0);
+            this.btnCancelSearch.Size = new System.Drawing.Size(31, 37);
+            this.btnCancelSearch.TabIndex = 207;
+            this.btnCancelSearch.TextOffset = new System.Drawing.Point(8, 0);
+            this.btnCancelSearch.Click += new System.EventHandler(this.btnCancelSearch_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tablePanel3.SetColumn(this.label1, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(870, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.tablePanel3.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(99, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Filter By -";
+            // 
+            // lblTotalItemResult
+            // 
+            this.lblTotalItemResult.AutoSize = true;
+            this.tablePanel3.SetColumn(this.lblTotalItemResult, 8);
+            this.lblTotalItemResult.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItemResult.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalItemResult.Location = new System.Drawing.Point(818, 21);
+            this.lblTotalItemResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalItemResult.Name = "lblTotalItemResult";
+            this.tablePanel3.SetRow(this.lblTotalItemResult, 0);
+            this.lblTotalItemResult.Size = new System.Drawing.Size(23, 28);
+            this.lblTotalItemResult.TabIndex = 6;
+            this.lblTotalItemResult.Text = "0";
+            // 
+            // tablePanel3
+            // 
+            this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 156.2001F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 8.399996F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 470.4004F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39.2F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 7.800008F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 14F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 110F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 51.99991F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 122.8003F, true, "FilterBy"),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 235F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 230.6F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 220F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 256.2001F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 158.7099F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 7.23F)});
+            this.tablePanel3.Controls.Add(this.lblTotalItemResult);
+            this.tablePanel3.Controls.Add(this.label1);
+            this.tablePanel3.Controls.Add(this.btnCancelSearch);
+            this.tablePanel3.Controls.Add(this.cmbThird);
+            this.tablePanel3.Controls.Add(this.cmbSecond);
+            this.tablePanel3.Controls.Add(this.cmbVendor);
+            this.tablePanel3.Controls.Add(this.cmbBrand);
+            this.tablePanel3.Controls.Add(this.label24);
+            this.tablePanel3.Controls.Add(this.txtSearchForSell);
+            this.tablePanel3.Controls.Add(this.lblTotalItemFound);
+            this.tablePanel3.Location = new System.Drawing.Point(40, 20);
+            this.tablePanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.tablePanel3.Name = "tablePanel3";
+            this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 39F)});
+            this.tablePanel3.Size = new System.Drawing.Size(2580, 71);
+            this.tablePanel3.TabIndex = 205;
+            // 
             // FormMakeSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2222,7 +2234,7 @@ namespace FinalPoject
             this.Controls.Add(this.pnlInsideLeft);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlInsideTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMakeSale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make Sales";
@@ -2247,12 +2259,12 @@ namespace FinalPoject
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
-            this.tablePanel3.ResumeLayout(false);
-            this.tablePanel3.PerformLayout();
             this.guna2Panel13.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
+            this.tablePanel3.ResumeLayout(false);
+            this.tablePanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2278,10 +2290,6 @@ namespace FinalPoject
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnDeleteProduct;
-        private DevExpress.Utils.Layout.TablePanel tablePanel3;
-        private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearchForSell;
-        private System.Windows.Forms.Label lblTotalItemFound;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private Guna.UI2.WinForms.Guna2Panel LeftPanel;
@@ -2368,10 +2376,6 @@ namespace FinalPoject
         private System.Windows.Forms.DataGridViewTextBoxColumn VendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThirdCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SecondCategoryName;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbThird;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbSecond;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbVendor;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbBrand;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -2384,13 +2388,21 @@ namespace FinalPoject
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private Guna.UI2.WinForms.Guna2Button btnCancelSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTotalItemResult;
+        private DevExpress.Utils.Layout.TablePanel tablePanel3;
+        private Label lblTotalItemResult;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnCancelSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbThird;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbSecond;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbVendor;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbBrand;
+        private Label label24;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchForSell;
+        private Label lblTotalItemFound;
     }
 }
