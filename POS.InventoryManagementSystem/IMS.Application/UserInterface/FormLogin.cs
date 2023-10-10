@@ -50,7 +50,7 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             try
             {
-                PrintService.PrintBill("test");
+                PrintService.PrintBill();
 
                 SecurityProvider.GenerateKeyFile();
 

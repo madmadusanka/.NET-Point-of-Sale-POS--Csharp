@@ -600,7 +600,7 @@ namespace FinalPoject
         {
             try
             {
-                if(Customer ==null && Customer?.CustomerPhone != txtCustomerPhone.Text)
+                if(!string.IsNullOrEmpty(txtCustomerPhone.Text)  && (Customer == null  || Customer?.CustomerPhone != txtCustomerPhone.Text))
                 {
                     Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
                     txtCoustomerEmail.Text = Customer.CustomerEmail;

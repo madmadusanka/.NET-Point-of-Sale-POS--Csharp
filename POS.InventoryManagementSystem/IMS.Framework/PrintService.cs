@@ -9,36 +9,36 @@ namespace IMS.Framework
 {
     public class PrintService
     {
-        public static void printWord()
-        {
-            //Application wordApp = new Application();
+        //public static void printWord()
+        //{
+        //Application wordApp = new Application();
 
-            //try
-            //{
-            //    // Disable alerts (e.g., confirmation dialogs)
-            //    wordApp.DisplayAlerts = WdAlertLevel.wdAlertsNone;
+        //try
+        //{
+        //    // Disable alerts (e.g., confirmation dialogs)
+        //    wordApp.DisplayAlerts = WdAlertLevel.wdAlertsNone;
 
-            //    // Open the Word document
-            //    Document doc = wordApp.Documents.Open(@"C:\Users\Dilan\Desktop\template.doc");
+        //    // Open the Word document
+        //    Document doc = wordApp.Documents.Open(@"C:\Users\Dilan\Desktop\template.doc");
 
-            //    // Print the document
-            //    doc.PrintOut();
+        //    // Print the document
+        //    doc.PrintOut();
 
-            //    // Close the document without saving changes
-            //    doc.Close(WdSaveOptions.wdDoNotSaveChanges);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Error: " + ex.Message);
-            //}
-            //finally
-            //{
-            //    // Quit Word application
-            //    wordApp.Quit();
-            //}
-        }
-        public static void PrintBill(List<OrdersProductsMap> ordersProductsMaps, Order order)
-        {
+        //    // Close the document without saving changes
+        //    doc.Close(WdSaveOptions.wdDoNotSaveChanges);
+        //}
+        //catch (Exception ex)
+        //{
+        //    Console.WriteLine("Error: " + ex.Message);
+        //}
+        //finally
+        //{
+        //    // Quit Word application
+        //    wordApp.Quit();
+        //}
+        //}
+        //public static void PrintBill(List<OrdersProductsMap> ordersProductsMaps, Order order)
+        //{
         //    Application wordApp = new Application();
         //    Document doc = null;
 
@@ -97,7 +97,7 @@ namespace IMS.Framework
         //        {
         //            if (kvp.Key == "date")
         //            {
-                        
+
         //            }
         //            else
         //            {
@@ -111,10 +111,10 @@ namespace IMS.Framework
 
         //        doc.Save();
         //        doc.PrintOut();
-                
+
 
         //        // Print the document
-               
+
 
         //        // Close the document without saving changes
         //        doc.Close();
@@ -128,10 +128,10 @@ namespace IMS.Framework
         //    finally
         //    {
         //        // Quit Word application
-              
+
         //        wordApp.Quit();
         //    }
-        }
+        //}
 
         //    public static void PrintBill(string test)
         //    {
@@ -271,139 +271,113 @@ namespace IMS.Framework
         //        }
         //    }
 
-        public static void PrintBill(string test)
+        public static void PrintBill(List<OrdersProductsMap> ordersProductsMaps = null, Order order = null)
         {
             ReportDocument report = new ReportDocument();
             report.Load("C:\\Users\\Dilan\\Documents\\GitHub\\.NET-Point-of-Sale-POS--Csharp\\POS.InventoryManagementSystem\\IMS.Application\\CrystalReport1.rpt"); // Replace with the actual path to your report file
                                                                                                                                                                     //report.PrintOptions.PrinterName = "your_printer_name"; // Replace with the name of your printer
 
-
-
-            //System.Data.DataTable dataTable = new System.Data.DataTable();
-            //// Assuming MyObject has properties Name and Age
-            //dataTable.Columns.Add("Item", typeof(string));
-            //dataTable.Columns.Add("Price", typeof(int));
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-            //dataTable.Rows.Add("as", "2323");
-
-
-            //DataSet dataSet = new DataSet();
-            //dataSet.Tables.Add(dataTable);
-            List<InvoiceData> parameters = new List<InvoiceData>
+            List<InvoiceData> parameters = new List<InvoiceData>();
+            if (ordersProductsMaps == null)
             {
-                 new InvoiceData{Item ="123s", Price="23432" } ,new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-                 ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
-            };
+
+                parameters = new List<InvoiceData>
+                {
+                     new InvoiceData{Item ="123s", Price="23432" } ,new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                     ,new InvoiceData{Item ="123s", Price="23432" }, new InvoiceData{Item ="123s", Price="23432" }
+                };
+            }
+            else
+            {
+                    foreach (OrdersProductsMap or in ordersProductsMaps)
+                {
+
+                    if (or.Quantity >= 1)
+                    {
+                        parameters.Add(new InvoiceData { Item = $"{or.Name}  {(or.Quantity)}Kg", Price = or.Price.ToString("F2") });
+
+
+                    }
+                    else
+                    {
+                        parameters.Add(new InvoiceData { Item = $"{or.Name} {((or.Quantity % 1).ToString("F3").Substring(2))}g", Price = or.Price.ToString("F2") });
+                    }
+
+                }
+            }
 
             report.SetDataSource(parameters);
 

@@ -1,4 +1,4 @@
-CREATE DATABASE Inventory3 COLLATE Latin1_General_100_CI_AS_SC_UTF8
+CREATE DATABASE Inventory COLLATE Latin1_General_100_CI_AS_SC_UTF8
 -- Create Users table
 -- Create Users table
 CREATE TABLE Users (
@@ -76,7 +76,7 @@ CREATE TABLE Products (
     ProductIdTag VARCHAR(50),
     ProductName VARCHAR(255),
     BrandId INT,
-    ProductDescription TEXT,
+    ProductDescription varchar(max),
     ProductQuantityPerUnit VARCHAR(50),
     ProductPerUnitPrice DECIMAL(18, 2),
     ProductMSRP DECIMAL(18, 2),
