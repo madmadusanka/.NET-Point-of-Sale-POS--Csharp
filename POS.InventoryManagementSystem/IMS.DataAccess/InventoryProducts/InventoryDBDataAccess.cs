@@ -44,8 +44,9 @@ namespace IMS.DataAccess
 
         {
             //this.Sqlcon = new SqlConnection(@"Server=AWINDUDAMPAHALA\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;TrustServerCertificate=True");
-            this.Sqlcon = new SqlConnection(@"Server=DESKTOP-AL7BDT0\SQLEXPRESS;Database=Inventory3;Trusted_Connection=True;TrustServerCertificate=True;");
-            Sqlcon.Open();
+            //this.Sqlcon = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;");
+            //this.Sqlcon = new SqlConnection(@"Server=DESKTOP-AL7BDT0\SQLEXPRESS;Database=Inventory3;Trusted_Connection=True;TrustServerCertificate=True;");
+            //Sqlcon.Open();
         }
 
         private void QueryText(string query)

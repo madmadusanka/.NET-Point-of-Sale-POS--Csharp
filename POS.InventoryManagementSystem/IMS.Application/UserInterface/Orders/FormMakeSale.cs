@@ -603,10 +603,14 @@ namespace FinalPoject
                 if(!string.IsNullOrEmpty(txtCustomerPhone.Text)  && (Customer == null  || Customer?.CustomerPhone != txtCustomerPhone.Text))
                 {
                     Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
-                    txtCoustomerEmail.Text = Customer.CustomerEmail;
-                    txtCoustomerName.Text = Customer.CustomerFullName;
-                    txtCustomerPhone.Text = Customer.CustomerPhone;
-                    txtCustomerAddress.Text = Customer.CustomerAddress;
+                    if(Customer != null)
+                    {
+                        txtCoustomerEmail.Text = Customer.CustomerEmail;
+                        txtCoustomerName.Text = Customer.CustomerFullName;
+                        txtCustomerPhone.Text = Customer.CustomerPhone;
+                        txtCustomerAddress.Text = Customer.CustomerAddress;
+                    }
+                
                 }
             }
             catch (Exception ex)

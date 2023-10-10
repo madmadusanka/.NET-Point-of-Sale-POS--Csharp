@@ -2,6 +2,7 @@
 using CrystalDecisions.Shared;
 using DevExpress.XtraPrinting;
 using IMS.Entity.InventoryProducts;
+using System;
 using System.Collections.Generic;
 using ExportOptions = CrystalDecisions.Shared.ExportOptions;
 
@@ -274,7 +275,8 @@ namespace IMS.Framework
         public static void PrintBill(List<OrdersProductsMap> ordersProductsMaps = null, Order order = null)
         {
             ReportDocument report = new ReportDocument();
-            report.Load("C:\\Users\\Dilan\\Documents\\GitHub\\.NET-Point-of-Sale-POS--Csharp\\POS.InventoryManagementSystem\\IMS.Application\\CrystalReport1.rpt"); // Replace with the actual path to your report file
+            //report.Load(AppDomain.CurrentDomain.BaseDirectory+"CrystalReport1.rpt"); // Replace with the actual path to your report file
+            report.Load("C:\\Users\\Dilan\\Documents\\GitHub\\.NET-Point-of-Sale-POS--Csharp\\POS.InventoryManagementSystem\\IMS.Application\\Report1.rdlc"); // Replace with the actual path to your report file
                                                                                                                                                                     //report.PrintOptions.PrinterName = "your_printer_name"; // Replace with the name of your printer
 
             List<InvoiceData> parameters = new List<InvoiceData>();

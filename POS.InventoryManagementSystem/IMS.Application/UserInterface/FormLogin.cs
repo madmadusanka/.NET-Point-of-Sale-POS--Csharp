@@ -41,20 +41,25 @@ namespace FinalPoject.UserInterface.Dashboard
         {
             //InvoiceReport invoiceReport = new InvoiceReport();
             //invoiceReport.Show();
-           
+
             //InvoiceReport report = new InvoiceReport();
             //report.Show();
+            if (!SecurityProvider.IsValidLicense())
+            {
+                MessageBox.Show("Invalid Licesne");
+                SecurityProvider.GenerateKeyFile();
+                return;
+
+            }
 
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                PrintService.PrintBill();
 
-                SecurityProvider.GenerateKeyFile();
 
-                if (SecurityProvider.IsValidLicense())
+                if (!SecurityProvider.IsValidLicense())
                 {
                     MessageBox.Show("Invalid Licesne");
                     SecurityProvider.GenerateKeyFile();
