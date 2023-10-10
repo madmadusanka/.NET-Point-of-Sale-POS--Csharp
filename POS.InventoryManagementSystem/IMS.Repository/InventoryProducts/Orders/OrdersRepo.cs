@@ -47,7 +47,7 @@ namespace IMS.Repository
             string sql;
             try
             {
-                if ( String.IsNullOrEmpty(key?.Trim()))
+                if (String.IsNullOrEmpty(key?.Trim()))
                     sql = @"select
                                     p.ProductId as 'ProductId', p.ProductIdTag as 'ProductIdTag', p.ProductName as 'ProductName',
                                     p.ProductStatus AS ProductStatus,
@@ -60,9 +60,9 @@ namespace IMS.Repository
                                     left join brands as b on b.BrandId = p.BrandId
                                     left join vendors as v on v.VendorId=b.VendorId
                                     left join ThirdCategories as tc on v.ThirdCategoryId=tc.ThirdCategoryId
-                                    left join SecondCategories as sc on tc.SecondCategoryId=sc.SecondCategoryId
-                                    
-                                    where p.ProductStatus like 'Yes';";
+                                    left join SecondCategories as sc on tc.SecondCategoryId=sc.SecondCategoryId";
+
+                //where p.ProductStatus like 'Yes';";
                 else
                     sql = @"select  
                                     p.ProductId as ProductId, p.ProductIdTag as ProductIdTag, p.ProductName as ProductName,
@@ -78,7 +78,7 @@ namespace IMS.Repository
                                     left join ThirdCategories as tc on v.ThirdCategoryId=tc.ThirdCategoryId
                                     left join SecondCategories as sc on tc.SecondCategoryId=sc.SecondCategoryId 
                                 
-                                    where CONCAT(  p.ProductName,sc.SecondCategoryName, b.BrandName, ProductId,tc.ThirdCategoryName) LIKE '%" + key + "%' ";
+                                    where CONCAT(  p.ProductName,sc.SecondCategoryName, b.BrandName, ProductId,tc.ThirdCategoryName, p.ProductIdTag) LIKE '%" + key + "%' ";
 
                 return this.iDB.ExecuteQueryTable(sql);
                 

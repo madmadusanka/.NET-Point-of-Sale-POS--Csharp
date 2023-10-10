@@ -140,9 +140,9 @@ namespace IMS.Repository
             {
                 var sql = @"insert into Products (ProductName, BrandId, ProductDescription, ProductQuantityPerUnit,
                                 ProductPerUnitPrice, ProductMSRP, ProductStatus, ProductDiscountRate, ProductSize, 
-                                ProductColor, ProductWeight, ProductUnitStock)
+                                ProductColor, ProductWeight, ProductUnitStock,ProductIdTag)
                                 values ('" + pro.ProductName + "' , '" + pro.BrandId + "' , '" + pro.ProductDescription + "' ,'" + pro.ProductQuantityPerUnit + "' ,'" 
-                                + pro.ProductPerUnitPrice + "' ,'" + pro.ProductMSRP + "' ,'" + pro.ProductStatus + "' ,'" + pro.ProductDiscountRate + "' ,'" + pro.ProductSize + "' ,'" + pro.ProductColor + "' ,'" + pro.ProductWeight + "' ,'" + pro.ProductUnitStock + "');";
+                                + pro.ProductPerUnitPrice + "' ,'" + pro.ProductMSRP + "' ,'" + pro.ProductStatus + "' ,'" + pro.ProductDiscountRate + "' ,'" + pro.ProductSize + "' ,'" + pro.ProductColor + "' ,'" + pro.ProductWeight + "' ,'" + pro.ProductUnitStock + "','" + pro.ProductIdTag + "');";
 
                 var rowCount = this.iDB.ExecuteDMLQuery(sql);
 
@@ -163,7 +163,7 @@ namespace IMS.Repository
         {
             try
             {
-                string sql = @"update Products set ProductName='" + product.ProductName + "' , BrandId='" + product.BrandId + "',ProductDescription='" + product.ProductDescription + "', ProductQuantityPerUnit='" + product.ProductQuantityPerUnit + "'," +
+                string sql = @"update Products set  ProductIdTag='" + product.ProductIdTag + "', ProductName='" + product.ProductName + "' , BrandId='" + product.BrandId + "',ProductDescription='" + product.ProductDescription + "', ProductQuantityPerUnit='" + product.ProductQuantityPerUnit + "'," +
                              "ProductPerUnitPrice='" + product.ProductPerUnitPrice + "', ProductMSRP='" + product.ProductMSRP + "', ProductStatus='" + product.ProductStatus + "',ProductDiscountRate='" + product.ProductDiscountRate + "',ProductSize='" +
                              product.ProductSize + "',ProductColor='" + product.ProductColor + "',ProductWeight='" + product.ProductWeight + "',ProductUnitStock='" + product.ProductUnitStock + "' where ProductId='" + product.ProductId + "'";
 

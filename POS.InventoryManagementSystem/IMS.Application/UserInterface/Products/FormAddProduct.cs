@@ -82,6 +82,8 @@ namespace FinalPoject
                     if (this.productRepo.UpdateProduct(proObj))
                     {
                         MessageBox.Show("Update Successfully");
+                        Refresh();
+                        this.PopulateGridView();
                     }
                     else
                     {
@@ -94,14 +96,15 @@ namespace FinalPoject
                     if (this.productRepo.Save(proObj))
                     {
                         MessageBox.Show("Save Successfully");
+                        Refresh();
+                        this.PopulateGridView();
                     }
                     else
                     {
                         MessageBox.Show("Save Failed");
                     }
                 }
-                Refresh();
-                this.PopulateGridView();
+               
             }
 
             catch (Exception exception)
@@ -162,6 +165,7 @@ namespace FinalPoject
             product.ProductWeight = Validation.ConvertToDouble(this.txtWeight.Text, "Weight");
             product.ProductUnitStock = Validation.ConvertToInt(this.txtUniStock.Text,"Unit Stock");
             product.ProductDescription = this.txtDiscription.Text;
+            product.ProductIdTag = this.txtTag.Text ==null?"": this.txtTag.Text;
 
             return product;
         }
