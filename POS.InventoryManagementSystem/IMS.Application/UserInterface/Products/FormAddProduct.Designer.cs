@@ -148,7 +148,7 @@ namespace FinalPoject
             this.pnlInsideTop.BackColor = System.Drawing.Color.Transparent;
             this.pnlInsideTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInsideTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlInsideTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInsideTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInsideTop.Name = "pnlInsideTop";
             this.pnlInsideTop.Size = new System.Drawing.Size(1659, 20);
             this.pnlInsideTop.TabIndex = 5;
@@ -157,7 +157,7 @@ namespace FinalPoject
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBottom.Location = new System.Drawing.Point(0, 899);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(1659, 20);
             this.pnlBottom.TabIndex = 9;
@@ -167,7 +167,7 @@ namespace FinalPoject
             this.pnlInsideLeft.BackColor = System.Drawing.Color.Transparent;
             this.pnlInsideLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlInsideLeft.Location = new System.Drawing.Point(0, 20);
-            this.pnlInsideLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInsideLeft.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInsideLeft.Name = "pnlInsideLeft";
             this.pnlInsideLeft.Size = new System.Drawing.Size(20, 879);
             this.pnlInsideLeft.TabIndex = 12;
@@ -177,7 +177,7 @@ namespace FinalPoject
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel3.Location = new System.Drawing.Point(1639, 20);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(20, 879);
             this.guna2Panel3.TabIndex = 16;
@@ -187,7 +187,7 @@ namespace FinalPoject
             this.guna2Panel4.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel4.Location = new System.Drawing.Point(20, 110);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(1619, 20);
             this.guna2Panel4.TabIndex = 22;
@@ -203,7 +203,7 @@ namespace FinalPoject
             this.guna2Panel1.Controls.Add(this.pnlInsideTop);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1659, 919);
             this.guna2Panel1.TabIndex = 6;
@@ -240,7 +240,7 @@ namespace FinalPoject
             this.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel12.FillColor = System.Drawing.Color.White;
             this.guna2Panel12.Location = new System.Drawing.Point(1063, 4);
-            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Size = new System.Drawing.Size(552, 761);
             this.guna2Panel12.TabIndex = 25;
@@ -291,7 +291,7 @@ namespace FinalPoject
             this.btnAddBarnd.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBarnd.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAddBarnd.Location = new System.Drawing.Point(449, 497);
-            this.btnAddBarnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddBarnd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddBarnd.Name = "btnAddBarnd";
             this.btnAddBarnd.Size = new System.Drawing.Size(47, 37);
             this.btnAddBarnd.TabIndex = 203;
@@ -395,6 +395,7 @@ namespace FinalPoject
             this.txtUniStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUniStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUniStock.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUniStock.Enabled = false;
             this.txtUniStock.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUniStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUniStock.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -416,6 +417,7 @@ namespace FinalPoject
             this.txtDiscountRate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscountRate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDiscountRate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscountRate.Enabled = false;
             this.txtDiscountRate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscountRate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscountRate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -501,6 +503,7 @@ namespace FinalPoject
             this.txtQuantityPerUnit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtQuantityPerUnit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtQuantityPerUnit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQuantityPerUnit.Enabled = false;
             this.txtQuantityPerUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtQuantityPerUnit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantityPerUnit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -522,6 +525,7 @@ namespace FinalPoject
             this.txtPerUnitPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPerUnitPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPerUnitPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPerUnitPrice.Enabled = false;
             this.txtPerUnitPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPerUnitPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPerUnitPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -543,6 +547,7 @@ namespace FinalPoject
             this.txtWeight.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtWeight.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtWeight.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtWeight.Enabled = false;
             this.txtWeight.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWeight.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -585,6 +590,7 @@ namespace FinalPoject
             this.txtSize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSize.Enabled = false;
             this.txtSize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -606,6 +612,7 @@ namespace FinalPoject
             this.txtColor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtColor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtColor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtColor.Enabled = false;
             this.txtColor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtColor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -651,6 +658,7 @@ namespace FinalPoject
             this.txtStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtStatus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtStatus.Enabled = false;
             this.txtStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -715,7 +723,7 @@ namespace FinalPoject
             this.btnRemoveProductPhoto.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveProductPhoto.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnRemoveProductPhoto.Location = new System.Drawing.Point(249, 176);
-            this.btnRemoveProductPhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemoveProductPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveProductPhoto.Name = "btnRemoveProductPhoto";
             this.btnRemoveProductPhoto.Size = new System.Drawing.Size(253, 46);
             this.btnRemoveProductPhoto.TabIndex = 133;
@@ -749,7 +757,7 @@ namespace FinalPoject
             this.btnAddProductPhoto.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddProductPhoto.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnAddProductPhoto.Location = new System.Drawing.Point(249, 118);
-            this.btnAddProductPhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProductPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProductPhoto.Name = "btnAddProductPhoto";
             this.btnAddProductPhoto.Size = new System.Drawing.Size(253, 46);
             this.btnAddProductPhoto.TabIndex = 132;
@@ -916,7 +924,7 @@ namespace FinalPoject
             this.guna2Panel10.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel10.Location = new System.Drawing.Point(0, 675);
-            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(552, 16);
             this.guna2Panel10.TabIndex = 142;
@@ -926,7 +934,7 @@ namespace FinalPoject
             this.guna2Panel20.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2Panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel20.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel20.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel20.Name = "guna2Panel20";
             this.guna2Panel20.Size = new System.Drawing.Size(552, 16);
             this.guna2Panel20.TabIndex = 139;
@@ -939,7 +947,7 @@ namespace FinalPoject
             this.guna2Panel62.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.guna2Panel62.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel62.Location = new System.Drawing.Point(0, 691);
-            this.guna2Panel62.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel62.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel62.Name = "guna2Panel62";
             this.guna2Panel62.Size = new System.Drawing.Size(552, 70);
             this.guna2Panel62.TabIndex = 132;
@@ -977,7 +985,7 @@ namespace FinalPoject
             this.btnCancle.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnCancle.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnCancle.Location = new System.Drawing.Point(285, 14);
-            this.btnCancle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(189, 42);
             this.btnCancle.TabIndex = 117;
@@ -998,7 +1006,7 @@ namespace FinalPoject
             this.btnSaveProduct.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnSaveProduct.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnSaveProduct.Location = new System.Drawing.Point(77, 14);
-            this.btnSaveProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveProduct.Name = "btnSaveProduct";
             this.btnSaveProduct.Size = new System.Drawing.Size(189, 42);
             this.btnSaveProduct.TabIndex = 118;
@@ -1013,7 +1021,7 @@ namespace FinalPoject
             this.guna2Panel15.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel15.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(552, 70);
             this.guna2Panel15.TabIndex = 130;
@@ -1023,7 +1031,7 @@ namespace FinalPoject
             this.guna2Panel16.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel16.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel16.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel16.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel16.Name = "guna2Panel16";
             this.guna2Panel16.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel16.TabIndex = 19;
@@ -1058,7 +1066,7 @@ namespace FinalPoject
             this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel11.FillColor = System.Drawing.Color.White;
             this.guna2Panel11.Location = new System.Drawing.Point(4, 4);
-            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(1031, 761);
             this.guna2Panel11.TabIndex = 27;
@@ -1076,14 +1084,15 @@ namespace FinalPoject
             this.pBrandName,
             this.pStatus,
             this.pMSRP,
-            this.pPerUnPrice,
-            this.pQuaPerUn,
-            this.pDisRate,
-            this.pUnStock,
-            this.pSize,
-            this.pColor,
-            this.pWeight,
-            this.pDisc});
+            //this.pPerUnPrice,
+            //this.pQuaPerUn,
+            //this.pDisRate,
+            //this.pUnStock,
+            //this.pSize,
+            //this.pColor,
+            //this.pWeight,
+            //this.pDisc
+            });
             this.dgvAllProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllProduct.Location = new System.Drawing.Point(11, 158);
             this.dgvAllProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1227,7 +1236,7 @@ namespace FinalPoject
             this.guna2Panel22.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel22.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel22.Location = new System.Drawing.Point(11, 681);
-            this.guna2Panel22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel22.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel22.Name = "guna2Panel22";
             this.guna2Panel22.Size = new System.Drawing.Size(1009, 10);
             this.guna2Panel22.TabIndex = 150;
@@ -1237,7 +1246,7 @@ namespace FinalPoject
             this.guna2Panel21.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel21.Location = new System.Drawing.Point(11, 148);
-            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(1009, 10);
             this.guna2Panel21.TabIndex = 149;
@@ -1247,7 +1256,7 @@ namespace FinalPoject
             this.guna2Panel19.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel19.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel19.Location = new System.Drawing.Point(1020, 148);
-            this.guna2Panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel19.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel19.Name = "guna2Panel19";
             this.guna2Panel19.Size = new System.Drawing.Size(11, 543);
             this.guna2Panel19.TabIndex = 147;
@@ -1257,7 +1266,7 @@ namespace FinalPoject
             this.guna2Panel18.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel18.Location = new System.Drawing.Point(0, 148);
-            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel18.Name = "guna2Panel18";
             this.guna2Panel18.Size = new System.Drawing.Size(11, 543);
             this.guna2Panel18.TabIndex = 146;
@@ -1269,7 +1278,7 @@ namespace FinalPoject
             this.guna2Panel13.CustomBorderThickness = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel13.Location = new System.Drawing.Point(0, 691);
-            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(1031, 70);
             this.guna2Panel13.TabIndex = 133;
@@ -1311,7 +1320,7 @@ namespace FinalPoject
             this.btnRefresh.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(214, 14);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(292, 42);
             this.btnRefresh.TabIndex = 133;
@@ -1335,7 +1344,7 @@ namespace FinalPoject
             this.btnDeleteProduct.HoverState.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnDeleteProduct.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnDeleteProduct.Location = new System.Drawing.Point(525, 14);
-            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(292, 42);
             this.btnDeleteProduct.TabIndex = 135;
@@ -1349,7 +1358,7 @@ namespace FinalPoject
             this.guna2Panel7.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel7.Location = new System.Drawing.Point(0, 70);
-            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(1031, 78);
             this.guna2Panel7.TabIndex = 132;
@@ -1359,7 +1368,7 @@ namespace FinalPoject
             this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel8.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(27, 78);
             this.guna2Panel8.TabIndex = 19;
@@ -1373,7 +1382,7 @@ namespace FinalPoject
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1031, 70);
             this.guna2Panel2.TabIndex = 131;
@@ -1386,7 +1395,7 @@ namespace FinalPoject
             this.guna2Panel14.Controls.Add(this.txtSearchProduct);
             this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel14.Location = new System.Drawing.Point(512, 0);
-            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel14.Name = "guna2Panel14";
             this.guna2Panel14.Size = new System.Drawing.Size(519, 70);
             this.guna2Panel14.TabIndex = 21;
@@ -1408,7 +1417,7 @@ namespace FinalPoject
             this.guna2Panel17.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel17.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel17.Location = new System.Drawing.Point(492, 0);
-            this.guna2Panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel17.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel17.Name = "guna2Panel17";
             this.guna2Panel17.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel17.TabIndex = 135;
@@ -1443,7 +1452,7 @@ namespace FinalPoject
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(27, 70);
             this.guna2Panel5.TabIndex = 19;
@@ -1471,7 +1480,7 @@ namespace FinalPoject
             this.pnlOrderSelect.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOrderSelect.FillColor = System.Drawing.Color.White;
             this.pnlOrderSelect.Location = new System.Drawing.Point(20, 20);
-            this.pnlOrderSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlOrderSelect.Margin = new System.Windows.Forms.Padding(4);
             this.pnlOrderSelect.Name = "pnlOrderSelect";
             this.pnlOrderSelect.Size = new System.Drawing.Size(1619, 90);
             this.pnlOrderSelect.TabIndex = 21;
@@ -1483,7 +1492,7 @@ namespace FinalPoject
             this.guna2Panel6.Controls.Add(this.guna2Panel9);
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(477, 90);
             this.guna2Panel6.TabIndex = 5;
@@ -1517,7 +1526,7 @@ namespace FinalPoject
             this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel9.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(29, 90);
             this.guna2Panel9.TabIndex = 19;

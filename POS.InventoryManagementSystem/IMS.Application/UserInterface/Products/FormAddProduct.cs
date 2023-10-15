@@ -151,19 +151,19 @@ namespace FinalPoject
             }
 
             product.ProductName = this.txtName.Text;
-            product.ProductStatus = this.txtStatus.Text;
+            product.ProductStatus = "Yes";//this.txtStatus.Text;
 
             product.ProductMSRP = Validation.ConvertToDouble(this.txtMSRP.Text, "MSRP");
 
             product.BrandId = brandRepo.GetBrandId(this.cmbBrand.Text);
-            product.ProductPerUnitPrice = Validation.ConvertToDouble(this.txtPerUnitPrice.Text, "Product Per Unit Price");
-            product.ProductQuantityPerUnit = Validation.ConvertToDouble(this.txtQuantityPerUnit.Text, "Quantity Per Unit");
-            product.ProductDiscountRate = Validation.ConvertToDouble(this.txtDiscountRate.Text,"Discount Rate");
-            product.ProductSize = Validation.ConvertToDouble(this.txtSize.Text, "Size");
-            product.ProductColor = this.txtColor.Text;
+            product.ProductPerUnitPrice = 1;// Validation.ConvertToDouble(this.txtPerUnitPrice.Text, "Product Per Unit Price");
+            product.ProductQuantityPerUnit = 1;// Validation.ConvertToDouble(this.txtQuantityPerUnit.Text, "Quantity Per Unit");
+            product.ProductDiscountRate = 1;// Validation.ConvertToDouble(this.txtDiscountRate.Text,"Discount Rate");
+            product.ProductSize = 1;// Validation.ConvertToDouble(this.txtSize.Text, "Size");
+            product.ProductColor = "Null"; ///this.txtColor.Text;
             //proCateMas.ProductPictures = new[] { Convert.ToByte(row["pPictures"].ToString()) };
-            product.ProductWeight = Validation.ConvertToDouble(this.txtWeight.Text, "Weight");
-            product.ProductUnitStock = Validation.ConvertToInt(this.txtUniStock.Text,"Unit Stock");
+            product.ProductWeight = 1; //Validation.ConvertToDouble(this.txtWeight.Text, "Weight");
+            product.ProductUnitStock = 1; //Validation.ConvertToInt(this.txtUniStock.Text,"Unit Stock");
             product.ProductDescription = this.txtDiscription.Text;
             product.ProductIdTag = this.txtTag.Text ==null?"": this.txtTag.Text;
 
@@ -177,16 +177,16 @@ namespace FinalPoject
             this.txtTag.Text = this.dgvAllProduct.CurrentRow.Cells["pTag"].Value.ToString();
             this.txtName.Text = this.dgvAllProduct.CurrentRow.Cells["pName"].Value.ToString();
             this.cmbBrand.Text = dgvAllProduct.CurrentRow.Cells["pBrandName"].Value.ToString();
-            this.txtQuantityPerUnit.Text = this.dgvAllProduct.CurrentRow.Cells["pQuaPerUn"].Value.ToString();
-            this.txtPerUnitPrice.Text = this.dgvAllProduct.CurrentRow.Cells["pPerUnPrice"].Value.ToString();
+            //this.txtQuantityPerUnit.Text = this.dgvAllProduct.CurrentRow.Cells["pQuaPerUn"].Value.ToString();
+            //this.txtPerUnitPrice.Text = this.dgvAllProduct.CurrentRow.Cells["pPerUnPrice"].Value.ToString();
             this.txtMSRP.Text = this.dgvAllProduct.CurrentRow.Cells["pMSRP"].Value.ToString();
-            this.txtSize.Text = this.dgvAllProduct.CurrentRow.Cells["pSize"].Value.ToString();
-            this.txtColor.Text = this.dgvAllProduct.CurrentRow.Cells["pColor"].Value.ToString();
-            this.txtWeight.Text = this.dgvAllProduct.CurrentRow.Cells["pWeight"].Value.ToString();
-            this.txtUniStock.Text = this.dgvAllProduct.CurrentRow.Cells["pUnStock"].Value.ToString();
-            this.txtDiscountRate.Text = this.dgvAllProduct.CurrentRow.Cells["pDisRate"].Value.ToString();
+            //this.txtSize.Text = this.dgvAllProduct.CurrentRow.Cells["pSize"].Value.ToString();
+            //this.txtColor.Text = this.dgvAllProduct.CurrentRow.Cells["pColor"].Value.ToString();
+            //this.txtWeight.Text = this.dgvAllProduct.CurrentRow.Cells["pWeight"].Value.ToString();
+            //this.txtUniStock.Text = this.dgvAllProduct.CurrentRow.Cells["pUnStock"].Value.ToString();
+            //this.txtDiscountRate.Text = this.dgvAllProduct.CurrentRow.Cells["pDisRate"].Value.ToString();
             this.txtStatus.Text = this.dgvAllProduct.CurrentRow.Cells["pStatus"].Value.ToString();
-            this.txtDiscription.Text = this.dgvAllProduct.CurrentRow.Cells["pDisc"].Value.ToString();
+            //this.txtDiscription.Text = this.dgvAllProduct.CurrentRow.Cells["pDisc"].Value.ToString();
         }
 
 

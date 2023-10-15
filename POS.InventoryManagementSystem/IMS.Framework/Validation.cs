@@ -19,7 +19,7 @@ namespace IMS.Framework
 
 
                 double result = 0.00;
-                if (double.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out result))
+                if (double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
                 {
                     return result;
                 }

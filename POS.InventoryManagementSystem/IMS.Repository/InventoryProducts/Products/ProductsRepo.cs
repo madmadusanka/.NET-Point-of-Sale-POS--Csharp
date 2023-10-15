@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using IMS.DataAccess;
 using IMS.Entity;
 using IMS.Entity.InventoryProducts;
+using IMS.Framework;
 
 namespace IMS.Repository
 {
@@ -87,19 +88,19 @@ namespace IMS.Repository
             }
 
             var product = new Products();
-            product.ProductId = Convert.ToInt32(row["pID"].ToString());
+            product.ProductId =Validation.ConvertToInt(row["pID"].ToString(),"Error on loading");
             product.ProductIdTag = row["pTag"].ToString();
             product.ProductName = row["pName"].ToString();
             product.BrandName = row["pBrandName"].ToString();
             product.ProductStatus = row["pStatus"].ToString();
-            product.ProductMSRP = Convert.ToDouble(row["pMSRP"].ToString());
-            product.ProductPerUnitPrice = Convert.ToDouble(row["pPerUnPrice"].ToString());
-            product.ProductQuantityPerUnit = Convert.ToDouble(row["pQuaPerUn"].ToString());
-            product.ProductDiscountRate = Convert.ToDouble(row["pDisRate"].ToString());
-            product.ProductSize = Convert.ToDouble(row["pSize"].ToString());
+            product.ProductMSRP = Validation.ConvertToDouble(row["pMSRP"].ToString(),"Error on loading");
+            product.ProductPerUnitPrice = Validation.ConvertToDouble(row["pPerUnPrice"].ToString(), "Error on loading");
+            product.ProductQuantityPerUnit = Validation.ConvertToDouble(row["pQuaPerUn"].ToString(), "Error on loading");
+            product.ProductDiscountRate = Validation.ConvertToDouble(row["pDisRate"].ToString(), "Error on loading");
+            product.ProductSize = Validation.ConvertToDouble(row["pSize"].ToString(), "Error on loading");
             product.ProductColor = row["pColor"].ToString();
-            product.ProductWeight = Convert.ToDouble(row["pWeight"].ToString());
-            product.ProductUnitStock = Convert.ToInt32(row["pUnStock"].ToString());
+            product.ProductWeight = Validation.ConvertToDouble(row["pWeight"].ToString(), "Error on loading");
+            product.ProductUnitStock = Validation.ConvertToInt(row["pUnStock"].ToString(), "Error on loading");
             product.ProductDescription = row["pDisc"].ToString();
             return product;
         }
