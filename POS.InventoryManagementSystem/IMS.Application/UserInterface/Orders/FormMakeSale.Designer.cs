@@ -110,6 +110,7 @@ namespace FinalPoject
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtpPayDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtProductPerUnitPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtProductMSRP = new Guna.UI2.WinForms.Guna2TextBox();
@@ -134,16 +135,16 @@ namespace FinalPoject
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
-            this.lblTotalItemFound = new System.Windows.Forms.Label();
-            this.cmbBrand = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbVendor = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbSecond = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbThird = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnCancelSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTotalItemResult = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbThird = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbSecond = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbVendor = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbBrand = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtSearchForSell = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTotalItemFound = new System.Windows.Forms.Label();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancle = new Guna.UI2.WinForms.Guna2Button();
@@ -152,7 +153,6 @@ namespace FinalPoject
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteProduct = new Guna.UI2.WinForms.Guna2Button();
             this.pbImage = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.dtpPayDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pnlOrderSelect.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1148,6 +1148,7 @@ namespace FinalPoject
             this.txtCoustomerName.SelectedText = "";
             this.txtCoustomerName.Size = new System.Drawing.Size(781, 37);
             this.txtCoustomerName.TabIndex = 230;
+            this.txtCoustomerName.TextChanged += new System.EventHandler(this.txtCoustomerName_TextChanged);
             // 
             // txtCustomerAddress
             // 
@@ -1209,6 +1210,22 @@ namespace FinalPoject
             this.label2.TabIndex = 226;
             this.label2.Text = "MSRP";
             this.label2.Visible = false;
+            // 
+            // dtpPayDate
+            // 
+            this.dtpPayDate.Checked = true;
+            this.dtpPayDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpPayDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtpPayDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpPayDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPayDate.Location = new System.Drawing.Point(213, 265);
+            this.dtpPayDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpPayDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpPayDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpPayDate.Name = "dtpPayDate";
+            this.dtpPayDate.Size = new System.Drawing.Size(781, 37);
+            this.dtpPayDate.TabIndex = 225;
+            this.dtpPayDate.Value = new System.DateTime(2021, 8, 23, 18, 39, 4, 672);
             // 
             // txtProductPerUnitPrice
             // 
@@ -1595,107 +1612,33 @@ namespace FinalPoject
             this.tablePanel3.Size = new System.Drawing.Size(2580, 71);
             this.tablePanel3.TabIndex = 205;
             // 
-            // lblTotalItemFound
+            // lblTotalItemResult
             // 
-            this.lblTotalItemFound.AutoSize = true;
-            this.tablePanel3.SetColumn(this.lblTotalItemFound, 7);
-            this.lblTotalItemFound.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemFound.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalItemFound.Location = new System.Drawing.Point(708, 7);
-            this.lblTotalItemFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalItemFound.Name = "lblTotalItemFound";
-            this.tablePanel3.SetRow(this.lblTotalItemFound, 0);
-            this.lblTotalItemFound.Size = new System.Drawing.Size(81, 56);
-            this.lblTotalItemFound.TabIndex = 0;
-            this.lblTotalItemFound.Text = "Total Found :";
+            this.lblTotalItemResult.AutoSize = true;
+            this.tablePanel3.SetColumn(this.lblTotalItemResult, 8);
+            this.lblTotalItemResult.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItemResult.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalItemResult.Location = new System.Drawing.Point(818, 21);
+            this.lblTotalItemResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalItemResult.Name = "lblTotalItemResult";
+            this.tablePanel3.SetRow(this.lblTotalItemResult, 0);
+            this.lblTotalItemResult.Size = new System.Drawing.Size(23, 28);
+            this.lblTotalItemResult.TabIndex = 6;
+            this.lblTotalItemResult.Text = "0";
             // 
-            // cmbBrand
+            // label1
             // 
-            this.cmbBrand.BackColor = System.Drawing.Color.Transparent;
-            this.tablePanel3.SetColumn(this.cmbBrand, 10);
-            this.cmbBrand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbBrand.DropDownHeight = 300;
-            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBrand.DropDownWidth = 250;
-            this.cmbBrand.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbBrand.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbBrand.FormattingEnabled = true;
-            this.cmbBrand.IntegralHeight = false;
-            this.cmbBrand.ItemHeight = 30;
-            this.cmbBrand.Location = new System.Drawing.Point(993, 17);
-            this.cmbBrand.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbBrand.Name = "cmbBrand";
-            this.tablePanel3.SetRow(this.cmbBrand, 0);
-            this.cmbBrand.Size = new System.Drawing.Size(227, 36);
-            this.cmbBrand.TabIndex = 207;
-            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
-            // 
-            // cmbVendor
-            // 
-            this.cmbVendor.BackColor = System.Drawing.Color.Transparent;
-            this.tablePanel3.SetColumn(this.cmbVendor, 11);
-            this.cmbVendor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbVendor.DropDownHeight = 300;
-            this.cmbVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVendor.DropDownWidth = 250;
-            this.cmbVendor.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbVendor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbVendor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbVendor.FormattingEnabled = true;
-            this.cmbVendor.IntegralHeight = false;
-            this.cmbVendor.ItemHeight = 30;
-            this.cmbVendor.Location = new System.Drawing.Point(1228, 17);
-            this.cmbVendor.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbVendor.Name = "cmbVendor";
-            this.tablePanel3.SetRow(this.cmbVendor, 0);
-            this.cmbVendor.Size = new System.Drawing.Size(223, 36);
-            this.cmbVendor.TabIndex = 208;
-            this.cmbVendor.SelectedIndexChanged += new System.EventHandler(this.cmbVendor_SelectedIndexChanged);
-            // 
-            // cmbSecond
-            // 
-            this.cmbSecond.BackColor = System.Drawing.Color.Transparent;
-            this.tablePanel3.SetColumn(this.cmbSecond, 13);
-            this.cmbSecond.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbSecond.DropDownHeight = 300;
-            this.cmbSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSecond.DropDownWidth = 250;
-            this.cmbSecond.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbSecond.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbSecond.FormattingEnabled = true;
-            this.cmbSecond.IntegralHeight = false;
-            this.cmbSecond.ItemHeight = 30;
-            this.cmbSecond.Location = new System.Drawing.Point(1678, 17);
-            this.cmbSecond.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbSecond.Name = "cmbSecond";
-            this.tablePanel3.SetRow(this.cmbSecond, 0);
-            this.cmbSecond.Size = new System.Drawing.Size(248, 36);
-            this.cmbSecond.TabIndex = 209;
-            this.cmbSecond.SelectedIndexChanged += new System.EventHandler(this.cmbSecond_SelectedIndexChanged);
-            // 
-            // cmbThird
-            // 
-            this.cmbThird.BackColor = System.Drawing.Color.Transparent;
-            this.tablePanel3.SetColumn(this.cmbThird, 12);
-            this.cmbThird.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbThird.DropDownHeight = 300;
-            this.cmbThird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbThird.DropDownWidth = 250;
-            this.cmbThird.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbThird.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbThird.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbThird.FormattingEnabled = true;
-            this.cmbThird.IntegralHeight = false;
-            this.cmbThird.ItemHeight = 30;
-            this.cmbThird.Location = new System.Drawing.Point(1458, 17);
-            this.cmbThird.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbThird.Name = "cmbThird";
-            this.tablePanel3.SetRow(this.cmbThird, 0);
-            this.cmbThird.Size = new System.Drawing.Size(212, 36);
-            this.cmbThird.TabIndex = 210;
-            this.cmbThird.SelectedIndexChanged += new System.EventHandler(this.cmbThird_SelectedIndexChanged);
+            this.label1.AutoSize = true;
+            this.tablePanel3.SetColumn(this.label1, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(870, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.tablePanel3.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(99, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Filter By -";
             // 
             // btnCancelSearch
             // 
@@ -1720,33 +1663,93 @@ namespace FinalPoject
             this.btnCancelSearch.TextOffset = new System.Drawing.Point(8, 0);
             this.btnCancelSearch.Click += new System.EventHandler(this.btnCancelSearch_Click);
             // 
-            // label1
+            // cmbThird
             // 
-            this.label1.AutoSize = true;
-            this.tablePanel3.SetColumn(this.label1, 9);
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(870, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.tablePanel3.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(99, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filter By -";
+            this.cmbThird.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbThird, 12);
+            this.cmbThird.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbThird.DropDownHeight = 300;
+            this.cmbThird.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbThird.DropDownWidth = 250;
+            this.cmbThird.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbThird.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbThird.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbThird.FormattingEnabled = true;
+            this.cmbThird.IntegralHeight = false;
+            this.cmbThird.ItemHeight = 30;
+            this.cmbThird.Location = new System.Drawing.Point(1458, 17);
+            this.cmbThird.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbThird.Name = "cmbThird";
+            this.tablePanel3.SetRow(this.cmbThird, 0);
+            this.cmbThird.Size = new System.Drawing.Size(212, 36);
+            this.cmbThird.TabIndex = 210;
+            this.cmbThird.SelectedIndexChanged += new System.EventHandler(this.cmbThird_SelectedIndexChanged);
             // 
-            // lblTotalItemResult
+            // cmbSecond
             // 
-            this.lblTotalItemResult.AutoSize = true;
-            this.tablePanel3.SetColumn(this.lblTotalItemResult, 8);
-            this.lblTotalItemResult.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalItemResult.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalItemResult.Location = new System.Drawing.Point(818, 21);
-            this.lblTotalItemResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalItemResult.Name = "lblTotalItemResult";
-            this.tablePanel3.SetRow(this.lblTotalItemResult, 0);
-            this.lblTotalItemResult.Size = new System.Drawing.Size(23, 28);
-            this.lblTotalItemResult.TabIndex = 6;
-            this.lblTotalItemResult.Text = "0";
+            this.cmbSecond.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbSecond, 13);
+            this.cmbSecond.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSecond.DropDownHeight = 300;
+            this.cmbSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSecond.DropDownWidth = 250;
+            this.cmbSecond.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbSecond.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSecond.FormattingEnabled = true;
+            this.cmbSecond.IntegralHeight = false;
+            this.cmbSecond.ItemHeight = 30;
+            this.cmbSecond.Location = new System.Drawing.Point(1678, 17);
+            this.cmbSecond.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSecond.Name = "cmbSecond";
+            this.tablePanel3.SetRow(this.cmbSecond, 0);
+            this.cmbSecond.Size = new System.Drawing.Size(248, 36);
+            this.cmbSecond.TabIndex = 209;
+            this.cmbSecond.SelectedIndexChanged += new System.EventHandler(this.cmbSecond_SelectedIndexChanged);
+            // 
+            // cmbVendor
+            // 
+            this.cmbVendor.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbVendor, 11);
+            this.cmbVendor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbVendor.DropDownHeight = 300;
+            this.cmbVendor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVendor.DropDownWidth = 250;
+            this.cmbVendor.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbVendor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbVendor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbVendor.FormattingEnabled = true;
+            this.cmbVendor.IntegralHeight = false;
+            this.cmbVendor.ItemHeight = 30;
+            this.cmbVendor.Location = new System.Drawing.Point(1228, 17);
+            this.cmbVendor.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbVendor.Name = "cmbVendor";
+            this.tablePanel3.SetRow(this.cmbVendor, 0);
+            this.cmbVendor.Size = new System.Drawing.Size(223, 36);
+            this.cmbVendor.TabIndex = 208;
+            this.cmbVendor.SelectedIndexChanged += new System.EventHandler(this.cmbVendor_SelectedIndexChanged);
+            // 
+            // cmbBrand
+            // 
+            this.cmbBrand.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel3.SetColumn(this.cmbBrand, 10);
+            this.cmbBrand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBrand.DropDownHeight = 300;
+            this.cmbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBrand.DropDownWidth = 250;
+            this.cmbBrand.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbBrand.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbBrand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbBrand.FormattingEnabled = true;
+            this.cmbBrand.IntegralHeight = false;
+            this.cmbBrand.ItemHeight = 30;
+            this.cmbBrand.Location = new System.Drawing.Point(993, 17);
+            this.cmbBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBrand.Name = "cmbBrand";
+            this.tablePanel3.SetRow(this.cmbBrand, 0);
+            this.cmbBrand.Size = new System.Drawing.Size(227, 36);
+            this.cmbBrand.TabIndex = 207;
+            this.cmbBrand.SelectedIndexChanged += new System.EventHandler(this.cmbBrand_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -1784,6 +1787,20 @@ namespace FinalPoject
             this.txtSearchForSell.Size = new System.Drawing.Size(407, 37);
             this.txtSearchForSell.TabIndex = 134;
             this.txtSearchForSell.TextChanged += new System.EventHandler(this.txtSearchForSell_TextChanged_1);
+            // 
+            // lblTotalItemFound
+            // 
+            this.lblTotalItemFound.AutoSize = true;
+            this.tablePanel3.SetColumn(this.lblTotalItemFound, 7);
+            this.lblTotalItemFound.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalItemFound.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalItemFound.Location = new System.Drawing.Point(708, 7);
+            this.lblTotalItemFound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalItemFound.Name = "lblTotalItemFound";
+            this.tablePanel3.SetRow(this.lblTotalItemFound, 0);
+            this.lblTotalItemFound.Size = new System.Drawing.Size(81, 56);
+            this.lblTotalItemFound.TabIndex = 0;
+            this.lblTotalItemFound.Text = "Total Found :";
             // 
             // guna2Panel13
             // 
@@ -1956,22 +1973,6 @@ namespace FinalPoject
             this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImage.TabIndex = 216;
             this.pbImage.TabStop = false;
-            // 
-            // dtpPayDate
-            // 
-            this.dtpPayDate.Checked = true;
-            this.dtpPayDate.CustomFormat = "yyyy-MM-dd";
-            this.dtpPayDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtpPayDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpPayDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPayDate.Location = new System.Drawing.Point(213, 265);
-            this.dtpPayDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpPayDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpPayDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpPayDate.Name = "dtpPayDate";
-            this.dtpPayDate.Size = new System.Drawing.Size(781, 37);
-            this.dtpPayDate.TabIndex = 225;
-            this.dtpPayDate.Value = new System.DateTime(2021, 8, 23, 18, 39, 4, 672);
             // 
             // FormMakeSale
             // 

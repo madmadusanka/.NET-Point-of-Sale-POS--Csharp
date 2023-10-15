@@ -26,7 +26,7 @@ namespace IMS.Repository.InventoryProducts.Customers
             string sql;
             try
             {
-                sql = @"select top(1) * from customers where CustomerPhone like '%"+ phone.Trim()+"%'";
+                sql = @"select top(1) CustomerID, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress from customers where CustomerPhone like '%" + phone.Trim()+"%'";
                 var dt = this.iDB.ExecuteQueryTable(sql);
                 
                 customer = ConvertToEntity(dt.Rows[0]);

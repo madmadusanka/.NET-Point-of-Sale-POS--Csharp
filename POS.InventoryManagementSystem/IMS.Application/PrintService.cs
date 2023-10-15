@@ -383,6 +383,11 @@ namespace FinalPoject
             }
 
             report.SetDataSource(parameters);
+            report.SetParameterValue("Total", "LKR " + order.TotalAmount);
+            report.SetParameterValue("Date", order.Date.ToString("MM/dd/yyyy"));
+            report.SetParameterValue("Name",  (order.CustomerFullName==null?"": $"Name: {order.CustomerFullName}"));
+            report.SetParameterValue("Tel",(order.CustomerPhone == null ? "" : $"Tel: {order.CustomerPhone}"));
+
 
 
             //            ExportOptions exportOptions = new ExportOptions();

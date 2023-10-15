@@ -66,10 +66,14 @@ namespace FinalPoject
         {
             this.dgvSearchProduct.AutoGenerateColumns = false;
             this.dgvSearchProduct.DataSource = this.makeSalesRepo.GetAll(searchKey);
+            this.lblTotalItemResult.Text = this.dgvSearchProduct.RowCount.ToString();
+        }
+        private void FreshLoad()
+        {
+            PopulateGridView();
             this.dgvSearchProduct.ClearSelection();
             this.Refresh();
             this.RefreshContent();
-            this.lblTotalItemResult.Text = this.dgvSearchProduct.RowCount.ToString();
         }
 
         private void FormMakeSale_Load(object sender, EventArgs e)
@@ -259,7 +263,7 @@ namespace FinalPoject
         //Refresh Button
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.PopulateGridView();
+            FreshLoad();
             this.RefreshContent();
             this.txtSearchForSell.Clear();
             //
@@ -434,7 +438,7 @@ namespace FinalPoject
         {
             try
             {
-                FillCustomer();
+                FillCustomerEntity();
                 Order orObj = this.FillEntity();
                 List<OrdersProductsMap> ordersProductsMaps = GetAllForOrders(orObj);
                 if (ordersProductsMaps.Count() > 0)
@@ -501,6 +505,7 @@ namespace FinalPoject
                     {
                         //Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
                         PrintService.PrintBill(ordersProductsMaps, orObj);
+
                         //printService.Print();
                     }
                     catch (Exception ex)
@@ -510,7 +515,7 @@ namespace FinalPoject
                     }
 
                     Refresh();
-                    this.PopulateGridView();
+                    FreshLoad();
                 }
             }
 
@@ -600,18 +605,34 @@ namespace FinalPoject
         {
             try
             {
-                if(!string.IsNullOrEmpty(txtCustomerPhone.Text)  && (Customer == null  || Customer?.CustomerPhone != txtCustomerPhone.Text))
-                {
-                    Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
-                    if(Customer != null)
+                Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
+                if(Customer != null)
                     {
                         txtCoustomerEmail.Text = Customer.CustomerEmail;
                         txtCoustomerName.Text = Customer.CustomerFullName;
-                        txtCustomerPhone.Text = Customer.CustomerPhone;
                         txtCustomerAddress.Text = Customer.CustomerAddress;
                     }
                 
+                else
+                {
+                    txtCoustomerEmail.Text = "";
+                    txtCoustomerName.Text = "";
+                    txtCustomerAddress.Text = "";
                 }
+              
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void FillCustomerEntity()
+        {
+            try
+            {
+                Customer = this.customersRepo.GetCustomerByPhone(txtCustomerPhone.Text);
+
             }
             catch (Exception ex)
             {
@@ -624,6 +645,11 @@ namespace FinalPoject
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtCoustomerName_TextChanged(object sender, EventArgs e)
         {
 
         }
