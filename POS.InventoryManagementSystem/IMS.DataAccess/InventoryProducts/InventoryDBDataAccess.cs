@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Management.Smo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +15,7 @@ namespace IMS.DataAccess
         private SqlConnection sqlcon;
         public SqlConnection Sqlcon
         {
-            get { return this.sqlcon; }
+            get {return this.sqlcon;}
             set { this.sqlcon = value; }
         }
 
@@ -43,12 +44,13 @@ namespace IMS.DataAccess
         public InventoryDBDataAccess()
 
         {
-            //this.Sqlcon = new SqlConnection(@"Server=AWINDUDAMPAHALA\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;TrustServerCertificate=True");
-            //this.Sqlcon = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;");
+            ////this.Sqlcon = new SqlConnection(@"Server=AWINDUDAMPAHALA\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;TrustServerCertificate=True");
+            this.Sqlcon = new SqlConnection(@"Server=localhost\SQLEXPRESS;Database=Inventory;Trusted_Connection=True;");
             //this.Sqlcon = new SqlConnection(@"Server=DESKTOP-AL7BDT0\SQLEXPRESS;Database=Inventory3;Trusted_Connection=True;TrustServerCertificate=True;");
-            //Sqlcon.Open();
+            Sqlcon.Open();
         }
 
+        
         private void QueryText(string query)
         {
             this.Sqlcom = new SqlCommand(query, this.Sqlcon);

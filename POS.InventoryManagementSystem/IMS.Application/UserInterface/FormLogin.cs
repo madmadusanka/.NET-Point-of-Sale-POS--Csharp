@@ -11,7 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
+using ExcelLibrary.BinaryFileFormat;
 using FinalPoject.UserInterface.Orders;
+using IMS.Entity.InventoryProducts;
 using IMS.Framework;
 using IMS.Repository;
 
@@ -39,17 +41,27 @@ namespace FinalPoject.UserInterface.Dashboard
         Bitmap bitmap = null;
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            //InvoiceReport invoiceReport = new InvoiceReport();
-            //invoiceReport.Show();
-
-            //InvoiceReport report = new InvoiceReport();
-            //report.Show();
-            if (!SecurityProvider.IsValidLicense())
+            try
             {
-                MessageBox.Show("Invalid Licesne");
-                SecurityProvider.GenerateKeyFile();
-                return;
 
+
+                //InvoiceReport invoiceReport = new InvoiceReport();
+                //invoiceReport.Show();
+
+                //InvoiceReport report = new InvoiceReport();
+                ////report.Show();
+                //PrintService.PrintBill();
+                if (!SecurityProvider.IsValidLicense())
+                {
+                    MessageBox.Show("Invalid Licesne");
+                    SecurityProvider.GenerateKeyFile();
+                    return;
+
+                }
+            }
+            catch(Exception ex)
+            {
+                Logger.Error(ex);
             }
 
         }
@@ -59,13 +71,13 @@ namespace FinalPoject.UserInterface.Dashboard
             {
 
 
-                if (!SecurityProvider.IsValidLicense())
-                {
-                    MessageBox.Show("Invalid Licesne");
-                    SecurityProvider.GenerateKeyFile();
-                    return;
+                //if (!SecurityProvider.IsValidLicense())
+                //{
+                //    MessageBox.Show("Invalid Licesne");
+                //    SecurityProvider.GenerateKeyFile();
+                //    return;
 
-                }
+                //}
 
                 string role = usersRepo.GetRole(txtUserId.Text, txtPassword.Text);
                 if (role == "Admin")
