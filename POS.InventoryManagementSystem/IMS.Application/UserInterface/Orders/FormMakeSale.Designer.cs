@@ -109,7 +109,6 @@ namespace FinalPoject
             this.txtCustomerAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtpPayDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtProductPerUnitPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -865,7 +864,6 @@ namespace FinalPoject
             this.panel1.Controls.Add(this.txtCustomerAddress);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpPayDate);
             this.panel1.Controls.Add(this.txtProductPerUnitPrice);
             this.panel1.Controls.Add(this.label4);
@@ -938,7 +936,7 @@ namespace FinalPoject
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(19, 355);
+            this.label18.Location = new System.Drawing.Point(19, 404);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 20);
@@ -962,12 +960,13 @@ namespace FinalPoject
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(533, 160);
+            this.label6.Location = new System.Drawing.Point(23, 356);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 243;
             this.label6.Text = "Status";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // cmbPayStatus
             // 
@@ -982,7 +981,7 @@ namespace FinalPoject
             this.cmbPayStatus.Items.AddRange(new object[] {
             "Paid",
             "UnPaid"});
-            this.cmbPayStatus.Location = new System.Drawing.Point(600, 160);
+            this.cmbPayStatus.Location = new System.Drawing.Point(213, 356);
             this.cmbPayStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPayStatus.Name = "cmbPayStatus";
             this.cmbPayStatus.Size = new System.Drawing.Size(360, 36);
@@ -1048,7 +1047,7 @@ namespace FinalPoject
             this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalAmount.Location = new System.Drawing.Point(213, 355);
+            this.txtTotalAmount.Location = new System.Drawing.Point(213, 404);
             this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
@@ -1146,7 +1145,7 @@ namespace FinalPoject
             this.txtCoustomerName.PasswordChar = '\0';
             this.txtCoustomerName.PlaceholderText = "";
             this.txtCoustomerName.SelectedText = "";
-            this.txtCoustomerName.Size = new System.Drawing.Size(781, 37);
+            this.txtCoustomerName.Size = new System.Drawing.Size(416, 37);
             this.txtCoustomerName.TabIndex = 230;
             this.txtCoustomerName.TextChanged += new System.EventHandler(this.txtCoustomerName_TextChanged);
             // 
@@ -1171,7 +1170,7 @@ namespace FinalPoject
             this.txtCustomerAddress.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.txtCustomerAddress.PlaceholderText = "Optional";
             this.txtCustomerAddress.SelectedText = "";
-            this.txtCustomerAddress.Size = new System.Drawing.Size(781, 37);
+            this.txtCustomerAddress.Size = new System.Drawing.Size(523, 37);
             this.txtCustomerAddress.TabIndex = 231;
             // 
             // label13
@@ -1198,19 +1197,6 @@ namespace FinalPoject
             this.label15.TabIndex = 229;
             this.label15.Text = "Customer Full Name";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(408, 273);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
-            this.label2.TabIndex = 226;
-            this.label2.Text = "MSRP";
-            this.label2.Visible = false;
-            // 
             // dtpPayDate
             // 
             this.dtpPayDate.Checked = true;
@@ -1223,7 +1209,7 @@ namespace FinalPoject
             this.dtpPayDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpPayDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpPayDate.Name = "dtpPayDate";
-            this.dtpPayDate.Size = new System.Drawing.Size(781, 37);
+            this.dtpPayDate.Size = new System.Drawing.Size(499, 37);
             this.dtpPayDate.TabIndex = 225;
             this.dtpPayDate.Value = new System.DateTime(2021, 8, 23, 18, 39, 4, 672);
             // 
@@ -2078,7 +2064,6 @@ namespace FinalPoject
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerAddress;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtProductPerUnitPrice;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtProductMSRP;
