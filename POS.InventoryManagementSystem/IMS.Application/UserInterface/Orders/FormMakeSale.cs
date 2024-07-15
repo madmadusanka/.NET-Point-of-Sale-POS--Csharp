@@ -461,7 +461,45 @@ namespace FinalPoject
                             {
 
                                 MessageBox.Show("Save Successfully");
+                                try
+                                {
+                                    if (!string.IsNullOrEmpty(txtCustomerPhone.Text))
+                                    {
+                                        if (Customer == null || Customer.CustomerID == default)
+                                        {
+                                            Customer = new Customer
+                                            {
+                                                CustomerFullName = txtCoustomerName.Text,
+                                                CustomerAddress = txtCustomerAddress.Text,
+                                                CustomerEmail = txtCoustomerEmail.Text,
+                                                CustomerPhone = txtCustomerPhone.Text
+                                            };
 
+                                            if (!customersRepo.Save(Customer))
+                                            {
+                                                MessageBox.Show("Customer not saved.");
+                                            }
+                                        }
+
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Customer not saved.");
+
+                                }
+                                try
+                                {
+                                    //Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
+                                    PrintService.PrintBill(ordersProductsMaps, orObj);
+
+                                    //printService.Print();
+                                }
+                                catch (Exception ex)
+                                {
+                                    Logger.Error(ex);
+                                    MessageBox.Show("Print Error");
+                                }
                                 foreach (DataGridViewRow row in dgvCart.Rows)
                                 {
                                     dgvCart.Rows.RemoveAt(row.Index);
@@ -474,45 +512,7 @@ namespace FinalPoject
                             MessageBox.Show("Save Failed");
                         }
                     }
-                    try
-                    {
-                        if (!string.IsNullOrEmpty(txtCustomerPhone.Text))
-                        {
-                            if (Customer == null || Customer.CustomerID == default)
-                            {
-                                Customer = new Customer
-                                {
-                                    CustomerFullName = txtCoustomerName.Text,
-                                    CustomerAddress = txtCustomerAddress.Text,
-                                    CustomerEmail = txtCoustomerEmail.Text,
-                                    CustomerPhone = txtCustomerPhone.Text
-                                };
-
-                                if (!customersRepo.Save(Customer))
-                                {
-                                    MessageBox.Show("Customer not saved.");
-                                }
-                            }
-
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Customer not saved.");
-
-                    }
-                    try
-                    {
-                        //Bitmap bitmap = BillGenerator.GenerateBill(ordersProductsMaps, Constants.Currency, orObj);
-                        PrintService.PrintBill(ordersProductsMaps, orObj);
-
-                        //printService.Print();
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.Error(ex);
-                        MessageBox.Show("Print Error");
-                    }
+                   
 
                     Refresh();
                     FreshLoad();

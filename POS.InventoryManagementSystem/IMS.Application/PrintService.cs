@@ -1,4 +1,5 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
+﻿
+using CrystalDecisions.CrystalReports.Engine;
 using IMS.Entity.InventoryProducts;
 using System;
 using System.Collections.Generic;
@@ -385,8 +386,8 @@ namespace FinalPoject
             report.SetDataSource(parameters);
             report.SetParameterValue("Total", "LKR " + order.TotalAmount);
             report.SetParameterValue("Date", order.Date.ToString("MM/dd/yyyy"));
-            report.SetParameterValue("Name",  (order.CustomerFullName==null?"": $"Name: {order.CustomerFullName}"));
-            report.SetParameterValue("Tel",(order.CustomerPhone == null ? "" : $"Tel: {order.CustomerPhone}"));
+            report.SetParameterValue("Name",  (String.IsNullOrEmpty(order.CustomerFullName)?"": $"Name: {order.CustomerFullName}"));
+            report.SetParameterValue("Tel",(String.IsNullOrEmpty(order.CustomerPhone) ? "" : $"Tel: {order.CustomerPhone}"));
 
 
 

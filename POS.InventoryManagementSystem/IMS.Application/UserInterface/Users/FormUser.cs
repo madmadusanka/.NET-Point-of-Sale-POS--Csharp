@@ -24,12 +24,19 @@ namespace FinalPoject
 
         private void PopulateGridView(string searchKey = null)
         {
+            try
+            {
+
+
+           
             this.dgvUser.AutoGenerateColumns = false;
             this.dgvUser.DataSource = this.usersRepo.GetAll(searchKey).ToList();
             this.dgvUser.ClearSelection();
             this.Refresh();
             this.RefreshContent();
         }
+            catch { }
+             }
 
         public void RefreshContent()
         {

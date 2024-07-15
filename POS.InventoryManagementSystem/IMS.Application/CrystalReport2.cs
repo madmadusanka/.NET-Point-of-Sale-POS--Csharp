@@ -9,12 +9,12 @@
 //------------------------------------------------------------------------------
 
 namespace FinalPoject {
+    using CrystalDecisions.CrystalReports.Engine;
+    using CrystalDecisions.ReportSource;
+    using CrystalDecisions.Shared;
     using System;
     using System.ComponentModel;
-    using CrystalDecisions.Shared;
-    using CrystalDecisions.ReportSource;
-    using CrystalDecisions.CrystalReports.Engine;
-    
+  
     
     public class CrystalReport2 : ReportClass {
         

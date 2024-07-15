@@ -87,6 +87,7 @@
     <Compile Include="SecurityProvider.cs" />
     <Compile Include="HardwareSerial.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TypeHelper.cs" />
     <Compile Include="Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

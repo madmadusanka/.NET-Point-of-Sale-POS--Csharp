@@ -364,11 +364,11 @@ namespace IMS.Repository
             string sql = "insert into Orders (Id, BarCodeId, Date," +
                              "OrderStatus, PaymentMethod, " +
                              "TotalAmount, CustomerFullName, CustomerPhone, CustomerEmail, CustomerAddress,SavedByUser,SaveDateTime) " +
-                             " values ('" + or.Id + "', " +
-                             " '" + or.BarCodeId + "' , '" + or.Date + "' , '" + or.OrderStatus + "' , '" + or.PaymentMethod + "' ," +
-                             " '" + or.TotalAmount + "' ," +
-                             " '" + or.CustomerFullName + "' , '" + or.CustomerPhone + "' , '" + or.CustomerEmail + "' ," +
-                             " '" + or.CustomerAddress + "' ,'"+or.SavedByUser+"' , '"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"') ";
+                             " values ('" + TypeHelper.ObjectToEmpty(or.Id) + "', " +
+                             " '" + TypeHelper.ObjectToEmpty(or.BarCodeId) + "' , '" + TypeHelper.ObjectToEmpty(or.Date) + "' , '" + TypeHelper.ObjectToEmpty(or.OrderStatus) + "' , '" +TypeHelper.ObjectToEmpty( or.PaymentMethod) + "' ," +
+                             " '" + TypeHelper.ObjectToEmpty(or.TotalAmount) + "' ," +
+                             " '" + TypeHelper.ObjectToEmpty(or.CustomerFullName) + "' , '" +TypeHelper.ObjectToEmpty( or.CustomerPhone) + "' , '" + TypeHelper.ObjectToEmpty(or.CustomerEmail) + "' ," +
+                             " '" + TypeHelper.ObjectToEmpty(or.CustomerAddress) + "' ,'"+ TypeHelper.ObjectToEmpty(or.SavedByUser)+"' , '"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"') ";
 
             try
             {

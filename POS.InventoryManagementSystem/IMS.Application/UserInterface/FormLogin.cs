@@ -71,13 +71,13 @@ namespace FinalPoject.UserInterface.Dashboard
             {
 
 
-                //if (!SecurityProvider.IsValidLicense())
-                //{
-                //    MessageBox.Show("Invalid Licesne");
-                //    SecurityProvider.GenerateKeyFile();
-                //    return;
+                if (!SecurityProvider.IsValidLicense())
+                {
+                    MessageBox.Show("Invalid Licesne");
+                    SecurityProvider.GenerateKeyFile();
+                    //return;
 
-                //}
+                }
 
                 string role = usersRepo.GetRole(txtUserId.Text, txtPassword.Text);
                 if (role == "Admin")

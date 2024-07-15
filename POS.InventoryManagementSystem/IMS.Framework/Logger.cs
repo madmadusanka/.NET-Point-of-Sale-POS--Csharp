@@ -45,7 +45,7 @@ namespace IMS.Framework
 
         public static void Error(Exception ex)
         {
-            log.Error(ex.Message + " \n " + ex.StackTrace+ " \n ");
+            log.Error(ex.Message  + "\n " + ex.StackTrace+ " \n");
         }
 
         public static void Info(Exception ex)
