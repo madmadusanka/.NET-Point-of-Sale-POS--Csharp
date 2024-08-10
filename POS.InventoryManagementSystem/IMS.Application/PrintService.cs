@@ -5,8 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FinalPoject
 {
@@ -276,10 +278,13 @@ namespace FinalPoject
 
         public static void PrintBill(List<OrdersProductsMap> ordersProductsMaps = null, Order order = null)
         {
+           
+
             ReportDocument report = new ReportDocument();
+
             //report.Load(AppDomain.CurrentDomain.BaseDirectory+"CrystalReport1.rpt"); // Replace with the actual path to your report file
             report.Load("C:\\CrystalReport1.rpt"); // Replace with the actual path to your report file
-                                                                                                                                                              //report.PrintOptions.PrinterName = "your_printer_name"; // Replace with the name of your printer
+                                                   //report.PrintOptions.PrinterName = "your_printer_name"; // Replace with the name of your printer
 
             List<InvoiceData> parameters = new List<InvoiceData>();
             if (ordersProductsMaps == null)
@@ -388,8 +393,8 @@ namespace FinalPoject
             report.SetDataSource(parameters);
             report.SetParameterValue("Total", "LKR " + order.TotalAmount.ToString("F2"));
             report.SetParameterValue("Date", order.Date.ToString("MM/dd/yyyy"));
-            report.SetParameterValue("Name",  (String.IsNullOrEmpty(order.CustomerFullName)?"": $"Name: {order.CustomerFullName}"));
-            report.SetParameterValue("Tel",(String.IsNullOrEmpty(order.CustomerPhone) ? "" : $"Tel: {order.CustomerPhone}"));
+            report.SetParameterValue("Name", (String.IsNullOrEmpty(order.CustomerFullName) ? "" : $"Name: {order.CustomerFullName}"));
+            report.SetParameterValue("Tel", (String.IsNullOrEmpty(order.CustomerPhone) ? "" : $"Tel: {order.CustomerPhone}"));
 
 
 
@@ -408,7 +413,6 @@ namespace FinalPoject
 
 
             report.PrintToPrinter(1, false, 0, 0);
-
         }
 
     }
