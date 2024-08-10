@@ -368,23 +368,25 @@ namespace FinalPoject
             {
                 foreach (OrdersProductsMap or in ordersProductsMaps)
                 {
+                    parameters.Add(new InvoiceData { Item = $"{or.Name} x {or.Quantity}", Price = or.Price.ToString("F2") });
 
-                    if (or.Quantity >= 1)
-                    {
-                        parameters.Add(new InvoiceData { Item = $"{or.Name}  {(or.Quantity)}Kg", Price = or.Price.ToString("F2") });
+                    //if (or.Quantity >= 1)
+                    //{
+                    //    parameters.Add(new InvoiceData { Item = $"{or.Name}  {(or.Quantity)}Kg", Price = or.Price.ToString("F2") });
 
 
-                    }
-                    else
-                    {
-                        parameters.Add(new InvoiceData { Item = $"{or.Name} {((or.Quantity % 1).ToString("F3").Substring(2))}g", Price = or.Price.ToString("F2") });
-                    }
+                    //}
+                    //else
+                    //{
+                    //    parameters.Add(new InvoiceData { Item = $"{or.Name} {((or.Quantity % 1).ToString("F3").Substring(2))}g", Price = or.Price.ToString("F2") });                        //parameters.Add(new InvoiceData { Item = $"{or.Name} {((or.Quantity % 1).ToString("F3").Substring(2))}g", Price = or.Price.ToString("F2") });
+
+                    //}                        
 
                 }
             }
 
             report.SetDataSource(parameters);
-            report.SetParameterValue("Total", "LKR " + order.TotalAmount);
+            report.SetParameterValue("Total", "LKR " + order.TotalAmount.ToString("F2"));
             report.SetParameterValue("Date", order.Date.ToString("MM/dd/yyyy"));
             report.SetParameterValue("Name",  (String.IsNullOrEmpty(order.CustomerFullName)?"": $"Name: {order.CustomerFullName}"));
             report.SetParameterValue("Tel",(String.IsNullOrEmpty(order.CustomerPhone) ? "" : $"Tel: {order.CustomerPhone}"));
